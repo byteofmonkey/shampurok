@@ -1,0 +1,8 @@
+## Compiled project: ./dist
+## Source folder: ./src
+
+This project created with gulp 4.0.2
+use 'npm i' to install node_modules
+
+Project specifics:
+1. created with vanilla javascript/scss

@@ -1,0 +1,114 @@
+.header {
+    height: 125px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    section {
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1680px;
+        padding: 0 25px;
+        position: relative;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    a,
+    &__button {
+        color: $default-color;
+        padding: 24px 16px;
+        font-size: 12px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media screen and (max-width: 992px) {
+
+        .hamburger {
+            display: initial;
+            box-shadow: none;
+        }
+
+        &.menu_open {
+            nav {
+                top: 80px;
+            }
+        }
+
+        height: 80px;
+
+        section {
+            padding: 0;
+        }
+
+        .header__menu {
+            padding: 0 25px;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+
+            backdrop-filter: blur(50px);
+            background-color: rgba(100, 100, 100, 0.5);
+        }
+
+        nav {
+            position: absolute;
+            top: -550%;
+            left: 0;
+            width: 100%;
+            padding-bottom: 20px;
+            transition: all 0.2s ease-out;
+
+            backdrop-filter: blur(24px);
+            background-color: rgba(100, 100, 100, 0.5);
+        }
+
+        a,
+        &__button {
+            padding: 14px 16px;
+            font-size: 14px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            width: 80%;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $default-color;
+            }
+        }
+
+        .button-yellow-border {
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        .header__menu {
+            padding: 0 5px;
+        }
+    }
+}
