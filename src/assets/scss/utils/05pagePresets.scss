@@ -1,0 +1,141 @@
+html {
+    line-height: $mainLineHeight;
+    font-size: $mainFontSize;
+    color: $defaultColor;
+
+    scroll-behavior: smooth;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        font-size: 8px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    font-weight: $mainFontWeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $backgroundColor;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1920px;
+    background: repeat-y center/100% url(../images/background/mainBg.jpg);
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 1600px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-size: rem(48);
+    line-height: 1.25;
+    color: $defaultColor;
+    font-family: Georgia;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: rem(36);
+    color: $defaultColor;
+    line-height: 1.5;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: rem(18);
+    color: $defaultColor;
+    line-height: normal;
+}
+
+p {
+    color: $defaultColor;
+}
+
+a {
+    font-size: 12px;
+    text-decoration: none;
+    user-select: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        color: $defaultColor;
+    }
+}
+
+button {
+    color: $defaultColor;
+
+    &:hover,
+    &:focus {
+        color: $defaultColor;
+    }
+}
+
+
+input[type="email"] {
+    font-family: inherit;
+    font-size: 16px;
+
+    ::placeholder {
+        color: $defaultColor;
+    }
+}
+
+.socials {
+    color: $accentColor;
+
+    a:hover i,
+    a:focus i {
+        color: $accentColor;
+    }
+}
+
+// .section {
+//     max-width: 1580px;
+//     margin: 140px auto;
+//     padding: 0 65px;
+
+//     @media screen and (max-width: $smDesktopWidth) {
+//         margin: 100px auto;
+//         padding: 0 30px;
+//     }
+// }
+
+// .container {
+//     width: 100%;
+//     flex: 0 0 auto;
+//     position: relative;
+//     margin: 0 auto;
+// }

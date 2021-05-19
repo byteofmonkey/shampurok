@@ -9,15 +9,21 @@
 <body>
 
   <!-- Header -->
-  {{> header }}
+  <div class="wrapper">
+    {{> header }}
+  </div>
 
   <main>
-    <!-- Main -->
-    {{> body }}
-  </main>
+    <div class="wrapper">
 
-  <!-- Footer -->
-  {{> footer }}
+      <!-- Main -->
+      {{> body }}
+
+      <!-- Footer -->
+      {{> footer }}
+
+    </div>
+  </main>
 
   <!-- JS -->
   <script src="assets/js/app.js"></script>

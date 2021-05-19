@@ -8,17 +8,20 @@
 
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
-
-
-$hamburger-layer-color : rgb(255, 255, 255) !default;
-@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
-
 @import 'node_modules/animate.css/animate';
 
 /* Blocks */
 @import "blocks/header.scss";
 @import "blocks/01intro.scss";
+@import "blocks/02story.scss";
+@import "blocks/03tiles.scss";
+@import "blocks/04sliderPopup.scss";
+@import "blocks/05getInfo.scss";
+@import "blocks/06quiz.scss";
+@import "blocks/07cardsWho.scss";
+@import "blocks/08accordion.scss";
+@import "blocks/09cardsCompare.scss";
+@import "blocks/10cardsOrder.scss";
+@import "blocks/11sliderFeedback.scss";
+@import "blocks/12formQuestions.scss";
 @import "blocks/footer.scss";
-
-
-@import "utils/animations.scss";
