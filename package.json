@@ -1,6 +1,7 @@
 {
     "name": "shampurok",
     "version": "1.0.0",
+    "license": "mit",
     "devDependencies": {
         "@babel/core": "^7.13.10",
         "@babel/preset-env": "^7.13.12",
@@ -36,6 +37,8 @@
         "@glidejs/glide": "^3.4.1",
         "animate.css": "^4.1.1",
         "hamburgers": "^1.1.3",
+        "swiper": "^6.6.2",
+        "tingle.js": "^0.16.0",
         "wow.js": "^1.2.2"
     }
 }

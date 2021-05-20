@@ -1,14 +1,15 @@
-// @import "node_modules/animate.css/animate.min";
 @import 'utils/01reset';
 @import 'utils/02vars';
 @import 'utils/03mixins';
 @import 'utils/04fonts';
 @import 'utils/05pagePresets';
+@import 'utils/06tingle';
 
 
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
-@import 'node_modules/animate.css/animate';
+// @import 'node_modules/animate.css/animate';
+// @import "node_modules/animate.css/animate.min";
+
+@import 'swiper/swiper-bundle';
 
 /* Blocks */
 @import "blocks/header.scss";

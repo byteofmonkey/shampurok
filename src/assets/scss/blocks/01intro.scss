@@ -1,4 +1,16 @@
-.preview {
-    background: center/cover url(../images/bg-preview.jpg);
+.intro {
+
+    height: 800px;
+    background: center/cover url(../images/background/01introBg.jpg);
+
+    h1 {
+        max-width: 636px;
+        padding-top: 236px;
+    }
+
+    .btn-solid {
+        width: 340px;
+        height: 60px;
+    }
 
 }

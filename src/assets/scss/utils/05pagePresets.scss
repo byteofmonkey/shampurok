@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 html {
     line-height: $mainLineHeight;
     font-size: $mainFontSize;
@@ -30,16 +36,17 @@ main {
     max-width: 1920px;
     background: repeat-y center/100% url(../images/background/mainBg.jpg);
     overflow: hidden;
+    position: relative;
 }
 
-.wrapper {
+.container {
+    margin: 0 auto;
     max-width: 1600px;
 }
 
-h1,
-h2,
-h3 {
-    margin: 0;
+.container,
+.containerFluid {
+    padding: 0 30px;
 }
 
 ul,
@@ -52,6 +59,12 @@ li {
 img {
     display: block;
     width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
 }
 
 h1 {
@@ -82,27 +95,71 @@ p {
     color: $defaultColor;
 }
 
-a {
-    font-size: 12px;
-    text-decoration: none;
+a,
+button {
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: $accentColor;
     user-select: none;
-    text-transform: uppercase;
 
     &:hover,
     &:focus {
         color: $defaultColor;
     }
+}
+
+a {
+    display: inline-flex;
+    text-decoration: none;
+    border-bottom: 1px solid $accentColor;
+    padding-bottom: 1px;
 }
 
 button {
-    color: $defaultColor;
+    display: flex;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn-border {
 
     &:hover,
     &:focus {
-        color: $defaultColor;
+        background-color: $accentColor;
     }
 }
 
+.btn-solid {
+    color: $defaultColor;
+    background-color: $accentColor;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+}
+
+.btn-border,
+.btn-solid {
+    border: 1px solid $accentColor;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.line {
+    border-bottom: 1px solid $accentColor;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+        font-size: 8px;
+        line-height: 0;
+        color: $accentColor;
+    }
+}
 
 input[type="email"] {
     font-family: inherit;
@@ -121,21 +178,3 @@ input[type="email"] {
         color: $accentColor;
     }
 }
-
-// .section {
-//     max-width: 1580px;
-//     margin: 140px auto;
-//     padding: 0 65px;
-
-//     @media screen and (max-width: $smDesktopWidth) {
-//         margin: 100px auto;
-//         padding: 0 30px;
-//     }
-// }
-
-// .container {
-//     width: 100%;
-//     flex: 0 0 auto;
-//     position: relative;
-//     margin: 0 auto;
-// }

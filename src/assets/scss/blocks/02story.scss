@@ -1,0 +1,21 @@
+.story {
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        margin: 0 auto;
+        max-width: 760px;
+        text-align: center;
+        font-size: 16px;
+
+        &:last-of-type {
+            margin: 40px auto 100px;
+        }
+    }
+
+    .line {
+        margin: 0 auto;
+        max-width: 970px;
+    }
+}

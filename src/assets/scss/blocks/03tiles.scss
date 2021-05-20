@@ -1,0 +1,26 @@
+.tiles {
+    &__items {
+        display: grid;
+
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+        div {
+
+            h3::before {
+                content: "\e905";
+
+                font-family: 'icomoon';
+                font-size: 60px;
+                line-height: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+    }
+}
