@@ -16,7 +16,7 @@
 @import "blocks/01intro.scss";
 @import "blocks/02story.scss";
 @import "blocks/03tiles.scss";
-@import "blocks/04sliderPopup.scss";
+@import "blocks/04popUp.scss";
 @import "blocks/05getInfo.scss";
 @import "blocks/06quiz.scss";
 @import "blocks/07cardsWho.scss";
@@ -26,3 +26,7 @@
 @import "blocks/11sliderFeedback.scss";
 @import "blocks/12formQuestions.scss";
 @import "blocks/footer.scss";
+
+.placeholder {
+    height: 500px;
+}
