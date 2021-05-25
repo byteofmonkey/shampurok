@@ -48,7 +48,6 @@
     &__sliderNavs {
         max-width: 520px;
         margin-left: auto;
-
     }
 
     &__sliderScrollBar {
@@ -64,6 +63,7 @@
         }
     }
 
+    // outer slider bar with numbers:
     &__sliderPagination {
         margin-top: 25px;
         position: static;
@@ -82,11 +82,17 @@
         }
     }
 
-    .swiper-miniatures {
+    .swiper-tumbnails {
         display: none;
     }
 }
 
+
+
+
+
+
+// Priduct card slider with thumbnails(only when product card opened):
 .popUp_open {
 
     .popUp__sliderWrapper {
@@ -109,12 +115,72 @@
     }
 
     .popUp__Wrapper {
-        display: flex;
+        display: grid;
+        grid-template: repeat(2, auto) / minmax(auto, 700px) auto;
+        grid-auto-flow: column;
+
         justify-content: center;
         padding: 60px;
     }
 
+
+
+
+
+
+
+
+
+
+
+    .swiper {
+        overflow: hidden;
+        align-self: start;
+
+        padding: 30px 50px;
+
+        // outline: 1px solid red;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 40px;
+            width: calc(100% - 100px);
+            height: calc(100% - 60px);
+            border: 1px solid $accentColor;
+        }
+
+        &:hover {
+            cursor: zoom-in;
+        }
+    }
+
+    .swiper-tumbnails {
+        // grid align-self
+        align-self: start;
+
+        padding: 0 50px;
+        margin-top: 50px;
+        display: flex;
+        gap: 2%;
+
+        img {
+            flex-grow: 1;
+        }
+
+        .swiper-pagination-bullet,
+        span {
+            height: 100%;
+            border-radius: 0;
+        }
+    }
+
     .popUp__content {
+        grid-row: 1 / -1;
+        padding-top: 0;
+        padding-left: 60px;
 
         .popUp__col {
             padding-top: 0;
@@ -134,40 +200,13 @@
         }
     }
 
-    .swiper {
-        align-self: flex-start;
-        max-width: 800px;
-        overflow-y: hidden;
-
-        .swiper-wrapper:hover {
-            cursor: zoom-in;
-        }
-
-        .swiper-miniatures {
-            margin-top: 50px;
-            display: flex;
-            gap: 2%;
-
-            img {
-                width: 0;
-                flex-grow: 1;
-            }
-
-            .swiper-pagination-bullet,
-            span {
-                height: 100%;
-                border-radius: 0;
-            }
-        }
-    }
-
     .popUp__openLink,
     .popUp__price {
         display: none;
     }
 
     .btn-border {
-        margin-left: auto;
+        float: right;
         width: 300px;
         margin-top: 50px;
     }

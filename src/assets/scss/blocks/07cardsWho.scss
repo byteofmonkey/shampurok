@@ -1,0 +1,17 @@
+.cardsWho {
+    ul {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 120px;
+
+        i {
+            display: block;
+            font-size: 52px;
+        }
+    }
+
+    h2 {
+        margin-bottom: 110px;
+    }
+}

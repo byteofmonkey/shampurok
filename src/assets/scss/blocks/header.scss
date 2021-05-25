@@ -17,67 +17,158 @@
     a,
     button {
         height: 100%;
-        border: none;
     }
 
     .logo {
         font-size: 30px;
     }
 
-    ul {
+    &__submenu {
         height: 100%;
         display: flex;
-    }
 
-    li {
-        height: 100%;
-        border-right: 1px solid $accentColor;
+        li {
+            height: 100%;
+        }
+
+        a {
+            border-right: 1px solid $accentColor;
+        }
     }
 
     &__address {
         padding: 0 40px;
 
         span {
-            width: 0;
-            opacity: 0;
-            overflow: hidden;
+            display: none;
             margin-left: 22px;
-            transition: opacity 0.1s linear;
+            font-size: 12px;
         }
 
         &:hover span {
-            opacity: 1;
-            width: auto;
-            display: block;
+            display: initial;
         }
-    }
-
-    &__phone {
-        padding: 0 40px;
-    }
-
-    &__hamburger {
-        padding: 0 10px 0 40px;
     }
 
     .icon-mapPin {
         font-size: 24px;
     }
 
-    .icon-menu {
-        margin-left: 26px;
-        font-size: 26px;
-    }
+    &__phone {
+        padding: 0 40px;
 
-    .icon-menuClose {
-        display: none;
-
-        &.open {
-            display: initial;
+        i {
+            font-size: 25px;
+            display: none;
         }
     }
 
+    &__openMenuBtn {
+        padding: 0 20px 0 40px;
+        border-right: 1px solid $accentColor;
 
+        div {
+            margin-left: 25px;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .icon-menu {
+            font-size: 5px;
+            transition: transform 0.1s;
 
+            &:nth-of-type(2) {
+                margin: 6px auto;
+            }
+        }
+
+        &:hover {
+            .icon-menu {
+                transform: translateX(2px)
+            }
+
+            i:nth-of-type(2) {
+                transform: translateX(-4px);
+            }
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        .container {
+            padding-right: 0;
+        }
+
+        &__openMenuBtn {
+            padding-right: 40px;
+            border: none;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &__phone {
+            span {
+                display: none;
+            }
+
+            i {
+                display: initial;
+            }
+        }
+
+        &__address:hover span {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $smTableWidth),
+    (orientation:landscape) and (max-width: 992px) {
+        height: 60px;
+
+        .logo {
+            font-size: 22px;
+            margin-right: 15px;
+        }
+
+        &__address {
+            padding: 0;
+            width: 60px;
+            border-left: 1px solid $accentColor;
+        }
+
+        &__phone {
+            padding: 0;
+            width: 60px
+        }
+
+        &__openMenuBtn {
+            padding: 0 20px;
+
+            div {
+                margin-left: 0;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        .logo {
+            font-size: 10px;
+            transform: scaleY(1.8);
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        .logo {
+            font-size: 5px;
+            margin: 0 5px;
+            transform: scaleY(3);
+        }
+
+        .container {
+            padding-left: 0;
+        }
+    }
 }

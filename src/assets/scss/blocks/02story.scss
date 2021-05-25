@@ -1,21 +1,21 @@
 .story {
     h2 {
         text-align: center;
+        margin-bottom: 40px;
     }
 
     p {
         margin: 0 auto;
         max-width: 760px;
         text-align: center;
-        font-size: 16px;
+        line-height: 1.85;
 
         &:last-of-type {
-            margin: 40px auto 100px;
+            margin: 40px auto 80px;
         }
     }
 
     .line {
-        margin: 0 auto;
-        max-width: 970px;
+        width: 65%;
     }
 }

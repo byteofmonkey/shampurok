@@ -3,25 +3,74 @@
 
     <a class="logo" href="index.html"><i class='icon-logo'></i></a>
 
-    <ul>
+    <ul class="header__submenu">
       <li>
         <a class="header__address" href="#"><i class="icon-mapPin"></i><span>г. Москва,<br>ул. Пушкина 123</span></a>
       </li>
       <li>
-        <a class="header__phone" href="tel:88002000600">+7 800 200 06 00</a>
+        <a class="header__phone" href="tel:88002000600"><span>+7 800 200 06 00</span><i class="icon-phone"></i></a>
       </li>
       <li>
-        <button class="header__hamburger" type="button" aria-label="Menu" aria-controls="navigation">
-          меню
-          <i class="icon-menu"></i>
-          <i class="icon-menuClose"></i>
+        <button id='openMenu' class="header__openMenuBtn" type="button" aria-label="Menu" aria-controls="navigation">
+          <span>меню</span>
+          <div>
+            <i class="icon-menu"></i>
+            <i class="icon-menu"></i>
+            <i class="icon-menu"></i>
+          </div>
         </button>
-      </li>
-    </ul>
+      </li><!-- end open menu btn -->
+    </ul><!-- end header submenu -->
 
-    <!-- <nav>
-      <a href="#"></a>
-    </nav> -->
+    <nav id="menu">
+      <ul class="header__socials">
+        <li>
+          <a class="link" href="https://www.facebook.com" target='_blank'><i class="icon-facebook"></i></a>
+        </li>
+        <li>
+          <a class="link" href="https://www.instagram.com" target='_blank'><i class="icon-instagram"></i></a>
+        </li>
+        <li>
+          <a class="link" href="https://www.telegram.org" target='_blank'><i class="icon-telegram"></i></a>
+        </li>
+      </ul><!-- end header socials -->
 
+
+      <ul id="headerMenu" data-simplebar class="header__menu">
+        <li>
+          <button id='closeMenu'><i class="icon-close"></i></button>
+        </li>
+        <li>
+          <a href="#">главный</a>
+        </li>
+        <li>
+          <a href="#">преимущества кейсов</a>
+        </li>
+        <li>
+          <a href="#">выбор кейсов</a>
+        </li>
+        <li>
+          <a href="#">кейсы с гравировкой</a>
+        </li>
+        <li>
+          <a href="#">подбор кейсов</a>
+        </li>
+        <li>
+          <a href="#">почему мы</a>
+        </li>
+        <li>
+          <a href="#">сравнить кейсы</a>
+        </li>
+        <li>
+          <a href="#">как оформить заказ</a>
+        </li>
+        <li>
+          <a href="#">обратная связь</a>
+        </li>
+        <li>
+          <a href="#">контакты</a>
+        </li>
+      </ul>
+    </nav><!-- end header menu -->
   </div><!-- end container -->
 </header><!-- end header -->

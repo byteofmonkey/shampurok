@@ -1,0 +1,155 @@
+.accordion {
+
+    .containerFluid {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+    }
+
+    h2 {
+        line-height: 0.73;
+        margin-top: 100px;
+
+        &::before,
+        &::after {
+            vertical-align: top;
+            content: '';
+            font-size: inherit;
+            line-height: 1.5;
+        }
+    }
+
+    img {
+        position: relative;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    &__imageFrame {
+        margin-top: 100px;
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $accentColor;
+            transform: translate(25px, 25px);
+        }
+    }
+
+
+
+
+    &__imageFrame {
+        position: relative;
+        flex-grow: 1;
+        flex-basis: 420px;
+    }
+
+    &__col {
+        flex-grow: 1;
+        flex-basis: 420px;
+
+        margin-left: 5%;
+    }
+
+
+
+    ul {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        padding-top: 20px;
+        border-bottom: 1px solid $borderColor;
+
+        flex-grow: 1;
+
+        p {
+            height: 0;
+            overflow: hidden;
+            padding-top: 10px;
+            padding-right: 80px;
+        }
+
+        &.open {
+            min-height: 120px;
+
+            p {
+                height: initial;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    span {
+        display: block;
+
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+
+        position: relative;
+
+        &::before {
+            content: '\e90b';
+            font-family: icomoon;
+            position: absolute;
+            right: 30px;
+            color: $accentColor;
+            font-size: 20px;
+            line-height: 20px;
+            color: transparent;
+        }
+
+        &::after {
+            content: '\e90c';
+            font-family: icomoon;
+            position: absolute;
+            right: 30px;
+            color: $accentColor;
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    li:hover {
+        color: $accentColor;
+        border-color: $accentColor;
+    }
+
+    li.open:hover {
+        color: $defaultColor;
+        border-color: $borderColor;
+    }
+
+    li.open span::after {
+        color: transparent;
+    }
+
+    li.open span::before {
+        color: $accentColor;
+    }
+}

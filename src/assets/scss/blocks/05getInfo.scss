@@ -1,0 +1,49 @@
+.getInfo {
+    background: no-repeat center/cover url(../images/background/05getInfoBg.jpg);
+    box-shadow: 0 15px 25px 0 #0004;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 25px;
+        min-height: 410px;
+    }
+
+    h2 {
+        margin-top: 90px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        max-width: 500px;
+        font-size: 18px;
+    }
+
+    .btn-border {
+        margin-top: 30px;
+        width: 340px;
+        height: 60px;
+    }
+
+    &__image {
+        flex-grow: 1;
+        flex-basis: 350px;
+
+        img {
+            transform: translateY(50px);
+            max-width: 600px;
+            margin: 0 auto;
+            filter: drop-shadow(#0008 -10px 10px 10px);
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__col {
+            width: 100%;
+        }
+
+        .btn-border {
+            width: 100%;
+        }
+    }
+}

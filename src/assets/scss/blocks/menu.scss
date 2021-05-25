@@ -1,0 +1,161 @@
+.header {
+
+    .simplebar-vertical.simplebar-track {
+        width: 20px;
+    }
+
+    .simplebar-scrollbar::before {
+        border-radius: 10px;
+        color: $accentColor;
+        background: $accentColor;
+    }
+
+    .simplebar-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 800px;
+        width: 100%;
+        max-width: 480px;
+        padding: 100px 0;
+
+        background-color: $backgroundColor;
+
+        transform: translate(100%);
+        transition: transform 0.4s;
+
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        align-items: center;
+        grid-gap: 50px;
+
+        a {
+            text-transform: uppercase;
+        }
+
+        button {
+            margin-left: -18px;
+            font-size: 56px;
+
+            i {
+                line-height: 10px;
+            }
+        }
+
+        &.open {
+            transform: translate(0);
+
+            .header__socials {
+                transform: translate(0);
+            }
+        }
+    }
+
+    &__menu {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    &__socials {
+        transform: translate(-100%);
+        transition: transform 0.3s linear;
+
+        li {
+            &:nth-child(1) a {
+                padding-left: 26px;
+            }
+
+            &:nth-child(2) a {
+                padding-left: 18px;
+            }
+
+            &:nth-child(3) a {
+                padding-left: 15px;
+            }
+        }
+
+        .link {
+            height: 70px;
+            width: 100%;
+            font-size: 40px;
+            justify-content: flex-start;
+        }
+    }
+
+    @media screen and (max-width: 992px) and (orientation:landscape) {
+        nav {
+            gap: 90px;
+        }
+    }
+
+    @media screen and (max-width: 992px) and (orientation:landscape),
+    screen and (max-width: $smTableWidth) {
+        nav {
+            max-width: unset;
+            height: 100vh;
+            padding: 50px 50px 50px 0;
+        }
+
+        &__socials {
+            transform: none;
+        }
+
+        &__menu li {
+            line-height: 4em;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        nav {
+            grid-template-columns: 50px 1fr;
+            grid-gap: 20px;
+            padding-right: 10px;
+        }
+
+        &__socials {
+            li {
+                &:nth-child(1) a {
+                    padding-left: 16px;
+                }
+
+                &:nth-child(2) a {
+                    padding-left: 8px;
+                }
+
+                &:nth-child(3) a {
+                    padding-left: 5px;
+                }
+            }
+
+            .link {
+                font-size: 25px;
+            }
+        }
+
+        &__menu li {
+            line-height: 3.5em;
+
+            a {
+                font-size: 13px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__menu li {
+            line-height: 3em;
+
+            a {
+                font-size: 10px;
+            }
+        }
+    }
+}

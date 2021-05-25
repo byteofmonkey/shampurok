@@ -48,8 +48,23 @@
     font-weight: 400;
     style: normal;
     font-display: swap;
-    src: local('Georgia'), local('Georgia'),
-        url('../fonts/Georgia.ttf') format('truetype');
+    src: url('../fonts/Georgia.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Georgia";
+    font-weight: 400;
+    style: italic;
+    font-display: swap;
+    src: url('../fonts/Georgia-italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Georgia";
+    font-weight: 700;
+    style: normal;
+    font-display: swap;
+    src: url('../fonts/Georgia-bold.ttf') format('truetype');
 }
 
 
@@ -86,10 +101,6 @@
 
 .icon-menu:before {
     content: "\e901";
-}
-
-.icon-menuClose:before {
-    content: "\e90f";
 }
 
 .icon-facebook:before {
@@ -142,4 +153,8 @@
 
 .icon-circle:before {
     content: "\e910";
+}
+
+.icon-phone:before {
+    content: "\e90f";
 }

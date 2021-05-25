@@ -4,17 +4,17 @@
   <div class="container">
 
     <h1>Cекретный ингридиент идеального шашлыка</h1>
-    <p>Ты думаешь, что вся соль в мясе ? Ничего подобного...</p>
-
+    <p>Ты думаешь, что вся соль в мясе ?</p>
+    <p>Ничего подобного...</p>
     <button class="btn-solid">узнать ингридиент</button>
 
-  </div>
+  </div><!-- end container -->
 </section><!-- end intro -->
 
 <!--
 -------------------------------------------------------------------------- 02-Story -->
 <section class="story">
-  <div class="container">
+  <div class=" container">
     <h2>Открой для себя новый мир BBQ</h2>
     <p>Жарким летним днем в кругу семьи и близких, свежий и сочный шашлык на свежем воздухе - это настоящее удовольствие и испытание для настоящих мужчин. Нужно собрать всю семью, собрать мангал, угли, шампура, подобрать мясо, загрузить в машину.</p>
     <p>Куча пакетов. Еще кто-то обязательно забудет нож или вилки.</p>
@@ -22,18 +22,14 @@
     <p>Но может все поменяться! Добавьте к своему отдыху один из кейсов с шампурами.</p>
     <p>Все в одном месте. Ничего не валяется по машине, ничего не будет забыто дома.</p>
     <p>И просто наслаждайтесь отдыхом и вкусным шашлыком.</p>
-    <div class="line">
-      <i class="icon-circle"></i>
-      <i class="icon-circle"></i>
-    </div>
-  </div>
-</section>
+    <div class="line"></div>
+  </div><!-- end container -->
+</section><!-- end section story -->
 
 <!--
 -------------------------------------------------------------------------- 03-Tiles -->
 <section class="tiles">
   <div class="container">
-
     <h2>Вся соль в:</h2>
 
     <div class="tiles__items">
@@ -43,7 +39,7 @@
       </div>
       <div>
         <h3>высокое качество</h3>
-        <p>ВСе изделия сделаны на профессиональном оборудовании и будут служить более 10 лет </p>
+        <p>Все изделия сделаны на профессиональном оборудовании и будут служить более 10 лет </p>
       </div>
       <div>
         <h3>нержавеющая сталь</h3>
@@ -51,7 +47,7 @@
       </div>
       <div>
         <h3>уникальный дизайн</h3>
-        <p>дизайнерский подход к каждому кейсу.</p>
+        <p>Дизайнерский подход к каждому кейсу.</p>
       </div>
       <div>
         <h3>идеальный подарок</h3>
@@ -61,31 +57,31 @@
         <h3>индивидуальная комплектация</h3>
         <p>Подберем кейс под ваши запросы и пожелания</p>
       </div>
-    </div>
+    </div><!-- end items -->
 
-  </div>
-</section>
+  </div><!-- end container -->
+</section><!-- end section tiles -->
 
 <!--
--------------------------------------------------------------------------- 03-SliderPopUp -->
+-------------------------------------------------------------------------- 04-SliderPopUp -->
 <section class="popUp">
   <div class="containerFluid">
     <h2>Выберите свой идеальный кейс</h2>
+    <!-- popUp__slider - JS class -->
 
     <div class="popUp__slider swiper-container">
+
+
       <div class="popUp__sliderWrapper swiper-wrapper">
 
-
-
         <div class="popUp__sliderSlide swiper-slide">
+          <!-- --------------tabs: -->
           <div class="popUp__Wrapper">
 
-
-            <!-- <div class="img"> -->
-            <!-- <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set"> -->
-
+            <!-- Начало swiper -->
 
             <div class="swiper">
+
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
@@ -113,10 +109,11 @@
 
               </div>
 
-              <div class="swiper-miniatures"></div>
-            </div>
-            <!-- </div> -->
-            <!-- end swiper image - nested swiper -->
+            </div><!-- end swiper with tumbnails -->
+
+            <div class="swiper-tumbnails"></div>
+
+
 
 
             <div class="popUp__content">
@@ -125,7 +122,6 @@
                 <a class="popUp__openLink" href="#">подробнее</a>
                 <span class="popUp__price">3700 грн.</span>
 
-                <!-- popUp__slider -->
                 <ul>
                   <li>8 шампуров 640х12х3мм</li>
                   <li>двойной шампур</li>
@@ -141,24 +137,19 @@
                   <li>6 вилок</li>
                   <li>6 ложек</li>
                   <li>6 тарелок</li>
-                </ul>
+                </ul><!-- end popUp list -->
               </div>
+
               <button class="btn-border">оформить заказ</button>
             </div>
-
-
 
           </div>
         </div>
 
-
         <div class="swiper-slide">asdf</div><!-- slide -->
         <div class="swiper-slide">asdf</div><!-- slide -->
         <div class="swiper-slide">asdf</div><!-- slide -->
-        <div class="slide swiper-slide">asdf</div><!-- slide -->
-
-
-
+        <div class="swiper-slide">asdf</div><!-- slide -->
 
       </div><!-- end swiper-wrapper -->
     </div><!-- end swiper-container -->
@@ -168,10 +159,124 @@
         <div class="popUp__sliderScrollBar swiper-scrollbar"></div>
         <div class="popUp__sliderPagination swiper-pagination"></div>
       </div>
+    </div><!-- end slider navs -->
+
+  </div><!-- end container fluid -->
+</section><!-- end popUp section -->
+
+<!--
+-------------------------------------------------------------------------- 05-GetInfo -->
+<section class="getInfo">
+  <div class="container">
+
+    <div class="getInfo__col">
+      <h2>Кейсы с гравировкой</h2>
+      <p>Хотите перосонализированный или именной кейс? Не проблема!</p>
+      <p>Свяжитесь с нами для обсуждения деталей.</p>
+      <button class="btn-border">обсудить детали</button>
     </div>
 
-  </div>
-</section>
+    <div class="getInfo__image">
+      <img src="./assets//images/sectionImages/getInfo.png" alt="bbq set">
+    </div>
+
+  </div><!-- end container -->
+</section><!-- end section get info -->
+
+<!--
+-------------------------------------------------------------------------- 06-Quiz -->
+<section class="quiz">
+  <div class="container">
+
+    <div class="frame">
+      <div class="frame__wrapper">
+
+        <div class="quiz__definition">
+          <h2>узнай какой кейс подойдет тебе</h2>
+          <p>Пройдите простой тест из 6 вопросов и вы получите:</p>
+          <ul>
+            <li>персональный подбор кейса</li>
+            <li>гарантию на изделие 2 года</li>
+            <li>скидка на мангал 20%</li>
+          </ul>
+        </div>
+        <button class="btn-solid">начать</button>
+        <div class="quiz__savings">cэкономит 90% вашего времени на подбор</div>
+
+      </div><!-- end frame wrapper -->
+    </div><!-- end image frame -->
+
+  </div><!-- end container -->
+</section><!-- end quiz -->
+
+<!--
+-------------------------------------------------------------------------- 07-CardsWho -->
+<section class="cardsWho">
+  <div class="container">
+    <h2 class="line-header">Набор незаменим для тех кто:</h2>
+    <ul>
+      <li>
+        <i class="icon-card1"></i>
+        является ценителем мяса, приготовленном на мангале
+      </li>
+      <li>
+        <i class="icon-card2"></i>
+        обожает пикники и отдых на природе
+      </li>
+      <li>
+        <i class="icon-card3"></i>
+        предпочитает комплексные решения и ценит удобство
+      </li>
+      <li>
+        <i class="icon-card4"></i>
+        испытывает страсть к уникальным вещам
+      </li>
+    </ul><!-- end cards list -->
+  </div><!-- end container -->
+</section><!-- end section cards who -->
+
+<!--
+-------------------------------------------------------------------------- 08-accordion -->
+<section class="accordion">
+  <div class="containerFluid">
+
+    <div class="accordion__imageFrame">
+      <img src="./assets/images/sectionImages/accordion.jpg" alt="">
+    </div>
+
+    <div class="accordion__col">
+      <h2>Почему нас выбрали более 5000 клиентов</h2>
+
+      <ul id='accordeon'>
+        <li>
+          <span>собственное производство</span>
+          <p>Все кейсы выполнены на высокоточном проффесиональном оборудовании.</p>
+        </li>
+        <li>
+          <span>отправляем без предоплаты</span>
+          <p>Вы можете получить товар наложеным платежем Новой Почты</p>
+        </li>
+        <li>
+          <span>отправка в день заказа</span>
+          <p>Если вы оформили заказ до 12 часов дня</p>
+        </li>
+        <li>
+          <span>лучшая цена</span>
+          <p>Лучшего соотношения цены и качества вы не найдете!</p>
+        </li>
+        <li>
+          <span>работаем без посредников</span>
+          <p>Продажа от производителя, все кейсы ручной работы</p>
+        </li>
+      </ul><!-- end accordeon list -->
+    </div><!-- end right col -->
+
+  </div><!-- end container fluid -->
+</section><!-- end section accordion -->
+
+
+
+
 
 
 

@@ -1,0 +1,77 @@
+.quiz {
+
+    .frame::before {
+        transform: translate(-15px, -15px);
+    }
+
+    .frame__wrapper {
+        min-height: 458px;
+        display: grid;
+        grid-template: auto auto / 1fr 250px auto;
+
+        grid-template-areas:
+            ". definition definition"
+            ". button savings";
+
+        background: #000 no-repeat url('../images/sectionImages/quiz.jpg');
+        background-position: left top;
+        background-size: 55% 100%;
+        border: 1px solid $accentColor;
+    }
+
+    h2 {
+        margin-top: 55px;
+        margin-right: 30px;
+    }
+
+    p {
+        margin-top: 30px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    ul {
+        margin-top: 15px;
+    }
+
+    li {
+        text-indent: 20px;
+        margin-left: 10px;
+        line-height: 2.3;
+
+        &::marker {
+            content: "\e910";
+            font-family: 'icomoon';
+            font-size: 8px;
+            color: $accentColor;
+        }
+    }
+
+    img {
+        grid-area: img;
+    }
+
+    &__definition {
+        grid-area: definition;
+    }
+
+    button {
+        grid-area: button;
+
+        width: 250px;
+        height: 60px;
+    }
+
+    &__savings {
+        grid-area: savings;
+
+        max-width: 190px;
+        margin-left: 40px;
+        margin-top: 4px;
+
+        font-family: 'Georgia';
+        font-style: italic;
+        color: $accentColor;
+    }
+}
