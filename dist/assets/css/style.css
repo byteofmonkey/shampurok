@@ -2173,17 +2173,21 @@ button.swiper-pagination-bullet {
     }
 }
 
-@media screen and (max-width: 1280px) {
-    .tiles__items {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 55px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .tiles__items {
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-gap: 55px;
+        grid-template-columns: minmax(auto, 500px);
+        grid-gap: 12vw;
+    }
+
+    .tiles__items div {
+        padding-left: 38px;
+        padding-right: 0;
+    }
+
+    .tiles__items h3::before {
+        font-size: 30px;
+        margin-left: -38px;
+        margin-right: 15px;
     }
 }
 
@@ -2525,10 +2529,12 @@ button.swiper-pagination-bullet {
 }
 
 .cardsWho ul {
-    text-align: center;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 120px;
+    grid-template: 1fr/repeat(4, 240px);
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .cardsWho ul i {
@@ -2538,6 +2544,13 @@ button.swiper-pagination-bullet {
 
 .cardsWho h2 {
     margin-bottom: 110px;
+}
+
+@media screen and (max-width: 1280px) {
+    .cardsWho {
+        grid-template: repeat(2, 1fr)/repeat(2, 240px) !important;
+        outline: 1px solid red;
+    }
 }
 
 .accordion .containerFluid {

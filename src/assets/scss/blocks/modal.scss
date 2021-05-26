@@ -1,0 +1,124 @@
+.modal {
+
+    &__header {
+        display: none;
+    }
+
+    &.open,
+    &.success,
+    &.error {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        outline: 100px solid red;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        backdrop-filter: blur(5px);
+        background: #26252799;
+
+        .modal__wrapper {
+            width: 410px;
+            height: 475px;
+            padding: 0 25px;
+            position: relative;
+
+            background: #19191A no-repeat url(../images/background/modalCallback.png);
+            background-size: 100%;
+            animation: openModalContent 0.5s cubic-bezier(.44, .29, .26, .99) forwards;
+
+            @keyframes openModalContent {
+                from {
+                    background-position: bottom 100px center;
+                }
+
+                to {
+                    background-position: bottom 0 center;
+                }
+            }
+        }
+
+        .modal__header {
+            display: initial;
+        }
+    }
+
+
+
+    &.success {
+        .modal__wrapper {
+            height: 475px;
+            width: 600px;
+            background: #000 bottom center/100% no-repeat url(../images/background/modalSuccess.jpg);
+        }
+
+        .modal__inputForm {
+            display: none;
+        }
+
+        .modal__error {
+            display: none;
+        }
+
+        form {
+            display: none;
+        }
+    }
+}
+
+
+.modal.open {
+
+
+
+
+
+    .modal__container {
+        opacity: 0;
+        transform: translateY(-150px);
+        animation: openModalimg 0.5s cubic-bezier(.44, .29, .26, .99) forwards;
+
+        @keyframes openModalimg {
+            50% {
+                opacity: 0.1;
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    }
+
+    #closeModal {
+        display: block;
+        margin-left: auto;
+        font-size: 35px;
+        padding: 20px 0 10px 10px;
+        margin-right: -5px;
+    }
+
+    h3 {
+        margin: -5px 0 20px;
+        font-size: 24px;
+        color: $accentColor;
+        text-align: center;
+        letter-spacing: 2.5px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+
+
+
+
+
+
+}

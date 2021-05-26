@@ -166,6 +166,17 @@ const toggleItems = (e) => {
     (item === target) ? item.classList.add('open'): item.classList.remove('open')
   }
 }
-
-
 accordeonItems.forEach(item => item.addEventListener('click', toggleItems))
+
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+const openModal = document.querySelector('#openModal');
+const modal = document.querySelector('.modal');
+
+openModal.addEventListener('click', () => {
+  modal.classList.add('success');
+
+})

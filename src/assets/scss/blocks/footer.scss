@@ -1,4 +1,103 @@
 .footer {
+    max-width: 1600px;
+    margin: 0 auto;
+    border-top: 1px solid $accentColor;
 
-    color: $darkColor;
+    background: no-repeat linear-gradient(to bottom, $accentColor 0%, $accentColor 100%);
+    background-size: 100% 1px;
+    background-position: center bottom 55px;
+
+    .container {
+        margin-top: 70px;
+        display: grid;
+        grid-template: 180px 55px / repeat(4, 235px);
+    }
+
+    .logo {
+        place-self: start;
+        font-size: 26px;
+    }
+
+    &__address,
+    &__phone,
+    &__socials {
+        place-self: start end;
+    }
+
+    &__socials {
+        display: flex;
+        margin: -15px -15px 0 -15px;
+
+        a {
+            font-size: 36px;
+            padding: 15px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    p {
+        line-height: 1.85;
+    }
+
+    &__policyLink {
+        place-self: center end;
+
+        height: 100%;
+        font-size: 10px;
+        color: $defaultColor;
+
+        &:hover,
+        &:focus {
+            color: $accentColor;
+        }
+    }
+
+    &__copyrights {
+        font-size: 10px;
+        color: $defaultColor;
+        place-self: center start;
+    }
+
+    @media screen and (max-width: $smDesktopWidth) {
+        .container {
+            grid-template: 110px 55px / repeat(3, 1fr);
+            row-gap: 50px;
+        }
+
+        .logo,
+        &__socials {
+            grid-area: 1 / 1 / 2 / 2;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &__socials {
+            place-self: end start;
+        }
+    }
+
+    @media screen and (max-width: $smTableWidth) {
+        background-position: center bottom 120px;
+
+        .container {
+            grid-template: 50px repeat(2, 110px) 50px repeat(3, 40px) / 1fr;
+            row-gap: 0px;
+        }
+
+        &__address,
+        &__phone,
+        &__socials,
+        &__policyLink {
+            place-self: start;
+        }
+
+        &__socials {
+            grid-area: unset;
+            max-width: 450px;
+            place-self: center;
+        }
+    }
 }

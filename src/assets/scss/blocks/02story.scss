@@ -18,4 +18,10 @@
     .line {
         width: 65%;
     }
+
+    @media screen and (max-width: $tableWidth) {
+        .line {
+            width: 100%;
+        }
+    }
 }

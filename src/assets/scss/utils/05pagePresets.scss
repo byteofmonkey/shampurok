@@ -79,7 +79,6 @@ section {
     }
 }
 
-
 .line-header {
     position: relative;
     line-height: 32px;
@@ -95,13 +94,27 @@ section {
         width: 100%;
         margin-left: 50px;
     }
+
+    @media screen and (max-width: $tableWidth) {
+        text-align: right;
+        margin-left: auto;
+        max-width: 320px;
+        position: unset;
+
+        &::after {
+            display: block;
+            width: 120%;
+            margin-left: 0;
+            left: 0;
+            text-align: left;
+        }
+    }
 }
 
 .frame {
-    position: relative;
-
     margin: 0 auto;
     max-width: 1600px;
+    position: relative;
 
     .frame__wrapper {
         transform: translate(0);
@@ -115,6 +128,19 @@ section {
         width: 100%;
         height: 100%;
         border: 1px solid $accentColor;
+    }
+}
+
+.list-items li {
+    padding-left: 30px;
+    margin-left: 10px;
+    line-height: 2.3;
+
+    &::marker {
+        content: "\e910";
+        font-family: 'icomoon';
+        font-size: 8px;
+        color: $accentColor;
     }
 }
 
@@ -247,11 +273,11 @@ button {
     }
 }
 
-// input[type="email"] {
-//     font-family: inherit;
-//     font-size: 16px;
+input[type="text"],
+input[type="tel"] {
+    // font-family: inherit;
 
-//     ::placeholder {
-//         color: $defaultColor;
-//     }
-// }
+    background: transparent;
+
+    border-bottom: 1px solid $borderColor;
+}

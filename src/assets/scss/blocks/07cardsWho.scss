@@ -1,17 +1,37 @@
 .cardsWho {
     ul {
-        text-align: center;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 120px;
-
-        i {
-            display: block;
-            font-size: 52px;
-        }
+        grid-template: 1fr / repeat(4, 240px);
+        justify-content: space-between;
+        text-align: center;
     }
 
     h2 {
         margin-bottom: 110px;
+    }
+
+    i {
+        display: block;
+        font-size: 52px;
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        ul {
+            grid-template: repeat(2, 1fr) / repeat(2, 240px);
+            justify-content: center;
+            grid-column-gap: 16vw;
+            grid-row-gap: 6vw;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        ul {
+            grid-template: repeat(4, 1fr) / minmax(auto, 400px);
+        }
+
+        i {
+            margin-bottom: 5px;
+        }
     }
 }

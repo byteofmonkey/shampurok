@@ -35,19 +35,6 @@
         margin-top: 15px;
     }
 
-    li {
-        text-indent: 20px;
-        margin-left: 10px;
-        line-height: 2.3;
-
-        &::marker {
-            content: "\e910";
-            font-family: 'icomoon';
-            font-size: 8px;
-            color: $accentColor;
-        }
-    }
-
     img {
         grid-area: img;
     }

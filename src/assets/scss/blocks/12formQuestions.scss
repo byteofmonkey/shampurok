@@ -1,0 +1,94 @@
+.questionsForm {
+    .line {
+        width: 85%;
+    }
+
+    .container {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+    }
+
+    &__image {
+        align-self: center;
+        justify-self: center;
+        width: 350px;
+        height: 350px;
+        border: 1px solid $accentColor;
+    }
+
+    img {
+        transform: translate(-20px, -20px);
+    }
+
+    p {
+        padding-bottom: 50px;
+    }
+
+    &__col {
+        justify-self: start;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .label:last-of-type {
+            padding-top: 40px;
+        }
+
+        input {
+            width: 100%;
+
+            font-size: 16px;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 400;
+            color: $defaultColor;
+            padding-bottom: 14px;
+            padding-left: 5px;
+
+            &:hover,
+            &:focus {
+                border-color: $accentColor;
+
+                &+span {
+                    color: $accentColor;
+                }
+            }
+
+            &:focus+span {
+                transform: translate(-4px, -25px) scale(0.9);
+            }
+
+            &:valid+span {
+                transform: translate(-4px, -25px) scale(0.9);
+                color: $accentColor;
+            }
+        }
+
+        label {
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 5px;
+
+                font-size: 16px;
+                font-family: 'Georgia';
+                font-weight: 700;
+                font-style: italic;
+                color: $defaultColor;
+                letter-spacing: 0.7px;
+
+                transition: transform 0.2s ease-in;
+            }
+        }
+    }
+
+    .btn-border {
+        width: 340px;
+        height: 60px;
+        margin-top: 50px;
+    }
+}

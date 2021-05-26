@@ -66,7 +66,7 @@
 -------------------------------------------------------------------------- 04-SliderPopUp -->
 <section class="popUp">
   <div class="containerFluid">
-    <h2>Выберите свой идеальный кейс</h2>
+    <h2 class="line-header">Выберите свой идеальный кейс</h2>
     <!-- popUp__slider - JS class -->
 
     <div class="popUp__slider swiper-container">
@@ -194,7 +194,7 @@
         <div class="quiz__definition">
           <h2>узнай какой кейс подойдет тебе</h2>
           <p>Пройдите простой тест из 6 вопросов и вы получите:</p>
-          <ul>
+          <ul class="list-items">
             <li>персональный подбор кейса</li>
             <li>гарантию на изделие 2 года</li>
             <li>скидка на мангал 20%</li>
@@ -236,7 +236,7 @@
 </section><!-- end section cards who -->
 
 <!--
--------------------------------------------------------------------------- 08-accordion -->
+-------------------------------------------------------------------------- 08-Accordion -->
 <section class="accordion">
   <div class="containerFluid">
 
@@ -274,13 +274,134 @@
   </div><!-- end container fluid -->
 </section><!-- end section accordion -->
 
+<!--
+-------------------------------------------------------------------------- 09-CardsCompare -->
+<section class="cardsCompare">
+  <div class="container">
+    <h2>Все познается в сравнении:</h2>
+
+    <div class="cardsCompare__row">
+
+      <div class="cardsCompare__col">
+        <h3>обычный набор</h3>
+        <ul class="list-items">
+          <li>Пластиковая одноразовая упакова</li>
+          <li>Все разбросано по машине или торчит с пакета</li>
+          <li>Пластиковая упаковка которая ломается спустя неделю и может повредить автомобильную обшивку</li>
+          <li>Выглядит не презентабильно для подарка</li>
+        </ul>
+      </div>
+
+      <div class="cardsCompare__col">
+        <h3>наш кейс</h3>
+        <ul class="list-items">
+          <li>красивая презентация подарка</li>
+          <li>удобное хранение</li>
+          <li>транспортировка без риска повредить шампура или тканевый чехол</li>
+          <li>возможность нанесения индивидуальной гравировки</li>
+        </ul>
+      </div>
+
+    </div><!-- end cards compare row -->
+  </div><!-- end container -->
+</section><!-- end cards compare section -->
+
+<!--
+-------------------------------------------------------------------------- 10-CardsOrder -->
+<section class="cardsOrder">
+  <div class="container">
+    <h2>Как оформить заказ</h2>
+    <div class="cardsOrder__cards">
+      <div class="cardsOrder__cardsItem">
+        <p>Оставьте заявку на сайте</p>
+      </div>
+      <div class="cardsOrder__arrow"></div>
+      <div class="cardsOrder__cardsItem">
+        <p>Менеджер свяжется с вами для уточнения деталей</p>
+      </div>
+      <div class="cardsOrder__arrow"></div>
+      <div class="cardsOrder__cardsItem">
+        <p>Формирование и отправка заказа</p>
+      </div>
+      <div class="cardsOrder__arrow"></div>
+      <div class="cardsOrder__cardsItem">
+        <p>Получение</p>
+      </div>
+    </div><!-- end cards -->
+    <button class="btn-border">оформить</button>
+  </div><!-- end container -->
+</section><!-- end cardsOrder -->
+
+<!--
+-------------------------------------------------------------------------- 11-SliderFeedback -->
+<section class="sliderFeedback">
+  <div class="container">
+    <h2>Что говорят о нас 23 000 пользователей инстаграм</h2>
+
+    <div style="height:500px; background:#262527 ;"></div>
+
+    <a href="#">больше отзывов</a>
+
+  </div><!-- end container -->
+</section><!-- end slider feedback section -->
+
+<!--
+-------------------------------------------------------------------------- 12-FormQuestions -->
+<section class="questionsForm">
+  <div class="line"></div>
+  <div class="container">
+
+    <div class="questionsForm__image">
+      <img src="./assets/images/sectionImages/formQuestions.jpg" alt="avatar">
+    </div>
+
+    <div class="questionsForm__col">
+      <h2 id='openModal'>Остались вопросы?</h2>
+      <p>Задайте их вашему персональному менеджеру</p>
 
 
 
+      <div class="modal">
+        <div class="modal__wrapper">
+          <div class="modal__container">
 
+            <div class="modal__header">
+              <button id="closeModal"><i class="icon-close"></i></button>
 
+              <div class="modal__inputForm">
+                <h3>оставьте заявку</h3>
+                <p>Мы свяжемся с Вами в ближайшее время</p>
+              </div>
 
+              <div class="modal__success">
+                <h3>Спасибо</h3>
+                <p>Ваша заявка принята в обработку.</p>
+              </div>
 
+              <div class="modal__error">
+                <p>Произошла ошибка сети</p>
+                <p>Попробуйте еще раз</p>
+              </div>
+            </div>
 
+            <form action="POST" name='callback'>
 
-<div class="placeholder"></div>
+              <label>
+                <input type="text" autocomplete="off" required>
+                <span>Ваше имя</span>
+              </label>
+
+              <label class="label">
+                <input type="text" autocomplete="off" required>
+                <span>Ваш телефон</span>
+              </label>
+
+              <button class="btn-border" type='submit'>отправить</button>
+            </form>
+          </div><!-- end modal container -->
+        </div><!-- end modal wrapper -->
+      </div><!-- end modal -->
+
+    </div><!-- end questionsForm col -->
+  </div><!-- end container -->
+</section><!-- end section questions form -->

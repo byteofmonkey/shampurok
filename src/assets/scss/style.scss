@@ -12,7 +12,6 @@
 
 /* Blocks */
 @import "blocks/header.scss";
-@import "blocks/menu.scss";
 @import "blocks/01intro.scss";
 @import "blocks/02story.scss";
 @import "blocks/03tiles.scss";
@@ -27,6 +26,5 @@
 @import "blocks/12formQuestions.scss";
 @import "blocks/footer.scss";
 
-.placeholder {
-    height: 500px;
-}
+@import "blocks/menu.scss";
+@import "blocks/modal.scss";

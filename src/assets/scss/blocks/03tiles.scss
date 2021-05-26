@@ -1,11 +1,10 @@
 .tiles {
     &__items {
         margin-top: 65px;
-
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
+        grid-template-columns: repeat(3, 1fr);
         justify-content: center;
-        grid-gap: 95px;
+        grid-gap: 75px;
 
         div {
             padding-left: 68px;
@@ -40,7 +39,6 @@
     @media screen and (max-width: $tableWidth) {
         &__items {
             grid-template-columns: minmax(auto, 500px);
-
             grid-gap: 12vw;
 
             div {
