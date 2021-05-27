@@ -1,33 +1,18 @@
 .cardsCompare {
     position: relative;
 
-    &::before {
-        content: 'VS';
-        font-size: 288px;
-        -webkit-text-stroke: 1px $accentColor;
-        color: transparent;
-        font-weight: 500;
-        position: absolute;
-        right: 50px;
-        line-height: 200px;
-    }
-
-    .container {
-        position: relative;
-        z-index: 1;
-    }
-
     &__row {
-        margin-top: 55px;
+        margin-top: 95px;
 
         display: grid;
-        grid-template: auto / repeat(2, 1fr);
+        grid-template: auto / repeat(2, minmax(auto, 680px));
         gap: 30px;
     }
 
     &__col {
-        padding: 4.5%;
+        padding: 80px 100px;
 
+        z-index: 1;
         background: $backgroundColor;
         box-shadow: 20px 20px 80px 0 #0004;
 
@@ -38,6 +23,17 @@
                 color: $dimmedTextColor;
             }
         }
+    }
+
+    &__vs {
+        font-size: 288px;
+        -webkit-text-stroke: 1px $accentColor;
+        color: transparent;
+        font-weight: 500;
+        line-height: 230px;
+        position: absolute;
+        top: 0;
+        right: 100px;
     }
 
     h3 {
@@ -51,10 +47,63 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
+        &__row {
+            grid-template: auto / 1fr 30px 1fr;
+            gap: 0;
+            margin-top: 65px;
+        }
+
+        &__col {
+            padding: 50px;
+        }
+
+        &__vs {
+            font-size: 250px;
+            position: relative;
+            z-index: 2;
+            left: 0;
+            opacity: 0.15;
+            justify-self: center;
+            align-self: center;
+        }
+
         li {
+            line-height: 1.5;
+            padding-bottom: 30px;
+
             &:last-of-type {
                 padding-bottom: 0px;
             }
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        &__row {
+            grid-template: 1fr 50px 1fr / minmax(200px, 550px);
+            margin-top: 65px;
+            justify-content: center;
+
+            div:nth-child(3) {
+                order: -2;
+            }
+
+            div:nth-child(2) {
+                order: -1;
+            }
+        }
+
+        &__col {
+            padding: 30px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__vs {
+            font-size: 180px;
+        }
+
+        &__col {
+            padding: 10px;
         }
     }
 }

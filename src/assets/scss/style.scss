@@ -10,6 +10,11 @@
 // @import 'node_modules/animate.css/animate';
 
 
+
+@import "blocks/headerMenu.scss";
+@import "blocks/modal.scss";
+@import "blocks/slider.scss";
+
 /* Blocks */
 @import "blocks/header.scss";
 @import "blocks/01intro.scss";
@@ -25,6 +30,3 @@
 @import "blocks/11sliderFeedback.scss";
 @import "blocks/12formQuestions.scss";
 @import "blocks/footer.scss";
-
-@import "blocks/menu.scss";
-@import "blocks/modal.scss";

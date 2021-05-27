@@ -105,7 +105,7 @@ section {
             display: block;
             width: 120%;
             margin-left: 0;
-            left: 0;
+            left: 15px;
             text-align: left;
         }
     }
@@ -166,7 +166,7 @@ h2 {
     color: $defaultColor;
     line-height: 1.5;
 
-    @media screen and (max-width: $smDesktopWidth) {
+    @media screen and (max-width: $desktopWidth) {
         font-size: 32px;
     }
 
@@ -174,7 +174,7 @@ h2 {
         font-size: 28px;
     }
 
-    @media screen and (max-width: $smTableWidth) {
+    @media screen and (max-width: $phoneWidth) {
         font-size: 24px;
     }
 }
@@ -187,24 +187,32 @@ h3 {
     line-height: normal;
     letter-spacing: 1.6px;
 
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 17px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        font-size: 16px;
+    }
+
     @media screen and (max-width: $phoneWidth) {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
 p {
     color: $defaultColor;
 
-    @media screen and (max-width: $tableWidth) {
+    @media screen and (max-width: $desktopWidth) {
         font-size: 14px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        font-size: 13px;
     }
 
     @media screen and (max-width: $phoneWidth) {
         font-size: 12px;
-    }
-
-    @media screen and (max-width: $smPhoneWidth) {
-        font-size: 10px;
     }
 }
 

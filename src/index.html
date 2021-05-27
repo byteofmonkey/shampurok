@@ -1,5 +1,5 @@
 <!--
--------------------------------------------------------------------------- 02-Intro -->
+------------------------------------------------------------- 02-Intro -->
 <section class="intro">
   <div class="container">
 
@@ -12,10 +12,10 @@
 </section><!-- end intro -->
 
 <!--
--------------------------------------------------------------------------- 02-Story -->
+------------------------------------------------------------- 02-Story -->
 <section class="story">
   <div class=" container">
-    <h2>Открой для себя новый мир BBQ</h2>
+    <h2>Открой для себя новый мир&nbsp;BBQ</h2>
     <p>Жарким летним днем в кругу семьи и близких, свежий и сочный шашлык на свежем воздухе - это настоящее удовольствие и испытание для настоящих мужчин. Нужно собрать всю семью, собрать мангал, угли, шампура, подобрать мясо, загрузить в машину.</p>
     <p>Куча пакетов. Еще кто-то обязательно забудет нож или вилки.</p>
     <p>И уже радости от приготовления шашлыка нет никакой.</p>
@@ -27,7 +27,7 @@
 </section><!-- end section story -->
 
 <!--
--------------------------------------------------------------------------- 03-Tiles -->
+------------------------------------------------------------- 03-Tiles -->
 <section class="tiles">
   <div class="container">
     <h2>Вся соль в:</h2>
@@ -63,13 +63,14 @@
 </section><!-- end section tiles -->
 
 <!--
--------------------------------------------------------------------------- 04-SliderPopUp -->
+------------------------------------------------------------- 04-SliderPopUp -->
 <section class="popUp">
-  <div class="containerFluid">
+  <div class="container">
+
     <h2 class="line-header">Выберите свой идеальный кейс</h2>
     <!-- popUp__slider - JS class -->
 
-    <div class="popUp__slider swiper-container">
+    <div class="slider" id='sliderORD'>
 
 
       <div class="popUp__sliderWrapper swiper-wrapper">
@@ -146,32 +147,36 @@
           </div>
         </div>
 
-        <div class="swiper-slide">asdf</div><!-- slide -->
-        <div class="swiper-slide">asdf</div><!-- slide -->
-        <div class="swiper-slide">asdf</div><!-- slide -->
-        <div class="swiper-slide">asdf</div><!-- slide -->
+        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
+        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
+        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
+        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
+        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
 
       </div><!-- end swiper-wrapper -->
     </div><!-- end swiper-container -->
 
-    <div class="container">
-      <div class="popUp__sliderNavs">
-        <div class="popUp__sliderScrollBar swiper-scrollbar"></div>
-        <div class="popUp__sliderPagination swiper-pagination"></div>
-      </div>
-    </div><!-- end slider navs -->
 
-  </div><!-- end container fluid -->
+
+    <div class="slider__navContainer">
+      <div class="slider__nav">
+        <div class="slider__scrollBar" id="sliderORDbar"></div>
+        <div class="slider__pagination" id="sliderORDpag"></div>
+      </div>
+    </div><!-- end slider nav container-->
+
+  </div><!-- end container -->
 </section><!-- end popUp section -->
 
 <!--
--------------------------------------------------------------------------- 05-GetInfo -->
+------------------------------------------------------------- 05-GetInfo -->
 <section class="getInfo">
   <div class="container">
 
     <div class="getInfo__col">
       <h2>Кейсы с гравировкой</h2>
-      <p>Хотите перосонализированный или именной кейс? Не проблема!</p>
+      <p>Хотите перосонализированный или именной кейс?</p>
+      <p>Не проблема!</p>
       <p>Свяжитесь с нами для обсуждения деталей.</p>
       <button class="btn-border">обсудить детали</button>
     </div>
@@ -184,33 +189,29 @@
 </section><!-- end section get info -->
 
 <!--
--------------------------------------------------------------------------- 06-Quiz -->
+------------------------------------------------------------- 06-Quiz -->
 <section class="quiz">
   <div class="container">
 
-    <div class="frame">
-      <div class="frame__wrapper">
-
-        <div class="quiz__definition">
-          <h2>узнай какой кейс подойдет тебе</h2>
-          <p>Пройдите простой тест из 6 вопросов и вы получите:</p>
-          <ul class="list-items">
-            <li>персональный подбор кейса</li>
-            <li>гарантию на изделие 2 года</li>
-            <li>скидка на мангал 20%</li>
-          </ul>
-        </div>
+    <div class="quiz__wrapper">
+      <div class="quiz__col">
+        <h2>узнай какой кейс подойдет тебе</h2>
+        <p>Пройдите простой тест из 6 вопросов и вы получите:</p>
+        <ul class="list-items">
+          <li>персональный подбор кейса</li>
+          <li>гарантию на изделие 2 года</li>
+          <li>скидка на мангал 20%</li>
+        </ul>
         <button class="btn-solid">начать</button>
         <div class="quiz__savings">cэкономит 90% вашего времени на подбор</div>
-
-      </div><!-- end frame wrapper -->
-    </div><!-- end image frame -->
+      </div>
+    </div>
 
   </div><!-- end container -->
 </section><!-- end quiz -->
 
 <!--
--------------------------------------------------------------------------- 07-CardsWho -->
+------------------------------------------------------------- 07-CardsWho -->
 <section class="cardsWho">
   <div class="container">
     <h2 class="line-header">Набор незаменим для тех кто:</h2>
@@ -236,12 +237,12 @@
 </section><!-- end section cards who -->
 
 <!--
--------------------------------------------------------------------------- 08-Accordion -->
+------------------------------------------------------------- 08-Accordion -->
 <section class="accordion">
   <div class="containerFluid">
 
     <div class="accordion__imageFrame">
-      <img src="./assets/images/sectionImages/accordion.jpg" alt="">
+      <div class="accordion__image"></div>
     </div>
 
     <div class="accordion__col">
@@ -275,7 +276,7 @@
 </section><!-- end section accordion -->
 
 <!--
--------------------------------------------------------------------------- 09-CardsCompare -->
+------------------------------------------------------------- 09-CardsCompare -->
 <section class="cardsCompare">
   <div class="container">
     <h2>Все познается в сравнении:</h2>
@@ -292,6 +293,8 @@
         </ul>
       </div>
 
+      <div class="cardsCompare__vs">VS</div>
+
       <div class="cardsCompare__col">
         <h3>наш кейс</h3>
         <ul class="list-items">
@@ -307,7 +310,7 @@
 </section><!-- end cards compare section -->
 
 <!--
--------------------------------------------------------------------------- 10-CardsOrder -->
+------------------------------------------------------------- 10-CardsOrder -->
 <section class="cardsOrder">
   <div class="container">
     <h2>Как оформить заказ</h2>
@@ -333,20 +336,70 @@
 </section><!-- end cardsOrder -->
 
 <!--
--------------------------------------------------------------------------- 11-SliderFeedback -->
+------------------------------------------------------------- 11-SliderFeedback -->
 <section class="sliderFeedback">
   <div class="container">
-    <h2>Что говорят о нас 23 000 пользователей инстаграм</h2>
+    <h2>Что говорят о&nbsp;нас&nbsp;23&nbsp;000 пользователей инстаграм</h2>
 
-    <div style="height:500px; background:#262527 ;"></div>
+    <div class="slider" id='sliderFB'>
+      <div class="swiper-wrapper">
 
-    <a href="#">больше отзывов</a>
+        <div class="swiper-slide test">
+          <img src="./assets/images/sliderFeedback/slide1.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide2.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide3.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide4.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide5.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide6.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide7.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide8.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide9.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide10.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide11.jpg" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderFeedback/slide12.jpg" alt="feedback">
+        </div>
+
+      </div><!-- end swiper-wrapper -->
+    </div><!-- end slider container -->
+
+    <div class="slider__navContainer">
+      <div class="slider__nav">
+        <div class="slider__scrollBar" id="sliderFBbar"></div>
+        <div class="slider__pagination" id="sliderFBpag"></div>
+      </div><!-- end slider navs -->
+
+      <a class="link" href="https://www.instagram.com" target='_blank'>больше отзывов</a>
+    </div>
+
+
 
   </div><!-- end container -->
 </section><!-- end slider feedback section -->
 
 <!--
--------------------------------------------------------------------------- 12-FormQuestions -->
+------------------------------------------------------------- 12-FormQuestions -->
 <section class="questionsForm">
   <div class="line"></div>
   <div class="container">

@@ -1,22 +1,20 @@
-"use strict"
-
 import Swiper from 'swiper/bundle';
-import {
-  popUpSliderOptions
-} from './popUp/slider.js';
-
+import SimpleBar from 'simplebar/dist/simplebar';
 import menu from './menu';
+
+import {
+  sliderORD,
+  sliderFB
+} from './slider.js';
+
 menu();
 
-import SimpleBar from 'simplebar';
-
-const simpleBar = new SimpleBar(document.getElementById('headerMenu'), {
+new SimpleBar(document.getElementById('headerMenu'), {
   autoHide: false
 });
 
-
-const swiper = new Swiper('.swiper-container', popUpSliderOptions);
-
+new Swiper('#sliderORD', sliderORD);
+new Swiper('#sliderFB', sliderFB);
 
 
 
@@ -45,7 +43,6 @@ const options1 = {
 // })
 
 //////////////////////////////////////////////////////////////////////////////
-
 const swiper1 = new Swiper('.swiper', options1);
 
 const popUpSliderWrapper = document.querySelector('.popUp__slider');

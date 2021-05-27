@@ -45,43 +45,7 @@
         height: 56px;
     }
 
-    &__sliderNavs {
-        max-width: 520px;
-        margin-left: auto;
-    }
-
-    &__sliderScrollBar {
-        margin-top: 105px;
-        height: 8px;
-        border: 1px solid $accentColor;
-        border-radius: 4px;
-
-        .swiper-scrollbar-drag {
-            height: 7px;
-            border-radius: 4px;
-            background: $accentColor;
-        }
-    }
-
     // outer slider bar with numbers:
-    &__sliderPagination {
-        margin-top: 25px;
-        position: static;
-        color: $accentColor;
-        text-align: left;
-
-        .swiper-pagination-current {
-            font-size: 20px;
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        .swiper-pagination-total {
-            font-size: 18px;
-            font-weight: 300;
-        }
-    }
-
     .swiper-tumbnails {
         display: none;
     }

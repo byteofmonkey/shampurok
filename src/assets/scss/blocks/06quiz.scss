@@ -1,27 +1,25 @@
 .quiz {
+    // .__wrapper::before {
+    //     transform: translate(-15px, -15px);
+    // }
 
-    .frame::before {
-        transform: translate(-15px, -15px);
-    }
-
-    .frame__wrapper {
+    &__wrapper {
         min-height: 458px;
-        display: grid;
-        grid-template: auto auto / 1fr 250px auto;
-
-        grid-template-areas:
-            ". definition definition"
-            ". button savings";
-
-        background: #000 no-repeat url('../images/sectionImages/quiz.jpg');
+        background-image: url(../images/sectionImages/quiz.jpg);
+        background-size: contain;
         background-position: left top;
-        background-size: 55% 100%;
+        background-repeat: no-repeat;
+        background-color: #000;
+
         border: 1px solid $accentColor;
+
+        display: flex;
+        justify-content: flex-end;
+        padding: 50px 100px;
     }
 
     h2 {
-        margin-top: 55px;
-        margin-right: 30px;
+        font-size: 28px;
     }
 
     p {
@@ -35,30 +33,92 @@
         margin-top: 15px;
     }
 
-    img {
-        grid-area: img;
-    }
-
-    &__definition {
-        grid-area: definition;
-    }
-
-    button {
-        grid-area: button;
-
+    .btn-solid {
         width: 250px;
         height: 60px;
+        float: left;
+        margin-top: 30px;
     }
 
     &__savings {
-        grid-area: savings;
-
         max-width: 190px;
         margin-left: 40px;
-        margin-top: 4px;
+        margin-top: 34px;
+
+        float: left;
 
         font-family: 'Georgia';
         font-style: italic;
         color: $accentColor;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        &__wrapper {
+            background-size: 100%;
+            background-position: center bottom;
+            padding: 50px;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        &__wrapper {
+            padding: 40px;
+        }
+
+        &__col {
+            width: 100%;
+        }
+
+        h2 {
+            max-width: 300px;
+            margin: 0 auto 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p {
+            margin-left: 50px;
+            max-width: 300px;
+        }
+
+        ul {
+            margin-left: 50px;
+        }
+
+        .btn-solid {
+            margin: 30px 0 25vw 90px;
+            float: unset;
+        }
+
+        &__savings {
+            margin-left: 50px;
+            float: unset;
+            max-width: unset;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__wrapper {
+            padding: 40px 15px;
+            background: #000 no-repeat left bottom / 400px url(../images/sectionImages/quiz.jpg);
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p,
+        ul {
+            margin-left: 0px;
+        }
+
+        .btn-solid {
+            margin: 30px 0 120px 0;
+            width: 100%;
+        }
+
+        &__savings {
+            margin-left: 0;
+        }
     }
 }

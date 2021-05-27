@@ -38,7 +38,7 @@
 
     @media screen and (max-width: $tableWidth) {
         &__items {
-            grid-template-columns: minmax(auto, 500px);
+            grid-template-columns: minmax(auto, 380px);
             grid-gap: 12vw;
 
             div {
