@@ -2,9 +2,11 @@
     &__items {
         margin-top: 65px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-        grid-gap: 75px;
+        grid-template: repeat(2, 1fr) / repeat(3, minmax(300px, 420px));
+        grid-auto-rows: 1fr;
+        justify-content: space-between;
+        grid-row-gap: 60px;
+        grid-column-gap: 30px;
 
         div {
             padding-left: 68px;
@@ -12,7 +14,8 @@
 
         h3 {
             margin-bottom: 15px;
-            line-height: 0;
+            position: relative;
+            line-height: 1.3;
 
             &::before {
                 content: "\e905";
@@ -21,36 +24,43 @@
                 font-weight: 400;
                 color: $accentColor;
 
-                vertical-align: top;
+                position: absolute;
+                top: -5px;
                 margin-left: -68px;
-                margin-right: 20px;
-                line-height: 20px;
             }
         }
     }
 
-    @media screen and (max-width: $desktopWidth) {
+    @media screen and (max-width: $smDesktopWidth) {
+        &__items {
+            grid-template: repeat(3, 1fr) / repeat(2, 330px);
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth),
+    screen and (max-width: 992px) and (orientation:landscape) {
         &__items {
             grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 10vw;
+            grid-row-gap: 40px;
+            grid-column-gap: 20px;
+
+            div {
+                padding-left: 20px;
+                padding-right: 0;
+            }
+        }
+
+        h3::before {
+            font-size: 15px;
+            margin-left: -20px;
+            top: -2px;
         }
     }
 
-    @media screen and (max-width: $tableWidth) {
+    @media screen and (max-width: $phoneWidth) {
         &__items {
-            grid-template-columns: minmax(auto, 380px);
-            grid-gap: 12vw;
-
-            div {
-                padding-left: 38px;
-                padding-right: 0;
-            }
-
-            h3::before {
-                font-size: 30px;
-                margin-left: -38px;
-                margin-right: 15px;
-            }
+            grid-template: repeat(6, auto) / 1fr;
         }
     }
 }

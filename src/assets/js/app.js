@@ -17,8 +17,6 @@ new Swiper('#sliderORD', sliderORD);
 new Swiper('#sliderFB', sliderFB);
 
 
-
-
 //////////////////////////////////////////////////////////////////////////////
 const options1 = {
   effect: 'cube',
@@ -174,6 +172,5 @@ const openModal = document.querySelector('#openModal');
 const modal = document.querySelector('.modal');
 
 openModal.addEventListener('click', () => {
-  modal.classList.add('success');
-
+  modal.classList.add('error');
 })

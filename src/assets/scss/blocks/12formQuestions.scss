@@ -1,9 +1,13 @@
 .questionsForm {
+    margin-bottom: 0;
+
     .line {
         width: 85%;
     }
 
     .container {
+        padding-top: 80px;
+        padding-bottom: 80px;
         display: grid;
         grid-template: auto / repeat(2, 1fr);
     }
@@ -28,7 +32,6 @@
         justify-self: start;
     }
 
-
     form {
         display: flex;
         flex-direction: column;
@@ -47,6 +50,8 @@
             color: $defaultColor;
             padding-bottom: 14px;
             padding-left: 5px;
+            background: transparent;
+            border-bottom: 1px solid $borderColor;
 
             &:hover,
             &:focus {
@@ -74,14 +79,14 @@
                 position: absolute;
                 left: 5px;
 
-                font-size: 16px;
+                font-size: 14px;
                 font-family: 'Georgia';
                 font-weight: 700;
                 font-style: italic;
                 color: $defaultColor;
                 letter-spacing: 0.7px;
 
-                transition: transform 0.2s ease-in;
+                transition: transform 0.1s ease-in;
             }
         }
     }
@@ -90,5 +95,60 @@
         width: 340px;
         height: 60px;
         margin-top: 50px;
+    }
+
+
+    @media screen and (max-width: $smDesktopWidth) {
+        .line {
+            width: 60%;
+        }
+
+        .container {
+            grid-template: auto / auto auto;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        &__image {
+            width: 250px;
+            height: 250px;
+            align-self: start;
+            margin-top: 15px;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        .line {
+            width: 70%;
+        }
+
+        .container {
+            grid-template: 1fr / 1fr;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        &__col {
+            justify-self: center;
+        }
+
+        &__image {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        .line {
+            width: 90%;
+        }
+
+        &__col {
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-border {
+            width: 100%;
+        }
     }
 }

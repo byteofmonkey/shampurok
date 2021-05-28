@@ -142,6 +142,11 @@ section {
         font-size: 8px;
         color: $accentColor;
     }
+
+
+    @media screen and (max-width: $smDesktopWidth) {
+        padding-left: 10px;
+    }
 }
 
 /////////////////////////////////////////////////////////_________________TYPOGRAPHY
@@ -171,7 +176,7 @@ h2 {
     }
 
     @media screen and (max-width: $tableWidth) {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     @media screen and (max-width: $phoneWidth) {
@@ -188,15 +193,15 @@ h3 {
     letter-spacing: 1.6px;
 
     @media screen and (max-width: $desktopWidth) {
-        font-size: 17px;
-    }
-
-    @media screen and (max-width: $tableWidth) {
         font-size: 16px;
     }
 
-    @media screen and (max-width: $phoneWidth) {
-        font-size: 15px;
+    @media screen and (max-width: $tableWidth) {
+        font-size: 13px;
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        font-size: 10px;
     }
 }
 
@@ -205,14 +210,6 @@ p {
 
     @media screen and (max-width: $desktopWidth) {
         font-size: 14px;
-    }
-
-    @media screen and (max-width: $tableWidth) {
-        font-size: 13px;
-    }
-
-    @media screen and (max-width: $phoneWidth) {
-        font-size: 12px;
     }
 }
 
@@ -279,13 +276,4 @@ button {
         background-color: transparent;
         border-color: $accentColor;
     }
-}
-
-input[type="text"],
-input[type="tel"] {
-    // font-family: inherit;
-
-    background: transparent;
-
-    border-bottom: 1px solid $borderColor;
 }

@@ -1,0 +1,170 @@
+.quizModal {
+    &__container {
+        ///////////////////////////////////////////////////////////////////
+        margin: 100px auto;
+        border: 1px solid rgba(0, 0, 0, 0.411);
+        ///////////////////////////////////////////////////////////////////
+
+        max-width: 900px;
+        padding: 40px 40px 40px 60px;
+        background: $backgroundColor;
+        background: no-repeat center / cover url(../images/background/mainBg.jpg);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__progressBar {
+        width: 80%;
+        user-select: none;
+    }
+
+    &__bar {
+        height: 5px;
+        border-radius: 5px;
+        border: 1px solid $accentColor;
+        overflow: hidden;
+    }
+
+    &__progressBarStick {
+        height: 5px;
+        background: $accentColor;
+        width: 8%;
+    }
+
+    &__steps {
+        margin-top: 20px;
+        color: $accentColor;
+        font-size: 18px;
+        letter-spacing: 2px;
+
+        display: flex;
+        justify-content: space-between;
+
+        &.active {
+            font-weight: 700;
+        }
+    }
+
+    .icon-close {
+        padding: 20px;
+        margin: -20px -30px 0 0;
+        font-size: 30px;
+    }
+
+    &__row {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    &__col {
+        flex-grow: 1;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__stepsNav {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+
+
+
+    // outline: 1px solid red;
+
+
+
+
+
+
+
+    .btn-border,
+    .btn-solid {
+        height: 45px;
+        width: 200px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    &__imageFrame {
+        margin-top: 22px;
+        border: 1px solid $accentColor;
+    }
+
+    img {
+        width: 275px;
+        height: 250px;
+        position: relative;
+
+        transform: translate(-15px, -15px);
+    }
+}
+
+
+
+.quizModal__answers {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    margin-top: 30px;
+}
+
+.quizModal__radio {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    span {
+        padding-left: 35px;
+    }
+
+    span::before {
+        content: '\e912';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-family: 'icomoon';
+        font-size: 15px;
+        color: $accentColor;
+    }
+
+    input:checked~span::before {
+        content: '\e913';
+    }
+}
+
+
+
+
+// .icon-input:before {
+//     content: "\e912";
+// }
+
+// .icon-inputChecked:before {
+//     content: "\e913";
+// }

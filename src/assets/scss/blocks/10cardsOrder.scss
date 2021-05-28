@@ -83,23 +83,24 @@
         }
 
         &__cards {
-            grid-template: repeat(3, 1fr 50px) 1fr / minmax(auto, 400px);
+            grid-template: repeat(3, 1fr 30px) 1fr / minmax(auto, 400px);
             grid-auto-flow: row;
             justify-content: center;
 
             div:nth-of-type(4),
+            div:nth-of-type(2),
             div:nth-of-type(6) {
-                background: no-repeat center top 5px / 20px 80% url(../images/svg/arrowDown.svg);
-                transform: scale(1, 2.5);
+                background: no-repeat center top 7px / 18px 55% url(../images/svg/arrowDown.svg);
+                transform: scale(1, 2.4);
                 margin-top: 0;
             }
         }
 
         &__cardsItem {
-            padding-bottom: 50px;
+            padding-bottom: 20px;
 
             &::before {
-                font-size: 60px;
+                font-size: 50px;
             }
         }
     }

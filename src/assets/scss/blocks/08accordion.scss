@@ -129,47 +129,18 @@
 
     @media screen and (max-width: 992px) {
         .containerFluid {
-            grid-template: 550px 1fr / 1fr;
+            grid-template: 200px 1fr / 1fr;
             gap: 50px;
-        }
-
-        &__imageFrame {
-            border: 1px solid $accentColor;
         }
     }
 
     @media screen and (max-width: $tableWidth) {
-        .containerFluid {
-            grid-template: 400px 1fr / 1fr;
-        }
-
         h2 {
-            max-width: 400px;
-        }
-    }
-
-    @media screen and (max-width: $phoneWidth) {
-        .containerFluid {
-            grid-template: 280px 1fr / 1fr;
+            max-width: 350px;
         }
 
         span {
-            font-size: 15px;
-
-            &::before,
-            &::after {
-                right: 10px;
-            }
-        }
-    }
-
-    @media screen and (max-width: $smPhoneWidth) {
-        .containerFluid {
-            grid-template: 200px 1fr / 1fr;
-        }
-
-        span {
-            font-size: 12px;
+            font-size: 13px;
 
             &::before,
             &::after {

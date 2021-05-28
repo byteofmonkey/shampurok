@@ -1,19 +1,15 @@
 .footer {
     border-top: 1px solid $accentColor;
 
-    background: no-repeat linear-gradient(to bottom, $accentColor 0%, $accentColor 100%);
-    background-size: 100% 1px;
-    background-position: center bottom 55px;
-
-    .container {
+    .footer__container {
         margin-top: 70px;
         display: grid;
-        grid-template: 180px 55px / repeat(4, 235px);
+        grid-template: 180px / repeat(4, minmax(170px, 235px));
     }
 
     .logo {
         place-self: start;
-        font-size: 26px;
+        font-size: 25px;
     }
 
     &__address,
@@ -25,10 +21,15 @@
     &__socials {
         display: flex;
         margin: -15px -15px 0 -15px;
+        order: 1;
 
         a {
-            font-size: 36px;
-            padding: 15px;
+            font-size: 24px;
+            padding: 16px;
+        }
+
+        li:nth-child(3) a {
+            font-size: 23px;
         }
     }
 
@@ -38,6 +39,23 @@
 
     p {
         line-height: 1.85;
+    }
+
+    hr {
+        border: none;
+        border-bottom: 1px solid $accentColor;
+    }
+
+    &__policyContainer {
+        min-height: 55px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__copyrights {
+        font-size: 10px;
+        color: $defaultColor;
+        place-self: center start;
     }
 
     &__policyLink {
@@ -53,49 +71,52 @@
         }
     }
 
-    &__copyrights {
-        font-size: 10px;
-        color: $defaultColor;
-        place-self: center start;
-    }
-
     @media screen and (max-width: $smDesktopWidth) {
-        .container {
-            grid-template: 110px 55px / repeat(3, 1fr);
-            row-gap: 50px;
+        .footer__container {
+            margin-top: 30px;
+            grid-template: 60px 120px / repeat(2, 1fr);
+            grid-column-gap: 50px;
         }
 
-        .logo,
-        &__socials {
-            grid-area: 1 / 1 / 2 / 2;
-            justify-content: space-between;
-            width: 100%;
+        h3 {
+            margin-bottom: 5px;
         }
 
         &__socials {
-            place-self: end start;
-        }
-    }
-
-    @media screen and (max-width: $smTableWidth) {
-        background-position: center bottom 120px;
-
-        .container {
-            grid-template: 50px repeat(2, 110px) 50px repeat(3, 40px) / 1fr;
-            row-gap: 0px;
+            order: unset;
         }
 
         &__address,
         &__phone,
-        &__socials,
-        &__policyLink {
+        &__socials {
             place-self: start;
+        }
+    }
+
+    @media screen and (max-width: $smTableWidth) {
+        &__policyContainer {
+            flex-direction: column;
+            padding-bottom: 10px;
+            line-height: 2.5;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        .footer__container {
+            margin-top: 20px;
+            grid-template: 40px repeat(2, 100px) 60px / 1fr;
+        }
+
+        .logo,
+        &__address,
+        &__phone,
+        &__socials {
+            place-self: center;
+            text-align: center;
         }
 
         &__socials {
-            grid-area: unset;
-            max-width: 450px;
-            place-self: center;
+            order: 1;
         }
     }
 }
