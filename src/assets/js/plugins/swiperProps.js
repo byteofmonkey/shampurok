@@ -1,7 +1,9 @@
-let slidesNum = document.querySelectorAll('#sliderORD .swiper-slide').length;
-slidesNum = (slidesNum < 10) ? `0${slidesNum}` : slidesNum;
+const getSlidesCount = (selector) => {
+  const num = document.querySelectorAll(`${selector} .swiper-slide`).length;
+  return (num < 10) ? `0${num}` : num;
+};
 
-export const sliderORD = {
+export const KITprops = {
   direction: 'horizontal',
   speed: 400,
   slidesPerView: 'auto',
@@ -17,8 +19,8 @@ export const sliderORD = {
     formatFractionCurrent: function(num) {
       return (num < 10) ? `0${num}` : num;
     },
-    formatFractionTotal: function(num) {
-      return slidesNum;
+    formatFractionTotal: function() {
+      return getSlidesCount('#swiperKIT');
     }
   },
   scrollbar: {
@@ -38,7 +40,7 @@ export const sliderORD = {
   }
 }
 
-export const sliderFB = {
+export const FBprops = {
   direction: 'horizontal',
   slidesPerView: 1.5,
   spaceBetween: 30,
@@ -54,8 +56,8 @@ export const sliderFB = {
     formatFractionCurrent: function(num) {
       return (num < 10) ? `0${num}` : num;
     },
-    formatFractionTotal: function(num) {
-      return (num < 10) ? `0${num}` : num;
+    formatFractionTotal: function() {
+      return getSlidesCount('#swiperFB');
     }
   },
   scrollbar: {
@@ -66,28 +68,15 @@ export const sliderFB = {
     1280: {
       slidesPerView: 4,
       spaceBetween: 50,
-      pagination: {
-        formatFractionTotal: function(num) {
-          let i = num + 3;
-          return (i < 10) ? `0${i}` : i;
-        }
-      },
     },
     480: {
       slidesPerView: 3.5,
       spaceBetween: 30,
-      pagination: {
-        formatFractionTotal: function(num) {
-          let i = num + 2;
-          return (i < 10) ? `0${i}` : i;
-        }
-      },
     },
   }
 }
 
-
-export const shmiperOptions = {
+export const CUBICLEprops = {
   effect: 'cube',
   speed: 1000,
   cubeEffect: {

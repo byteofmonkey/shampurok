@@ -12,11 +12,6 @@ class modalCallBack {
 
 
 
-
-
-
-
-
     // modal.forEach(item => item.addEventListener('click', (e) => {
     //   if (e.target.matches('.icon-close') || e.target.matches('.modal-wrapper')) {
     //     closeModal();

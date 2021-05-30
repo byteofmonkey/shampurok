@@ -5,22 +5,40 @@ import Menu from './plugins/menu';
 import Accordion from './plugins/accordion';
 import modalCallBack from './plugins/modalCallBack';
 
+
+
+
+import Section from "./cards/constructor";
 import {
-  sliderORD,
-  sliderFB,
-  shmiperOptions,
-} from './plugins/slider.js';
+  sliderFeebackData,
+  sliderKitData,
+} from "./cards/data";
+import sliderFeedback from "./cards/sliderFeedback";
+import sliderKit from "./cards/sliderKit";
+
+
+
+import {
+  KITprops,
+  CUBICLEprops,
+  FBprops,
+} from './plugins/swiperProps.js';
+
+// Section(parentSelector, cardClassName, innerHTMLfunction, contentArray)
+new Section("#swiperFB .swiper-wrapper", "swiper-slide", sliderFeedback, sliderFeebackData).render();
+new Section("#swiperKIT .swiper-wrapper", "swiper-slide", sliderKit, sliderKitData).render();
+
+
+new Swiper('#swiperKIT', KITprops);
+new Swiper('#swiperFB', FBprops);
+new Swiper('#shmiper', CUBICLEprops);
 
 new Menu();
 new Accordion();
 new modalCallBack();
-
 // new SimpleBar();
 
-new Swiper('#sliderORD', sliderORD);
-new Swiper('#sliderFB', sliderFB);
 
-new Swiper('#shmiper', shmiperOptions);
 
 // const images = document.querySelectorAll('.modalProductCard img');
 // images.forEach(item => {
@@ -47,82 +65,13 @@ new Swiper('#shmiper', shmiperOptions);
 //////////////////////////////////////////////////////////////////////////////
 
 
+const introBtn = document.querySelector('.intro .btn-solid');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const introBtn1 = document.querySelector('.intro .btn-solid');
-
-introBtn1.addEventListener('click', () => {
-
+introBtn.addEventListener('click', () => {
   document.querySelector('.tiles').scrollIntoView({
     block: 'center',
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -187,4 +136,15 @@ introBtn1.addEventListener('click', () => {
   };
 })();
 
-fitText(document.getElementById('fittext'), 1.3)
+fitText(document.getElementById('fittext'), 1.3);
+
+
+
+
+
+
+
+
+const buttonsKit = document.querySelectorAll('#swiperKIT .link');
+
+console.dir(buttonsKit[1].dataset.card);
