@@ -1,133 +1,50 @@
 import Swiper from 'swiper/bundle';
 import SimpleBar from 'simplebar/dist/simplebar';
-import menu from './menu';
+
+import Menu from './plugins/menu';
+import Accordion from './plugins/accordion';
+import modalCallBack from './plugins/modalCallBack';
 
 import {
   sliderORD,
-  sliderFB
-} from './slider.js';
+  sliderFB,
+  shmiperOptions,
+} from './plugins/slider.js';
 
-menu();
+new Menu();
+new Accordion();
+new modalCallBack();
 
-new SimpleBar(document.getElementById('headerMenu'), {
-  autoHide: false
-});
+// new SimpleBar();
 
 new Swiper('#sliderORD', sliderORD);
 new Swiper('#sliderFB', sliderFB);
 
+new Swiper('#shmiper', shmiperOptions);
 
-//////////////////////////////////////////////////////////////////////////////
-const options1 = {
-  effect: 'cube',
-  speed: 400,
-  enabled: false,
-  allowTouchMove: false, // скорее всего можно добавить через breakpoints - для телефона
-  zoom: {
-    maxRatio: 2,
-  },
-  pagination: {
-    el: ".swiper-tumbnails",
-    clickable: true,
-    renderBullet: function(index, className) {
-      return `<img class=${className} src="./assets/images/sliderPopup/slide${index+1}.jpg" alt="tumbnail">`;
-    },
-  },
-}
+// const images = document.querySelectorAll('.modalProductCard img');
+// images.forEach(item => {
+//   item.addEventListener('dragmove', (e) => e.preventDefault());
 
-
-// document.querySelector('.swiper-container').addEventListener('dragstart', (e) => {
-//   e.preventDefault()
 // })
+// const popUpSliderWrapper = document.querySelector('.popUp__slider');
+// const sliderItem = document.querySelector('.swiper-wrapper');
+// const openPopUp = function(e) {
+//   e.preventDefault();
+//   popUpSliderWrapper.classList.toggle('popUp_open');
 
-//////////////////////////////////////////////////////////////////////////////
-const swiper1 = new Swiper('.swiper', options1);
-
-const popUpSliderWrapper = document.querySelector('.popUp__slider');
-const sliderItem = document.querySelector('.swiper-wrapper');
-const openPopUp = function(e) {
-  e.preventDefault();
-  popUpSliderWrapper.classList.toggle('popUp_open');
-
-  if (popUpSliderWrapper.classList.contains('popUp_open')) {
-    document.body.style.overflow = 'hidden';
-    swiper1.enable();
-    swiper1.update();
-    return;
-  }
-
-  swiper1.disable()
-  document.body.style.overflow = '';
-}
-document.querySelector('.popUp__openLink').addEventListener('click', openPopUp);
-
-
-//////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// swiper.isEnd
-// swiper.slideNext(speed, runCallbacks)
-// allowTouchMove: false // можно свайпать только по slidePrev or slideNext
-
-
-// const menuButton = document.querySelector('.menu-button');
-
-// const onMenu = () => {
-//   swiper.enable();
-
-//   console.log(swiper.isBeginning, swiper.isEnd);
-
-//   if (swiper.isBeginning) {
-//     swiper.slideNext();
-//   } else {
-//     swiper.slidePrev();
+//   if (popUpSliderWrapper.classList.contains('popUp_open')) {
+//     document.body.style.overflow = 'hidden';
+//     swiper1.enable();
+//     swiper1.update();
+//     return;
 //   }
-// };
 
-// var swiper = new Swiper('#menuSlider', {
-//   slidesPerView: 'auto',
-//   initialSlide: 0,
-//   resistanceRatio: 0.8,
-//   enabled: false,
-//   slideToClickedSlide: true,
-
-//   on: {
-//     beforeInit: function() {
-//       menuButton.addEventListener('click', onMenu, true);
-//     },
-//     transitionEnd: function() {
-//       if (swiper.isEnd) {
-//         console.log('end')
-//         menuButton.classList.add('closebtnn');
-//       }
-
-//       if (swiper.isBeginning) {
-//         console.log("beginning");
-//         menuButton.classList.remove('closebtnn');
-//         swiper.disable();
-//       }
-
-
-//     },
-//   },
-// });
+//   swiper1.disable()
+//   document.body.style.overflow = '';
+// }
+// document.querySelector('.popUp__openLink').addEventListener('click', openPopUp);
+//////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -147,30 +64,127 @@ document.querySelector('.popUp__openLink').addEventListener('click', openPopUp);
 
 
 
-const accorderon = document.querySelector('#accordeon');
-
-const accordeonItems = accordeon.children;
-
-// console.log(accordeonItems);
-accordeonItems[0].classList.add('open');
-
-const toggleItems = (e) => {
-  const target = e.target.closest('li');
-
-  for (let item of accordeonItems) {
-    (item === target) ? item.classList.add('open'): item.classList.remove('open')
-  }
-}
-accordeonItems.forEach(item => item.addEventListener('click', toggleItems))
 
 
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
 
-const openModal = document.querySelector('#openModal');
-const modal = document.querySelector('.modal');
 
-openModal.addEventListener('click', () => {
-  modal.classList.add('error');
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const introBtn1 = document.querySelector('.intro .btn-solid');
+
+introBtn1.addEventListener('click', () => {
+
+  document.querySelector('.tiles').scrollIntoView({
+    block: 'center',
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!	
+ * FitText.js 1.0 jQuery free version
+ *
+ * Copyright 2011, Dave Rupert http://daverupert.com 
+ * Released under the WTFPL license 
+ * http://sam.zoy.org/wtfpl/
+ * Modified by Slawomir Kolodziej http://slawekk.info
+ *
+ * Date: Tue Aug 09 2011 10:45:54 GMT+0200 (CEST)
+ */
+(function() {
+
+  var addEvent = function(el, type, fn) {
+    if (el.addEventListener)
+      el.addEventListener(type, fn, false);
+    else
+      el.attachEvent('on' + type, fn);
+  };
+
+  var extend = function(obj, ext) {
+    for (var key in ext)
+      if (ext.hasOwnProperty(key))
+        obj[key] = ext[key];
+    return obj;
+  };
+
+  window.fitText = function(el, kompressor, options) {
+
+    var settings = extend({
+      'minFontSize': -1 / 0,
+      'maxFontSize': 1 / 0
+    }, options);
+
+    var fit = function(el) {
+      var compressor = kompressor || 1;
+
+      var resizer = function() {
+        el.style.fontSize = Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) + 'px';
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Bind events
+      // If you have any js library which support Events, replace this part
+      // and remove addEvent function (or use original jQuery version)
+      addEvent(window, 'resize', resizer);
+      addEvent(window, 'orientationchange', resizer);
+    };
+
+    if (el.length)
+      for (var i = 0; i < el.length; i++)
+        fit(el[i]);
+    else
+      fit(el);
+
+    // return set of elements
+    return el;
+  };
+})();
+
+fitText(document.getElementById('fittext'), 1.3)

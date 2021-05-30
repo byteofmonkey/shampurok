@@ -58,10 +58,13 @@
         .container {
             grid-template: auto auto / 1fr;
             gap: 0;
+            justify-items: center;
         }
 
         &__image {
+            justify-self: center;
             grid-area: unset;
+            max-width: 400px;
         }
 
         img {

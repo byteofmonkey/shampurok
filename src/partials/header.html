@@ -5,13 +5,15 @@
 
     <ul class="header__submenu">
       <li>
-        <a class="header__address" href="https://goo.gl/maps/3rhuPXA11qH9GmZz5" target="_blank"><i class="icon-mapPin"></i><span>г. Москва,<br>ул. Пушкина 123</span></a>
+        <a class="header__address" href="https://goo.gl/maps/3rhuPXA11qH9GmZz5" target="_blank"><i class="icon-mapPin"></i>
+          <address>г. Москва,<br>ул. Пушкина 1</address>
+        </a>
       </li>
       <li>
-        <a class="header__phone" href="tel:88002000600"><span>+7 800 200 06 00</span><i class="icon-phone"></i></a>
+        <button class="header__phone" data-callback><span>+7 800 200 06 00</span><i class="icon-phone"></i></button>
       </li>
       <li>
-        <button id='openMenu' class="header__openMenuBtn" type="button" aria-label="Menu" aria-controls="navigation">
+        <button class="header__openMenuBtn" type="button" aria-label="Menu" aria-controls="navigation">
           <span>меню</span>
           <div>
             <i class="icon-menu"></i>
@@ -22,7 +24,7 @@
       </li><!-- end open menu btn -->
     </ul><!-- end header submenu -->
 
-    <nav id="menu">
+    <nav>
       <ul class="header__socials">
         <li>
           <a class="link icon-facebook" href="https://www.facebook.com" target='_blank'></a>
@@ -35,40 +37,39 @@
         </li>
       </ul><!-- end header socials -->
 
-
-      <ul id="headerMenu" data-simplebar class="header__menu">
+      <ul class="header__menu" data-simplebar data-simplebar-auto-hide="false">
         <li>
-          <button id='closeMenu'><i class="icon-close"></i></button>
+          <button tabindex="-1" class="icon-close"></button>
         </li>
         <li>
-          <a href="./index.html">главный</a>
+          <button tabindex="-1">главный</button>
         </li>
         <li>
-          <a href="#tiles">преимущества кейсов</a>
+          <button tabindex="-1">преимущества кейсов</button>
         </li>
         <li>
-          <a href="#popUp">выбор кейсов</a>
+          <button tabindex="-1">выбор кейсов</button>
         </li>
         <li>
-          <a href="#custom">кейсы с гравировкой</a>
+          <button tabindex="-1">кейсы с гравировкой</button>
         </li>
         <li>
-          <a href="#quiz">подбор кейсов</a>
+          <button tabindex="-1">подбор кейсов</button>
         </li>
         <li>
-          <a href="#accordion">почему мы</a>
+          <button tabindex="-1">почему мы</button>
         </li>
         <li>
-          <a href="#cardsCompare">сравнить кейсы</a>
+          <button tabindex="-1">сравнить кейсы</button>
         </li>
         <li>
-          <a href="#cardsOrder">как оформить заказ</a>
+          <button tabindex="-1">как оформить заказ</button>
         </li>
         <li>
-          <a href="#questionForm">обратная связь</a>
+          <button tabindex="-1">обратная связь</button>
         </li>
         <li>
-          <a href="#footer">контакты</a>
+          <button tabindex="-1">контакты</button>
         </li>
       </ul>
     </nav><!-- end header menu -->

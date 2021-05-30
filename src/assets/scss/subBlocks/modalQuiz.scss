@@ -1,10 +1,7 @@
 .quizModal {
-    &__container {
-        ///////////////////////////////////////////////////////////////////
-        margin: 100px auto;
-        border: 1px solid rgba(0, 0, 0, 0.411);
-        ///////////////////////////////////////////////////////////////////
+    display: none;
 
+    &__container {
         max-width: 900px;
         padding: 40px 40px 40px 60px;
         background: $backgroundColor;
@@ -22,14 +19,14 @@
     }
 
     &__bar {
-        height: 5px;
-        border-radius: 5px;
+        height: 6px;
+        border-radius: 3px;
         border: 1px solid $accentColor;
         overflow: hidden;
     }
 
     &__progressBarStick {
-        height: 5px;
+        height: 4px;
         background: $accentColor;
         width: 8%;
     }
@@ -63,6 +60,7 @@
 
     &__col {
         flex-grow: 1;
+        max-width: 450px;
     }
 
     h2 {
@@ -76,18 +74,18 @@
         justify-content: space-between;
     }
 
+    &__answers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
 
-
-
-
-
-    // outline: 1px solid red;
-
-
-
-
-
-
+    &__answersCol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 
     .btn-border,
     .btn-solid {
@@ -95,19 +93,9 @@
         width: 200px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
     &__imageFrame {
         margin-top: 22px;
+        align-self: flex-start;
         border: 1px solid $accentColor;
     }
 
@@ -120,51 +108,18 @@
     }
 }
 
+.quizModal.open {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-
-.quizModal__answers {
     display: flex;
-    justify-content: space-between;
-    height: 45px;
-    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(1px);
+    background: #777b;
 }
-
-.quizModal__radio {
-    position: relative;
-    height: 100%;
-    width: 50%;
-    cursor: pointer;
-
-    input {
-        display: none;
-    }
-
-    span {
-        padding-left: 35px;
-    }
-
-    span::before {
-        content: '\e912';
-        position: absolute;
-        left: 0;
-        top: 2px;
-        font-family: 'icomoon';
-        font-size: 15px;
-        color: $accentColor;
-    }
-
-    input:checked~span::before {
-        content: '\e913';
-    }
-}
-
-
-
-
-// .icon-input:before {
-//     content: "\e912";
-// }
-
-// .icon-inputChecked:before {
-//     content: "\e913";
-// }

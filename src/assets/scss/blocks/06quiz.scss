@@ -1,7 +1,4 @@
 .quiz {
-    // .__wrapper::before {
-    //     transform: translate(-15px, -15px);
-    // }
 
     &__wrapper {
         min-height: 458px;
@@ -70,7 +67,6 @@
         }
 
         h2 {
-            max-width: 300px;
             margin: 0 auto 50px;
             font-size: 24px;
             text-align: center;
@@ -86,7 +82,7 @@
         }
 
         .btn-solid {
-            margin: 30px 0 25vw 90px;
+            margin: 30px 0 30px 68px;
             float: unset;
         }
 

@@ -3,6 +3,7 @@
 @import 'utils/03mixins';
 @import 'utils/04fonts';
 @import 'utils/05pagePresets';
+@import 'utils/06typography';
 
 
 @import 'swiper/swiper-bundle';
@@ -10,19 +11,23 @@
 // @import 'node_modules/animate.css/animate';
 
 
+/* SubBlocks & page elements */
+@import "subBlocks/elementsStatic.scss";
+@import "subBlocks/elementsInteractive.scss";
+@import "subBlocks/headerMenu.scss";
+@import "subBlocks/modalCallBack.scss";
+@import "subBlocks/modalThanks&Error.scss";
+@import "subBlocks/modalProductCard.scss";
 
-@import "blocks/headerMenu.scss";
-@import "blocks/modal.scss";
-@import "blocks/slider.scss";
-@import "blocks/quizModal.scss";
+@import "subBlocks/modalQuiz.scss";
 
 
 /* Blocks */
-@import "blocks/header.scss";
+@import "blocks/00header.scss";
 @import "blocks/01intro.scss";
 @import "blocks/02story.scss";
 @import "blocks/03tiles.scss";
-@import "blocks/04popUp.scss";
+@import "blocks/04sliderKit.scss";
 @import "blocks/05custom.scss";
 @import "blocks/06quiz.scss";
 @import "blocks/07cardsWho.scss";
@@ -31,4 +36,4 @@
 @import "blocks/10cardsOrder.scss";
 @import "blocks/11sliderFeedback.scss";
 @import "blocks/12formQuestions.scss";
-@import "blocks/footer.scss";
+@import "blocks/13footer.scss";

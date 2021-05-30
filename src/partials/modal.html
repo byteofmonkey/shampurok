@@ -1,0 +1,246 @@
+<div class="modalProductCard modal-wrapper">
+  <div class="modalProductCard__container" data-simplebar data-simplebar-auto-hide="false">
+
+    <div class="modalProductCard__content">
+      <button class="icon-close"></button>
+      <div class="modalProductCard__row">
+
+
+        <div class="modalProductCard__colSlider">
+          <div class="modalProductCard__sliderBorder">
+
+            <div class="swiper-container" id='shmiper'>
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="./assets/images/sliderPopup/slide2.jpg" alt="bbq set">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="./assets/images/sliderPopup/slide3.jpg" alt="bbq set">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="./assets/images/sliderPopup/slide4.jpg" alt="bbq set">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div><!-- end border -->
+
+          <div class="swiper-pagination" id=thumbnails></div>
+        </div><!-- end swiper -->
+
+
+        <div class="modalProductCard__colDescription">
+          <h3>Кейс “шампурок”</h3>
+          <ul>
+            <li>8 шампуров 640х12х3мм</li>
+            <li>двойной шампур</li>
+            <li>щипцы для барбекю</li>
+            <li>фляга</li>
+            <li>6 рюмок</li>
+            <li>6 стаканов</li>
+            <li>тесак</li>
+            <li>нож охотничий</li>
+            <li>штопор</li>
+            <li>турбозажигалка</li>
+            <li>мангал</li>
+            <li>6 вилок</li>
+            <li>6 ложек</li>
+            <li>6 тарелок</li>
+          </ul>
+          <button class="btn-border">оформить заказ</button>
+        </div><!-- end col description -->
+
+
+      </div><!-- end row -->
+    </div><!-- end content -->
+  </div><!-- end container(background) -->
+</div><!-- end modal-wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modalThanks modal-wrapper" data-modal>
+  <div>
+    <button data-close class="icon-close"></button>
+    <h3>Спасибо</h3>
+    <p>Ваша заявка принята в обработку.</p>
+  </div>
+</div><!-- end modal thanks -->
+
+
+<div class="modalError modal-wrapper" data-modal>
+  <div>
+    <button data-close class="icon-close"></button>
+    <p>Ошибка сети</p>
+    <p>Попробуйте еще раз...</p>
+  </div>
+</div><!-- end modal error -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="quizModal" data-modal id='quizModal'>
+  <div class="quizModal__container">
+
+    <div class="quizModal__header">
+      <div class="quizModal__progressBar">
+        <div class="quizModal__bar">
+          <div class="quizModal__progressBarStick"></div>
+        </div>
+        <div class="quizModal__steps">
+          <span>01</span>
+          <span>02</span>
+          <span>03</span>
+          <span>04</span>
+          <span>05</span>
+          <span>06</span>
+          <span>07</span>
+        </div>
+      </div>
+      <button class="icon-close" data-close></button>
+    </div><!-- end quiz header -->
+
+    <div class="quizModal__row">
+
+      <div class="quizModal__col">
+        <h2>С посудой или без ?</h2>
+
+
+        <form action="POST" name='order'>
+          <div class="quizModal__answers">
+
+            <div class="quizModal__answersCol">
+
+
+              <label class="radio">
+                <input type="radio" name='gift' checked>
+                <span>для себя</span>
+              </label>
+
+
+
+
+              <!-- <label class="input-text">
+                  <input type="text" autocomplete="off" required>
+                  <span>Ваше имя</span>
+                </label>
+  
+                <label class="input-text">
+                  <input type="text" autocomplete="off" required>
+                  <span>Ваш телефон</span>
+                </label> -->
+            </div>
+
+            <div class="quizModal__answersCol">
+
+
+
+              <label class="radio">
+                <input type="radio" name='gift'>
+                <span>хочу сделать подарок</span>
+              </label>
+
+              <!-- <button class="btn-solid">отправить</button> -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+        </form>
+
+        <div class="quizModal__stepsNav">
+          <button class="btn-border">назад</button>
+          <button class="btn-solid">далее</button>
+        </div>
+
+      </div><!-- end quiz col -->
+
+      <div class="quizModal__imageFrame">
+        <img src="./assets//images/quizImages/quiz1.jpg" alt="quiz img">
+      </div>
+
+    </div>
+
+  </div><!-- end quiz container -->
+</div>

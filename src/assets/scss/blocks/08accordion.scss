@@ -34,12 +34,15 @@
     }
 
     ul {
-        margin-top: 40px;
+        margin-top: -40px;
     }
 
     li {
         padding-top: 20px;
         border-bottom: 1px solid $borderColor;
+        cursor: pointer;
+
+        @extend .no-select;
 
         p {
             height: 0;
@@ -48,8 +51,29 @@
             padding-right: 80px;
         }
 
+        &:hover {
+            color: $accentColor;
+            border-color: $accentColor;
+        }
+
         &.open {
             min-height: 120px;
+
+            &:hover {
+                color: $defaultColor;
+                border-color: $borderColor;
+                cursor: default;
+            }
+
+            span {
+                &::before {
+                    color: $accentColor;
+                }
+
+                &::after {
+                    color: transparent;
+                }
+            }
 
             p {
                 height: initial;
@@ -63,7 +87,6 @@
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.5px;
-
         position: relative;
 
         &::before {
@@ -88,32 +111,10 @@
         }
     }
 
-    li:hover {
-        color: $accentColor;
-        border-color: $accentColor;
-    }
-
-    li.open:hover {
-        color: $defaultColor;
-        border-color: $borderColor;
-    }
-
-    li.open span::after {
-        color: transparent;
-    }
-
-    li.open span::before {
-        color: $accentColor;
-    }
-
     @media screen and (max-width: $desktopWidth) {
         .containerFluid {
             margin: 0;
             gap: 50px;
-        }
-
-        ul {
-            margin-top: 10px;
         }
     }
 
@@ -137,6 +138,10 @@
     @media screen and (max-width: $tableWidth) {
         h2 {
             max-width: 350px;
+        }
+
+        ul {
+            margin-top: 0px;
         }
 
         span {

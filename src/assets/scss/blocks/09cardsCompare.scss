@@ -2,8 +2,6 @@
     position: relative;
 
     &__row {
-        margin-top: 95px;
-
         display: grid;
         grid-template: auto / repeat(2, minmax(auto, 680px));
         gap: 30px;
@@ -50,7 +48,6 @@
         &__row {
             grid-template: auto / 1fr 30px 1fr;
             gap: 0;
-            margin-top: 65px;
 
             div:nth-child(3) {
                 border: 1px solid $accentColor;
@@ -90,7 +87,6 @@
     @media screen and (max-width: $tableWidth) {
         &__row {
             grid-template: auto 50px auto / minmax(200px, 550px);
-            margin-top: 65px;
             justify-content: center;
 
             div:nth-child(3) {

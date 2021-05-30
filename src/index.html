@@ -3,7 +3,7 @@
 <section class="intro">
   <div class="container">
 
-    <h1>Cекретный ингридиент идеального шашлыка</h1>
+    <h1 id='fittext'>Cекретный ингридиент идеального шашлыка</h1>
     <p>Ты думаешь, что вся соль в мясе ?</p>
     <p>Ничего подобного...</p>
     <button class="btn-solid">узнать ингридиент</button>
@@ -11,7 +11,7 @@
   </div><!-- end container -->
 </section><!-- end intro -->
 
-<!--
+<!--    
 ------------------------------------------------------------- 02-Story -->
 <section class="story">
   <div class=" container">
@@ -28,35 +28,23 @@
 
 <!--
 ------------------------------------------------------------- 03-Tiles -->
-<section class="tiles" id='tiles'>
+<section class="tiles">
   <div class="container">
     <h2>Вся соль в:</h2>
 
     <div class="tiles__items">
-      <div>
-        <h3>удобство</h3>
-        <p>Все необходимое для bbq в одном кейсе</p>
-      </div>
-      <div>
-        <h3>высокое качество</h3>
-        <p>Все изделия сделаны на профессиональном оборудовании и будут служить более 10 лет </p>
-      </div>
-      <div>
-        <h3>нержавеющая сталь</h3>
-        <p>Металлические изделия, толщина которых 3мм, оброботаны специальным лазером</p>
-      </div>
-      <div>
-        <h3>уникальный дизайн</h3>
-        <p>Дизайнерский подход к каждому кейсу.</p>
-      </div>
-      <div>
-        <h3>идеальный подарок</h3>
-        <p>Каждая 3-й заказ - это подарок родным или друзьям</p>
-      </div>
-      <div>
-        <h3>индивидуальная комплектация</h3>
-        <p>Подберем кейс под ваши запросы и пожелания</p>
-      </div>
+      <h3>удобство</h3>
+      <p>Все необходимое для bbq в одном кейсе</p>
+      <h3>уникальный дизайн</h3>
+      <p>Дизайнерский подход к каждому кейсу.</p>
+      <h3>высокое качество</h3>
+      <p>Все изделия сделаны на профессиональном оборудовании и будут служить более 10 лет </p>
+      <h3>идеальный подарок</h3>
+      <p>Каждая 3-й заказ - это подарок родным или друзьям</p>
+      <h3>нержавеющая сталь</h3>
+      <p>Металлические изделия, толщина которых 3мм, оброботаны специальным лазером</p>
+      <h3>индивидуальная комплектация</h3>
+      <p>Подберем кейс под ваши запросы и пожелания</p>
     </div><!-- end items -->
 
   </div><!-- end container -->
@@ -64,113 +52,104 @@
 
 <!--
 ------------------------------------------------------------- 04-SliderPopUp -->
-<section class="popUp" id=popUp>
+<section class="sliderKit">
+
   <div class="container">
-
     <h2 class="line-header">Выберите свой идеальный кейс</h2>
-    <!-- popUp__slider - JS class -->
-
-    <div class="slider" id='sliderORD'>
-
-
-      <div class="popUp__sliderWrapper swiper-wrapper">
-
-        <div class="popUp__sliderSlide swiper-slide">
-          <!-- --------------tabs: -->
-          <div class="popUp__Wrapper">
-
-            <!-- Начало swiper -->
-
-            <div class="swiper">
-
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <div class="swiper-zoom-container">
-                    <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="swiper-zoom-container">
-                    <img src="./assets/images/sliderPopup/slide2.jpg" alt="bbq set">
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="swiper-zoom-container">
-                    <img src="./assets/images/sliderPopup/slide3.jpg" alt="bbq set">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="swiper-zoom-container">
-                    <img src="./assets/images/sliderPopup/slide4.jpg" alt="bbq set">
-                  </div>
-                </div>
-
-              </div>
-
-            </div><!-- end swiper with tumbnails -->
-
-            <div class="swiper-tumbnails"></div>
 
 
 
+    <div class="swiper" id='sliderORD'>
+      <div class="swiper-wrapper">
 
-            <div class="popUp__content">
-              <h3>Кейс “шампурок”</h3>
-              <div class="popUp__col">
-                <a class="popUp__openLink" href="#">подробнее</a>
-                <span class="popUp__price">3700 грн.</span>
-
-                <ul>
-                  <li>8 шампуров 640х12х3мм</li>
-                  <li>двойной шампур</li>
-                  <li>щипцы для барбекю</li>
-                  <li>фляга</li>
-                  <li>6 рюмок</li>
-                  <li>6 стаканов</li>
-                  <li>тесак</li>
-                  <li>нож охотничий</li>
-                  <li>штопор</li>
-                  <li>турбозажигалка</li>
-                  <li>мангал</li>
-                  <li>6 вилок</li>
-                  <li>6 ложек</li>
-                  <li>6 тарелок</li>
-                </ul><!-- end popUp list -->
-              </div>
-
-              <button class="btn-border">оформить заказ</button>
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
             </div>
-
+            <button class="btn-border">оформить заказ</button>
           </div>
-        </div>
+        </div><!-- slide -->
 
-        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
-        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
-        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
-        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
-        <div class="swiper-slide" style="background: #262527; height: 660px; width: 100%;">asdf</div><!-- slide -->
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
+            </div>
+            <button class="btn-border">оформить заказ</button>
+          </div>
+        </div><!-- slide -->
+
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
+            </div>
+            <button class="btn-border">оформить заказ</button>
+          </div>
+        </div><!-- slide -->
+
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
+            </div>
+            <button class="btn-border">оформить заказ</button>
+          </div>
+        </div><!-- slide -->
+
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
+            </div>
+            <button class="btn-border">оформить заказ</button>
+          </div>
+        </div><!-- slide -->
+
+        <div class="swiper-slide">
+          <img src="./assets/images/sliderPopup/slide1.jpg" alt="bbq set">
+          <div class="sliderKit__content">
+            <h3>Кейс “шампурок”</h3>
+            <div>
+              <button class="link">подробнее</button>
+              <span>3700 грн.</span>
+            </div>
+            <button class="btn-border">оформить заказ</button>
+          </div>
+        </div><!-- slide -->
 
       </div><!-- end swiper-wrapper -->
     </div><!-- end swiper-container -->
 
-
-
-    <div class="slider__navContainer">
-      <div class="slider__nav">
-        <div class="slider__scrollBar" id="sliderORDbar"></div>
-        <div class="slider__pagination" id="sliderORDpag"></div>
+    <div class="slider-bar">
+      <div class="slider-bar-container">
+        <div class="slider-scroll-bar" id="sliderORDbar"></div>
+        <div class="slider-pagination" id="sliderORDpag"></div>
       </div>
-    </div><!-- end slider nav container-->
+    </div><!-- end slider bar-->
 
-  </div><!-- end container -->
+  </div><!-- end section container -->
 </section><!-- end popUp section -->
 
 <!--
-------------------------------------------------------------- 05-GetInfo -->
-<section class="custom" id='custom'>
+------------------------------------------------------------- 05-Custom -->
+<section class="custom">
   <div class="container">
 
     <div class="custom__col">
@@ -178,7 +157,7 @@
       <p>Хотите перосонализированный или именной кейс?</p>
       <p>Не проблема!</p>
       <p>Свяжитесь с нами для обсуждения деталей.</p>
-      <button class="btn-border">обсудить детали</button>
+      <button class="btn-border" data-callback>обсудить детали</button>
     </div>
 
     <div class="custom__image">
@@ -190,19 +169,19 @@
 
 <!--
 ------------------------------------------------------------- 06-Quiz -->
-<section class="quiz" id='quiz'>
+<section class="quiz">
   <div class="container">
 
     <div class="quiz__wrapper">
       <div class="quiz__col">
-        <h2>узнай какой кейс подойдет тебе</h2>
+        <h2>узнай какой кейс подойдет&nbsp;тебе</h2>
         <p>Пройдите простой тест из 6 вопросов и вы получите:</p>
         <ul class="list-items">
           <li>персональный подбор кейса</li>
           <li>гарантию на изделие 2 года</li>
           <li>скидка на мангал 20%</li>
         </ul>
-        <button class="btn-solid">начать</button>
+        <button class="btn-solid" id='openQuizModal'>начать</button>
         <div class="quiz__savings">cэкономит 90% вашего времени на подбор</div>
       </div>
     </div>
@@ -222,7 +201,7 @@
       </li>
       <li>
         <i class="icon-card2"></i>
-        обожает пикники и отдых на природе
+        обожает пикники и отдых на&nbsp;природе
       </li>
       <li>
         <i class="icon-card3"></i>
@@ -230,7 +209,7 @@
       </li>
       <li>
         <i class="icon-card4"></i>
-        испытывает страсть к уникальным вещам
+        испытывает страсть к уникальным&nbsp;вещам
       </li>
     </ul><!-- end cards list -->
   </div><!-- end container -->
@@ -238,7 +217,7 @@
 
 <!--
 ------------------------------------------------------------- 08-Accordion -->
-<section class="accordion" id='accordion'>
+<section class="accordion">
   <div class="containerFluid">
 
     <div class="accordion__imageFrame">
@@ -248,8 +227,8 @@
     <div class="accordion__col">
       <h2>Почему нас выбрали более 5000 клиентов</h2>
 
-      <ul id='accordeon'>
-        <li>
+      <ul id='accordion'>
+        <li class="open">
           <span>собственное производство</span>
           <p>Все кейсы выполнены на высокоточном проффесиональном оборудовании.</p>
         </li>
@@ -277,7 +256,7 @@
 
 <!--
 ------------------------------------------------------------- 09-CardsCompare -->
-<section class="cardsCompare" id='cardsCompare'>
+<section class="cardsCompare">
   <div class="container">
     <h2>Все познается в сравнении:</h2>
 
@@ -311,7 +290,7 @@
 
 <!--
 ------------------------------------------------------------- 10-CardsOrder -->
-<section class="cardsOrder" id='cardsOrder'>
+<section class="cardsOrder">
   <div class="container">
     <h2>Как оформить заказ</h2>
     <div class="cardsOrder__cards">
@@ -331,7 +310,7 @@
         <p>Получение</p>
       </div>
     </div><!-- end cards -->
-    <button class="btn-border">оформить</button>
+    <button class="btn-border" data-callback>оформить</button>
   </div><!-- end container -->
 </section><!-- end cardsOrder -->
 
@@ -384,23 +363,28 @@
       </div><!-- end swiper-wrapper -->
     </div><!-- end slider container -->
 
-    <div class="slider__navContainer">
+    <!-- <div class="slider__navContainer">
       <div class="slider__nav">
         <div class="slider__scrollBar" id="sliderFBbar"></div>
         <div class="slider__pagination" id="sliderFBpag"></div>
-      </div><!-- end slider navs -->
+      </div> -->
+
+
+    <div class="slider-bar">
+      <div class="slider-bar-container">
+        <div class="slider-scroll-bar" id="sliderFBbar"></div>
+        <div class="slider-pagination" id="sliderFBpag"></div>
+      </div>
 
       <a class="link" href="https://www.instagram.com" target='_blank'>больше отзывов</a>
-    </div>
-
-
+    </div><!-- end slider bar-->
 
   </div><!-- end container -->
 </section><!-- end slider feedback section -->
 
 <!--
 ------------------------------------------------------------- 12-FormQuestions -->
-<section class="questionsForm" id='questionForm'>
+<section class="questionsForm">
   <div class="line"></div>
   <div class="container">
 
@@ -412,111 +396,32 @@
       <h2 id='openModal'>Остались вопросы?</h2>
       <p>Задайте их вашему персональному менеджеру</p>
 
+      <div class="modalCallBack modal-wrapper" data-modal>
+        <div class="modalCallBack__container">
 
-
-      <div class="modal">
-        <div class="modal__wrapper">
-
-          <div class="modal__header">
-            <button id="closeModal"><i class="icon-close"></i></button>
-
-            <div class="modal__inputForm">
-              <h3>оставьте заявку</h3>
-              <p>Мы свяжемся с Вами в ближайшее время</p>
-            </div>
-
-            <div class="modal__success">
-              <h3>Спасибо</h3>
-              <p>Ваша заявка принята в обработку.</p>
-            </div>
-
-            <div class="modal__error">
-              <p>Ошибка сети</p>
-              <p>Попробуйте еще раз...</p>
-            </div>
+          <div class="modalCallBack__header">
+            <button data-close class="icon-close"></button>
+            <h3>оставьте заявку</h3>
+            <p>Мы свяжемся с Вами в ближайшее время</p>
           </div>
 
           <form action="POST" name='callback'>
 
-            <label>
+            <label class="input-text">
               <input type="text" autocomplete="off" required>
               <span>Ваше имя</span>
             </label>
 
-            <label class="label">
+            <label class="input-text">
               <input type="text" autocomplete="off" required>
               <span>Ваш телефон</span>
             </label>
 
             <button class="btn-border" type='submit'>отправить</button>
           </form>
-        </div><!-- end modal wrapper -->
-      </div><!-- end modal -->
+        </div>
+      </div><!-- end modal callback -->
 
     </div><!-- end questionsForm col -->
   </div><!-- end container -->
 </section><!-- end section questions form -->
-
-
-
-<section class="quizModal">
-  <div class="quizModal__container">
-
-    <div class="quizModal__header">
-      <div class="quizModal__progressBar">
-        <div class="quizModal__bar">
-          <div class="quizModal__progressBarStick"></div>
-        </div>
-        <div class="quizModal__steps">
-          <span>01</span>
-          <span>02</span>
-          <span>03</span>
-          <span>04</span>
-          <span>05</span>
-          <span>06</span>
-          <span>07</span>
-        </div>
-      </div>
-      <button class="icon-close"></button>
-    </div><!-- end quiz header -->
-
-    <div class="quizModal__row">
-
-      <div class="quizModal__col">
-        <h2>С посудой или без ?</h2>
-
-
-
-
-
-        <form action="POST" name='order'>
-          <div class="quizModal__answers">
-            <label class="quizModal__radio">
-              <input type="radio" name='gift' checked>
-              <span>для себя</span>
-            </label>
-            <label class="quizModal__radio">
-              <input type="radio" name='gift'>
-              <span>хочу сделать подарок</span>
-            </label>
-          </div>
-          <!-- <input type="text">
-          <input type="text"> -->
-          <!-- <button class="btn-solid" type='submit'>отправить</button> -->
-        </form>
-
-        <div class="quizModal__stepsNav">
-          <button class="btn-border">назад</button>
-          <button class="btn-solid">далее</button>
-        </div>
-
-      </div><!-- end quiz col -->
-
-      <div class="quizModal__imageFrame">
-        <img src="./assets//images/quizImages/quiz1.jpg" alt="quiz img">
-      </div>
-
-    </div>
-
-  </div><!-- end quiz container -->
-</section>

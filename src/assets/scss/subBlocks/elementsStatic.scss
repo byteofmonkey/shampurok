@@ -1,0 +1,202 @@
+main {
+    margin: 0 auto;
+    max-width: 1920px;
+    background: repeat-y center/100% url(../images/background/mainBg.jpg);
+    overflow: hidden;
+    position: relative;
+}
+
+.container,
+.containerFluid {
+    padding: 0 30px;
+    max-width: 1600px;
+
+    @media screen and (max-width: $tableWidth) {
+        padding: 0 15px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+}
+
+section {
+    margin: 160px 0;
+
+    @media screen and (max-width: $desktopWidth) {
+        margin: 140px 0;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        margin: 60px 0;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        margin: 40px 0;
+    }
+}
+
+//////////////////////////////////////////////________section line whith pins
+.line {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    background: no-repeat left 5px center/100% 1px linear-gradient($accentColor, $accentColor);
+
+    &::before,
+    &::after {
+        content: "\e910";
+        font-family: 'icomoon';
+        color: $accentColor;
+        font-size: 8px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        width: 100%;
+    }
+}
+
+//////////////////////////////////////////////________header h2 line
+.line-header {
+    line-height: 32px;
+
+    &::after {
+        content: "\e910";
+        font-family: 'icomoon';
+        font-size: 8px;
+        color: $accentColor;
+        background: no-repeat left 5px center/100% 1px linear-gradient($accentColor, $accentColor);
+
+        position: absolute;
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        margin-left: auto;
+        max-width: 320px;
+        text-align: right;
+
+        &::after {
+            display: block;
+            margin-left: 0;
+            margin-top: -15px;
+            left: 15px;
+            text-align: left;
+        }
+    }
+}
+
+//////////////////////////////////////////////________list-items-markers
+.list-items li {
+    padding-left: 30px;
+    margin-left: 10px;
+    line-height: 2.3;
+
+    &::marker {
+        content: "\e910";
+        font-family: 'icomoon';
+        font-size: 8px;
+        color: $accentColor;
+    }
+
+
+    @media screen and (max-width: $smDesktopWidth) {
+        padding-left: 10px;
+    }
+}
+
+//////////////////////////////////////////////________slider progress bar & slide numbers
+
+.slider-bar {
+    margin-top: 100px;
+    user-select: none;
+
+    .slider-bar-container {
+        max-width: 520px;
+        width: 100%;
+    }
+
+    .slider-scroll-bar {
+        height: 8px;
+        border: 1px solid $accentColor;
+        border-radius: 4px;
+        flex-grow: 1;
+
+        .swiper-scrollbar-drag {
+            height: 6px;
+            border-radius: 3px;
+            background: $accentColor;
+        }
+    }
+
+    .slider-pagination {
+        margin-top: 25px;
+        position: static;
+        color: $accentColor;
+        text-align: left;
+
+        .swiper-pagination-current {
+            font-size: 20px;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .swiper-pagination-total {
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        margin-top: 80px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        margin-top: 60px;
+
+        .slider-bar-container {
+            max-width: unset;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        margin-top: 40px;
+    }
+}
+
+//////////////////////////////////////////////________modal-wrapper
+.modal-wrapper.open {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(1px);
+    background: #777b;
+}
+
+//////////////////////////////////////////////________simple bar
+.simplebar-vertical.simplebar-track {
+    width: 14px;
+}
+
+.simplebar-scrollbar::before {
+    border-radius: 7px;
+    color: $accentColor;
+    background: $accentColor;
+}
+
+.simplebar-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

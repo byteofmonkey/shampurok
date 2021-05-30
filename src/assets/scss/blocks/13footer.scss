@@ -18,6 +18,16 @@
         place-self: start end;
     }
 
+    button {
+        display: block;
+        color: $defaultColor;
+
+        &:hover,
+        &:focus {
+            color: $accentColor;
+        }
+    }
+
     &__socials {
         display: flex;
         margin: -15px -15px 0 -15px;

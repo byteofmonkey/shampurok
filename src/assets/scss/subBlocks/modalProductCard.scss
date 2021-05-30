@@ -1,0 +1,135 @@
+.modalProductCard {
+
+    &__container {
+        max-width: 1100px;
+        width: 100%;
+
+        max-height: 100vh; // simple bar - important
+        background: #000 no-repeat top/cover url(../images/background/mainBg.jpg);
+    }
+
+    .simplebar-vertical.simplebar-track {
+        margin: 50px 10px 20px 0;
+    }
+
+    &__content {
+        padding: 10px 50px 40px;
+    }
+
+    .icon-close {
+        display: block;
+        font-size: 35px;
+        margin-left: auto;
+        padding: 10px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+
+    &__colSlider {
+        flex-grow: 1;
+        width: 400px;
+        padding: 0 20px 0 20px;
+    }
+
+    &__colDescription {
+        flex-grow: 100;
+        flex-basis: 200px;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 60px;
+    }
+
+    li {
+        flex-basis: 230px;
+        flex-grow: 1;
+        height: 45px;
+
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+
+        border-bottom: 1px solid $borderColor;
+    }
+
+    .btn-border {
+        display: block;
+        margin: 40px 0 0 auto;
+        width: 300px;
+        height: 50px;
+    }
+
+    &__sliderBorder {
+        outline: 1px solid $accentColor;
+        outline-offset: -20px;
+    }
+
+    .swiper-container {
+        transform: translate(-15px, -15px);
+        padding: 15px;
+        width: 100%;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        cursor: zoom-in;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        margin-top: 40px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .swiper-pagination-bullet {
+            height: auto;
+            border-radius: 0;
+            flex-grow: 1;
+        }
+    }
+
+    @media screen and (max-width: $smDesktopWidth) {
+        &__content {
+            padding: 10px 40px 40px;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        &__colSlider {
+            padding: 0 15px 0 30px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__content {
+            padding: 10px 30px 40px 15px;
+        }
+
+        &__colSlider {
+            width: 250px;
+            padding: 0 10px 0 30px;
+        }
+
+        .btn-border {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__colSlider {
+            width: 200px;
+            padding: 0 0px 0 15px;
+        }
+    }
+}

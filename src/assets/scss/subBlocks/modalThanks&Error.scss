@@ -1,0 +1,36 @@
+.modalThanks,
+.modalError {
+
+    display: none;
+
+    div {
+        height: 475px;
+        width: 600px;
+        padding: 0 25px;
+        background: #000 no-repeat bottom center/100% url(../images/background/modalSuccess.jpg);
+    }
+
+    .icon-close {
+        display: block;
+        margin-left: auto;
+        font-size: 35px;
+        padding: 20px 0 10px 10px;
+    }
+
+    h3 {
+        margin: -5px 0 10px;
+        font-size: 48px;
+        color: $accentColor;
+        text-align: left;
+        letter-spacing: 2.5px;
+        font-weight: 600;
+    }
+
+    p {
+        max-width: 180px;
+    }
+
+    &.open {
+        display: flex;
+    }
+}

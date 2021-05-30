@@ -1,0 +1,38 @@
+.modalCallBack {
+    &__header {
+        display: none;
+    }
+
+    &.open {
+        .modalCallBack__container {
+            width: 410px;
+            height: 475px;
+            background: no-repeat center/100% url(../images/background/modalCallback.jpg);
+
+            padding: 0 25px;
+        }
+
+        .modalCallBack__header {
+            display: block;
+        }
+
+        .icon-close {
+            display: block;
+            margin-left: auto;
+            font-size: 35px;
+            padding: 20px 0 10px 10px;
+        }
+
+        h3 {
+            margin: -5px 0 20px;
+            font-size: 24px;
+            color: $accentColor;
+            text-align: center;
+            letter-spacing: 2.5px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

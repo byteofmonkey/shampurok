@@ -1,10 +1,6 @@
 .questionsForm {
     margin-bottom: 0;
 
-    .line {
-        width: 85%;
-    }
-
     .container {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -25,7 +21,7 @@
     }
 
     p {
-        padding-bottom: 50px;
+        margin: 30px 0 20px;
     }
 
     &__col {
@@ -35,74 +31,16 @@
     form {
         display: flex;
         flex-direction: column;
-
-        .label:last-of-type {
-            padding-top: 40px;
-        }
-
-        input {
-            width: 100%;
-
-            font-size: 16px;
-            font-family: "Montserrat";
-            font-style: normal;
-            font-weight: 400;
-            color: $defaultColor;
-            padding-bottom: 14px;
-            padding-left: 5px;
-            background: transparent;
-            border-bottom: 1px solid $borderColor;
-
-            &:hover,
-            &:focus {
-                border-color: $accentColor;
-
-                &+span {
-                    color: $accentColor;
-                }
-            }
-
-            &:focus+span {
-                transform: translate(-4px, -25px) scale(0.9);
-            }
-
-            &:valid+span {
-                transform: translate(-4px, -25px) scale(0.9);
-                color: $accentColor;
-            }
-        }
-
-        label {
-            position: relative;
-
-            span {
-                position: absolute;
-                left: 5px;
-
-                font-size: 14px;
-                font-family: 'Georgia';
-                font-weight: 700;
-                font-style: italic;
-                color: $defaultColor;
-                letter-spacing: 0.7px;
-
-                transition: transform 0.1s ease-in;
-            }
-        }
     }
 
     .btn-border {
         width: 340px;
         height: 60px;
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
 
     @media screen and (max-width: $smDesktopWidth) {
-        .line {
-            width: 60%;
-        }
-
         .container {
             grid-template: auto / auto auto;
             gap: 30px;
@@ -118,10 +56,6 @@
     }
 
     @media screen and (max-width: $tableWidth) {
-        .line {
-            width: 70%;
-        }
-
         .container {
             grid-template: 1fr / 1fr;
             gap: 30px;
@@ -135,13 +69,14 @@
         &__image {
             display: none;
         }
+
+        .line {
+            width: auto;
+            margin: 0 15px;
+        }
     }
 
     @media screen and (max-width: $phoneWidth) {
-        .line {
-            width: 90%;
-        }
-
         &__col {
             text-align: center;
             width: 100%;

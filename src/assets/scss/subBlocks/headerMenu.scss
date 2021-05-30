@@ -1,22 +1,5 @@
 .header {
 
-    .simplebar-vertical.simplebar-track {
-        width: 20px;
-    }
-
-    .simplebar-scrollbar::before {
-        border-radius: 10px;
-        color: $accentColor;
-        background: $accentColor;
-    }
-
-    .simplebar-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
     nav {
         position: absolute;
         top: 0;
@@ -37,17 +20,16 @@
         align-items: center;
         grid-gap: 50px;
 
-        a {
+        z-index: 1;
+
+        button {
             text-transform: uppercase;
         }
 
-        button {
-            margin-left: -18px;
+        .icon-close {
+            margin-left: -14px;
             font-size: 56px;
-
-            i {
-                line-height: 10px;
-            }
+            line-height: 10px;
         }
 
         &.open {
