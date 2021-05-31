@@ -12,9 +12,12 @@ import Section from "./cards/constructor";
 import {
   sliderFeebackData,
   sliderKitData,
+  modalKitData,
 } from "./cards/data";
+
 import sliderFeedback from "./cards/sliderFeedback";
 import sliderKit from "./cards/sliderKit";
+import ModalKit from "./cards/modalKit";
 
 
 
@@ -29,9 +32,14 @@ new Section("#swiperFB .swiper-wrapper", "swiper-slide", sliderFeedback, sliderF
 new Section("#swiperKIT .swiper-wrapper", "swiper-slide", sliderKit, sliderKitData).render();
 
 
+
+
+
+
+
 new Swiper('#swiperKIT', KITprops);
 new Swiper('#swiperFB', FBprops);
-new Swiper('#shmiper', CUBICLEprops);
+
 
 new Menu();
 new Accordion();
@@ -146,5 +154,13 @@ fitText(document.getElementById('fittext'), 1.3);
 
 
 const buttonsKit = document.querySelectorAll('#swiperKIT .link');
-
 console.dir(buttonsKit[1].dataset.card);
+
+new ModalKit(0, modalKitData).render();
+let swp = new Swiper('#cubicle', CUBICLEprops);
+
+setTimeout(() => {
+  new ModalKit(1, modalKitData).render();
+  swp.destroy();
+  swp = new Swiper('#cubicle', CUBICLEprops);
+}, 3000)

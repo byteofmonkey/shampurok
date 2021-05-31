@@ -79,15 +79,13 @@ export const FBprops = {
 export const CUBICLEprops = {
   effect: 'cube',
   speed: 1000,
+  allowTouchMove: false,
   cubeEffect: {
     shadow: true,
     slideShadows: true,
     shadowOffset: 60,
     shadowScale: 0.9,
   },
-  // enabled: false,
-  allowTouchMove: false,
-  // скорее всего можно добавить через breakpoints - для телефона
   zoom: {
     maxRatio: 2,
   },
@@ -95,7 +93,7 @@ export const CUBICLEprops = {
     el: "#thumbnails",
     clickable: true,
     renderBullet: function(index, className) {
-      return `<img class=${className} src="./assets/images/sliderPopup/slide${index+1}.jpg" alt="tumbnail">`;
+      return `<img class=${className} src=${this.imagesToLoad[index].getAttribute('src')} alt="tumbnail">`;
     },
   },
 }
