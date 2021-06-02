@@ -1,9 +1,9 @@
 main {
     margin: 0 auto;
     max-width: 1920px;
-    background: repeat-y center/100% url(../images/background/mainBg.jpg);
     overflow: hidden;
     position: relative;
+    background: repeat-y center top / 100% url(../images/background/mainBg.jpg);
 }
 
 .container,
@@ -37,25 +37,25 @@ section {
 }
 
 //////////////////////////////////////////////________section line whith pins
-// .line {
-//     margin: 0 auto;
-//     width: 75%;
-//     display: flex;
-//     justify-content: space-between;
-//     background: no-repeat left 5px center/100% 1px linear-gradient($accentColor, $accentColor);
+.line {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    background: no-repeat left 5px center/100% 1px linear-gradient($accentColor, $accentColor);
 
-//     &::before,
-//     &::after {
-//         content: "\e910";
-//         font-family: 'icomoon';
-//         color: $accentColor;
-//         font-size: 8px;
-//     }
+    &::before,
+    &::after {
+        content: "\e910";
+        font-family: 'icomoon';
+        color: $accentColor;
+        font-size: 8px;
+    }
 
-//     @media screen and (max-width: $tableWidth) {
-//         width: 100%;
-//     }
-// }
+    @media screen and (max-width: $tableWidth) {
+        width: 100%;
+    }
+}
 
 //////////////////////////////////////////////________header h2 line
 .line-header {

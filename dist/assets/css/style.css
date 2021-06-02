@@ -485,6 +485,69 @@ h3 {
     }
 }
 
+.story {
+    background: url(../images/webp/parallax/02story/item0.webp), url(../images/webp/parallax/02story/item1.webp), url(../images/webp/parallax/02story/item2.webp), url(../images/webp/parallax/02story/item3.webp);
+    background-repeat: no-repeat;
+    background-position: left top, left bottom, center bottom, right top;
+    background-size: 100px, 100px, 100px, 200px;
+}
+
+.tiles {
+    background: url(../images/webp/parallax/03tiles/item0.webp), url(../images/webp/parallax/03tiles/item1.webp), url(../images/webp/parallax/03tiles/item2.webp), url(../images/webp/parallax/03tiles/item3.webp);
+    background-repeat: no-repeat;
+    background-position: left 100px bottom 100px, left bottom, center bottom, top right;
+    background-size: 100px, 100px, 100px, 200px;
+}
+
+.sliderKit {
+    background: url(../images/webp/parallax/04sliderKit/item0.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100px;
+}
+
+.order {
+    background: url(../images/webp/parallax/06order/item0.webp), url(../images/webp/parallax/06order/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+    background-size: 200px, 200px;
+}
+
+.cardsWho {
+    background: url(../images/webp/parallax/07cardsWho/item0.webp), url(../images/webp/parallax/07cardsWho/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 100px, 100px;
+}
+
+.cardsCompare {
+    background: url(../images/webp/parallax/09cardsCompare/item0.webp), url(../images/webp/parallax/09cardsCompare/item1.webp), url(../images/webp/parallax/09cardsCompare/item2.webp);
+    background-repeat: no-repeat;
+    background-position: center top, center top 50px, left bottom;
+    background-size: 100px, 100px, 200px;
+}
+
+.cardsOrder {
+    background: url(../images/webp/parallax/10cardsOrder/item0.webp), url(../images/webp/parallax/10cardsOrder/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 300px, 150px;
+}
+
+.questionsForm {
+    background: url(../images/webp/parallax/12questionsForm/item0.webp), url(../images/webp/parallax/12questionsForm/item1.webp), url(../images/webp/parallax/12questionsForm/item2.webp);
+    background-repeat: no-repeat;
+    background-position: left top, left center, right center;
+    background-size: 100px, 100px, 100px;
+}
+
+.footer {
+    background: url(../images/webp/parallax/footer/item0.webp), url(../images/webp/parallax/footer/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 300px, 300px;
+}
+
 /**
  * Swiper 6.6.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -1492,9 +1555,9 @@ button.swiper-pagination-bullet {
 main {
     margin: 0 auto;
     max-width: 1920px;
-    background: repeat-y center/100% url(../images/background/mainBg.jpg);
     overflow: hidden;
     position: relative;
+    background: repeat-y center top/100% url(../images/background/mainBg.jpg);
 }
 
 .container,
@@ -1533,6 +1596,33 @@ section {
 @media screen and (max-width: 480px) {
     section {
         margin: 40px 0;
+    }
+}
+
+.line {
+    margin: 0 auto;
+    width: 75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: no-repeat left 5px center/100% 1px -webkit-gradient(linear, left top, left bottom, from(#BDA180), to(#BDA180));
+    background: no-repeat left 5px center/100% 1px -o-linear-gradient(#BDA180, #BDA180);
+    background: no-repeat left 5px center/100% 1px linear-gradient(#BDA180, #BDA180);
+}
+
+.line::before, .line::after {
+    content: "\e910";
+    font-family: 'icomoon';
+    color: #BDA180;
+    font-size: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .line {
+        width: 100%;
     }
 }
 
@@ -3035,8 +3125,8 @@ a:hover i, a:focus i,
 .sliderKit .swiper-slide {
     width: 435px;
     background-color: #262527;
-    -webkit-box-shadow: 20px 20px 80px 0 #0004;
-    box-shadow: 20px 20px 80px 0 #0004;
+    -webkit-box-shadow: 20px 20px 80px 0 #0005;
+    box-shadow: 20px 20px 80px 0 #0005;
 }
 
 .sliderKit__content {
@@ -3144,9 +3234,9 @@ a:hover i, a:focus i,
 }
 
 .custom {
+    -webkit-box-shadow: 0 15px 25px 0 #0005;
+    box-shadow: 0 15px 25px 0 #0005;
     background: no-repeat center/cover url(../images/background/05getInfoBg.jpg);
-    -webkit-box-shadow: 0 15px 25px 0 #0004;
-    box-shadow: 0 15px 25px 0 #0004;
 }
 
 .custom .container {

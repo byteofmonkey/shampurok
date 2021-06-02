@@ -1,7 +1,9 @@
 import Swiper from 'swiper/bundle';
 import SimpleBar from 'simplebar/dist/simplebar';
 // new SimpleBar() - не нужно вызывать
+import SimpleParallax from 'simple-parallax-js';
 
+import ScrollMagic from 'scrollmagic';
 
 import Menu from './02plugins/menu';
 import Accordion from './02plugins/accordion';
@@ -109,6 +111,65 @@ const modalOrder = document.querySelector('.modalOrder');
 openModalOrderBtn.addEventListener('click', () => {
   closeAllModal();
   modalOrder.classList.add('open');
+});
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+// const image = document.querySelector('#ps1');
+// new SimpleParallax(image, {
+//   delay: 0.2, // 1s, продолжает двигаться после завершения скрола
+//   orientation: 'down', //right, down, left, up left, up right, down left or down right
+//   scale: 10,
+//   overflow: true, // поверх осталных
+//   // customContainer: '#mainId', // относительно чего параллакс
+//   // customWrapper: '#mainId',
+//   // maxTransition: 200
+//   transition: 'ease-out'
+// });
+
+// const image2 = document.querySelector('#ps2');
+// new SimpleParallax(image2, {
+//   delay: 1, // 1s, продолжает двигаться после завершения скрола
+//   orientation: 'down', //right, down, left, up left, up right, down left or down right
+//   scale: 3,
+//   overflow: true, // поверх осталных
+//   // customContainer: '.story', // относительно чего параллакс
+//   customWrapper: '.wrapperpr',
+//   // maxTransition: 200
+// });
+
+// const image3 = document.querySelector('#ps3');
+// new SimpleParallax(image3, {
+//   delay: 5, // 1s, продолжает двигаться после завершения скрола
+//   orientation: 'down', //right, down, left, up left, up right, down left or down right
+//   scale: 3,
+//   overflow: true, // поверх осталных
+//   // customContainer: '.story', // относительно чего параллакс
+//   customWrapper: '.wrapperpr',
+//   // maxTransition: 200
+// });
+
+// const image4 = document.querySelector('#ps4');
+// new SimpleParallax(image4, {
+//   delay: 1, // 1s, продолжает двигаться после завершения скрола
+//   orientation: 'down', //right, down, left, up left, up right, down left or down right
+//   scale: 2,
+//   overflow: true, // поверх осталных
+//   // customContainer: '.story', // относительно чего параллакс
+//   // customWrapper: '.wrapperpr',
+//   // maxTransition: 200
+// });
+
+
+const targetMain = document.querySelector('main');
+const ttt = document.documentElement;
+document.addEventListener('scroll', (e) => {
+
+  let a = ttt.scrollTop * 0.7 + 'px';
+  targetMain.style = `background-position: center ${a};`;
 });
 
 

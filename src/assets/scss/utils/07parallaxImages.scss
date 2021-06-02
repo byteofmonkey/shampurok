@@ -1,0 +1,83 @@
+.story {
+    // peper / kebab stiks / basil / platter
+    background: url(../images/webp/parallax/02story/item0.webp),
+        url(../images/webp/parallax/02story/item1.webp),
+        url(../images/webp/parallax/02story/item2.webp),
+        url(../images/webp/parallax/02story/item3.webp);
+    background-repeat: no-repeat;
+    background-position: left top, left bottom, center bottom, right top;
+    background-size: 100px, 100px, 100px, 200px;
+}
+
+.tiles {
+    // onion / onion / bay leaves / bay leaves
+    background: url(../images/webp/parallax/03tiles/item0.webp),
+        url(../images/webp/parallax/03tiles/item1.webp),
+        url(../images/webp/parallax/03tiles/item2.webp),
+        url(../images/webp/parallax/03tiles/item3.webp);
+    background-repeat: no-repeat;
+    background-position: left 100px bottom 100px, left bottom, center bottom, top right;
+    background-size: 100px, 100px, 100px, 200px;
+}
+
+.sliderKit {
+    background: url(../images/webp/parallax/04sliderKit/item0.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100px;
+}
+
+.order {
+    // tomatoes / leaves
+    background: url(../images/webp/parallax/06order/item0.webp),
+        url(../images/webp/parallax/06order/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+    background-size: 200px, 200px;
+}
+
+.cardsWho {
+    // salt - fork
+    background: url(../images/webp/parallax/07cardsWho/item0.webp),
+        url(../images/webp/parallax/07cardsWho/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 100px, 100px;
+}
+
+.cardsCompare {
+    // leaves / leaves / skillet
+    background: url(../images/webp/parallax/09cardsCompare/item0.webp),
+        url(../images/webp/parallax/09cardsCompare/item1.webp),
+        url(../images/webp/parallax/09cardsCompare/item2.webp);
+    background-repeat: no-repeat;
+    background-position: center top, center top 50px, left bottom;
+    background-size: 100px, 100px, 200px;
+}
+
+.cardsOrder {
+    // salt / bottle
+    background: url(../images/webp/parallax/10cardsOrder/item0.webp),
+        url(../images/webp/parallax/10cardsOrder/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 300px, 150px;
+}
+
+.questionsForm {
+    // leaf / leaf / salt
+    background: url(../images/webp/parallax/12questionsForm/item0.webp),
+        url(../images/webp/parallax/12questionsForm/item1.webp),
+        url(../images/webp/parallax/12questionsForm/item2.webp);
+    background-repeat: no-repeat;
+    background-position: left top, left center, right center;
+    background-size: 100px, 100px, 100px;
+}
+
+.footer {
+    background: url(../images/webp/parallax/footer/item0.webp),
+        url(../images/webp/parallax/footer/item1.webp);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 300px, 300px;
+}
