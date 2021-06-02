@@ -1,65 +1,82 @@
-<button class="icon-close"></button>
-<div class="modalProductCard__row">
+<div class="modalOrder modal-wrapper open" data-modal>
+  <div class="modalOrder__container" data-simplebar data-simplebar-auto-hide="false">
 
-
-  <div class="modalProductCard__colSlider">
-    <div class="modalProductCard__sliderBorder">
-
-      <div class="swiper-container" id='cubicle'>
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="swiper-zoom-container">
-              <img src="./assets/images/sliderKit/kit1/slide1.jpg" alt="bbq set">
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="swiper-zoom-container">
-              <img src="./assets/images/sliderKit/kit1/slide2.jpg" alt="bbq set">
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="swiper-zoom-container">
-              <img src="./assets/images/sliderKit/kit1/slide3.jpg" alt="bbq set">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-zoom-container">
-              <img src="./assets/images/sliderKit/kit1/slide4.jpg" alt="bbq set">
-            </div>
-          </div>
-
+    <div class="modalOrder__header">
+      <div class="modalOrder__progress">
+        <div class="modalOrder__bar">
+          <div></div>
+        </div>
+        <div class="modalOrder__steps">
+          <span class="active">01</span>
+          <span>02</span>
+          <span>03</span>
+          <span>04</span>
+          <span>05</span>
+          <span>06</span>
+          <span>07</span>
         </div>
       </div>
+      <button class="icon-close" data-close></button>
+    </div><!-- end header -->
 
-    </div><!-- end border -->
+    <div class="modalOrder__row">
 
-    <div class="swiper-pagination" id=thumbnails></div>
-  </div><!-- end swiper -->
+      <div class="modalOrder__col">
+        <h2>С посудой или без ?</h2>
 
+        <!-- <p data-hide data-step="6">заполните форму и Ваш персональный менеджер
+            свяжется с Вами в ближайшее время</p> -->
 
-  <div class="modalProductCard__colDescription">
-    <h3>Кейс “шампурок”</h3>
-    <ul>
-      <li>8 шампуров 640х12х3мм</li>
-      <li>двойной шампур</li>
-      <li>щипцы для барбекю</li>
-      <li>фляга</li>
-      <li>6 рюмок</li>
-      <li>6 стаканов</li>
-      <li>тесак</li>
-      <li>нож охотничий</li>
-      <li>штопор</li>
-      <li>турбозажигалка</li>
-      <li>мангал</li>
-      <li>6 вилок</li>
-      <li>6 ложек</li>
-      <li>6 тарелок</li>
-    </ul>
-    <button class="btn-border" data-callback>оформить заказ</button>
-  </div><!-- end col description -->
+        <form action="POST" name='order'>
 
+          <div class="modalOrder__formCol">
+            <!-- <label class="radio">
+                <input type="radio" name=' gift' checked>
+                <span>для себя</span>
+              </label> -->
 
-</div><!-- end row -->
+            <label class="input-text">
+              <input type="text" autocomplete="off" required>
+              <span>Ваше имя</span>
+            </label>
+
+            <label class="input-text">
+              <input type="text" autocomplete="off" required>
+              <span>Ваш телефон</span>
+            </label>
+
+            <!-- <span data-hide data-step="1">1</span>
+              <span data-hide data-step="2">2</span>
+              <span data-hide data-step="3">3</span> -->
+
+          </div>
+
+          <div class="modalOrder__formCol">
+
+            <!-- <span data-hide data-step="1">1</span>
+              <span data-hide data-step="2">2</span>
+              <span data-hide data-step="3">3</span> -->
+
+            <!-- <label class="radio">
+                <input type="radio" name='gift'>
+                <span>хочу сделать подарок</span>
+              </label> -->
+            <button class="btn-solid">отправить</button>
+          </div>
+
+        </form><!-- end form -->
+
+        <div class="modalOrder__nav">
+          <button class="btn-border">назад</button>
+          <button class="btn-solid">далее</button>
+        </div>
+
+      </div><!-- end col -->
+
+      <div class="modalOrder__imageFrame">
+        <img src="./assets//images/quizImages/quiz1.jpg" alt="quiz img">
+      </div>
+
+    </div><!-- end content row -->
+  </div><!-- end quiz container -->
+</div><!-- end modal quiz -->

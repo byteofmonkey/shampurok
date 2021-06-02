@@ -1,85 +1,137 @@
 import Swiper from 'swiper/bundle';
 import SimpleBar from 'simplebar/dist/simplebar';
-
-import Menu from './plugins/menu';
-import Accordion from './plugins/accordion';
-import modalCallBack from './plugins/modalCallBack';
+// new SimpleBar() - не нужно вызывать
 
 
+import Menu from './02plugins/menu';
+import Accordion from './02plugins/accordion';
 
 
-import Section from "./cards/constructor";
+import Section from "./01renderSections/02sectionConstructor";
 import {
   sliderFeebackData,
   sliderKitData,
   modalKitData,
-} from "./cards/data";
+  modalOrderData,
+} from "./01renderSections/01renderData";
 
-import sliderFeedback from "./cards/sliderFeedback";
-import sliderKit from "./cards/sliderKit";
-import ModalKit from "./cards/modalKit";
-
-
+import sliderFeedback from "./01renderSections/04sectionSliderFeedback";
+import sliderKit from "./01renderSections/03sectionSliderKit";
+import ModalKit from "./01renderSections/05modalKitConstructor";
+import ModalOrder from "./01renderSections/06modalOrderConstructor";
 
 import {
   KITprops,
   CUBICLEprops,
   FBprops,
-} from './plugins/swiperProps.js';
+} from './02plugins/swiperProps.js';
+
 
 // Section(parentSelector, cardClassName, innerHTMLfunction, contentArray)
 new Section("#swiperFB .swiper-wrapper", "swiper-slide", sliderFeedback, sliderFeebackData).render();
 new Section("#swiperKIT .swiper-wrapper", "swiper-slide", sliderKit, sliderKitData).render();
 
-
-
-
-
-
+new ModalOrder(modalOrderData).render();
 
 new Swiper('#swiperKIT', KITprops);
 new Swiper('#swiperFB', FBprops);
 
 
+
 new Menu();
 new Accordion();
-new modalCallBack();
-// new SimpleBar();
 
 
+/////////////////////////////////////////////////////////////////////////
+const swp = new Swiper('#cubicle', CUBICLEprops);
 
-// const images = document.querySelectorAll('.modalProductCard img');
-// images.forEach(item => {
-//   item.addEventListener('dragmove', (e) => e.preventDefault());
+const buttonsKit = document.querySelectorAll('#swiperKIT .link');
 
-// })
-// const popUpSliderWrapper = document.querySelector('.popUp__slider');
-// const sliderItem = document.querySelector('.swiper-wrapper');
-// const openPopUp = function(e) {
-//   e.preventDefault();
-//   popUpSliderWrapper.classList.toggle('popUp_open');
+buttonsKit.forEach(item => {
+  item.addEventListener('click', function() {
+    const modal = document.querySelector('.modalProductCard');
 
-//   if (popUpSliderWrapper.classList.contains('popUp_open')) {
-//     document.body.style.overflow = 'hidden';
-//     swiper1.enable();
-//     swiper1.update();
-//     return;
-//   }
+    const id = this.dataset.card;
 
-//   swiper1.disable()
-//   document.body.style.overflow = '';
-// }
-// document.querySelector('.popUp__openLink').addEventListener('click', openPopUp);
-//////////////////////////////////////////////////////////////////////////////
+    modal.classList.add('open');
+    new ModalKit(id, modalKitData).render();
 
+    swp.update();
+    swp.slideTo(0, 600);
 
+  })
+});
+
+/////////////////////////////////////////////////////////////////////////
+// установка события на кнопку intro - узнать ингридиент
 const introBtn = document.querySelector('.intro .btn-solid');
 
 introBtn.addEventListener('click', () => {
   document.querySelector('.tiles').scrollIntoView({
-    block: 'center',
+    block: 'center'
   });
 });
+/////////////////////////////////////////////////////////////////////////
+const allModal = document.querySelectorAll('[data-modal]');
+const closeBtn = document.querySelectorAll('[data-close]');
+const modalWrapper = document.querySelectorAll('.modal-wrapper');
+
+const closeAllModal = () => {
+  allModal.forEach(item => item.classList.remove('open'));
+};
+
+closeBtn.forEach((item) => {
+  item.addEventListener('click', closeAllModal);
+});
+
+modalWrapper.forEach(item => item.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-wrapper')) closeAllModal();
+}));
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === "Escape") closeAllModal();
+});
+
+/////////////////////////////////////////////////////////////////////////
+const openModalCallbackBtn = document.querySelectorAll('[data-callBack]');
+const modalCallback = document.querySelector('.modalCallBack');
+
+openModalCallbackBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeAllModal();
+    modalCallback.classList.add('open');
+  });
+});
+/////////////////////////////////////////////////////////////////////////
+const openModalOrderBtn = document.querySelector('.order .btn-solid');
+const modalOrder = document.querySelector('.modalOrder');
+
+openModalOrderBtn.addEventListener('click', () => {
+  closeAllModal();
+  modalOrder.classList.add('open');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -145,22 +197,3 @@ introBtn.addEventListener('click', () => {
 })();
 
 fitText(document.getElementById('fittext'), 1.3);
-
-
-
-
-
-
-
-
-const buttonsKit = document.querySelectorAll('#swiperKIT .link');
-console.dir(buttonsKit[1].dataset.card);
-
-new ModalKit(0, modalKitData).render();
-let swp = new Swiper('#cubicle', CUBICLEprops);
-
-setTimeout(() => {
-  new ModalKit(1, modalKitData).render();
-  swp.destroy();
-  swp = new Swiper('#cubicle', CUBICLEprops);
-}, 3000)

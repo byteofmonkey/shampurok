@@ -12,14 +12,13 @@
 
 
 /* SubBlocks & page elements */
-@import "subBlocks/elementsStatic.scss";
-@import "subBlocks/elementsInteractive.scss";
-@import "subBlocks/headerMenu.scss";
-@import "subBlocks/modalCallBack.scss";
-@import "subBlocks/modalThanks&Error.scss";
-@import "subBlocks/modalProductCard.scss";
-
-@import "subBlocks/modalQuiz.scss";
+@import "subBlocks/01elementsStatic.scss";
+@import "subBlocks/02elementsInteractive.scss";
+@import "subBlocks/03headerMenu.scss";
+@import "subBlocks/04modalCallBack.scss";
+@import "subBlocks/05modalProductCard.scss";
+@import "subBlocks/06modalOrder.scss";
+@import "subBlocks/07modalThanks&Error.scss";
 
 
 /* Blocks */
@@ -29,7 +28,7 @@
 @import "blocks/03tiles.scss";
 @import "blocks/04sliderKit.scss";
 @import "blocks/05custom.scss";
-@import "blocks/06quiz.scss";
+@import "blocks/06order.scss";
 @import "blocks/07cardsWho.scss";
 @import "blocks/08accordion.scss";
 @import "blocks/09cardsCompare.scss";
@@ -37,3 +36,33 @@
 @import "blocks/11sliderFeedback.scss";
 @import "blocks/12formQuestions.scss";
 @import "blocks/13footer.scss";
+
+
+// .radio {
+//     position: relative;
+//     height: 100%;
+//     width: 100%;
+//     cursor: pointer;
+
+//     input {
+//         display: none;
+//     }
+
+//     span {
+//         padding-left: 35px;
+//     }
+
+//     span::before {
+//         content: '\e912';
+//         position: absolute;
+//         left: 0;
+//         top: 2px;
+//         font-family: 'icomoon';
+//         font-size: 15px;
+//         color: $accentColor;
+//     }
+
+//     input:checked~span::before {
+//         content: '\e913';
+//     }
+// }

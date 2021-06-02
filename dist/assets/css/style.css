@@ -1536,33 +1536,6 @@ section {
     }
 }
 
-.line {
-    margin: 0 auto;
-    width: 75%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    background: no-repeat left 5px center/100% 1px -webkit-gradient(linear, left top, left bottom, from(#BDA180), to(#BDA180));
-    background: no-repeat left 5px center/100% 1px -o-linear-gradient(#BDA180, #BDA180);
-    background: no-repeat left 5px center/100% 1px linear-gradient(#BDA180, #BDA180);
-}
-
-.line::before, .line::after {
-    content: "\e910";
-    font-family: 'icomoon';
-    color: #BDA180;
-    font-size: 8px;
-}
-
-@media screen and (max-width: 768px) {
-    .line {
-        width: 100%;
-    }
-}
-
 .line-header {
     line-height: 32px;
 }
@@ -1685,11 +1658,13 @@ section {
 
 .modal-wrapper.open {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    max-width: 1920px;
+    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1729,7 +1704,7 @@ section {
 }
 
 .no-select, a,
-button, .accordion li {
+button, .radio, .accordion li {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -1797,6 +1772,12 @@ a:hover i, a:focus i,
     border-color: #BDA180;
 }
 
+.btn-solid:focus,
+.btn-border:focus {
+    -webkit-box-shadow: 4px 6px 4px -0.5px #0004;
+    box-shadow: 4px 6px 4px -0.5px #0004;
+}
+
 .input-text {
     height: 70px;
     margin-top: 10px;
@@ -1856,32 +1837,75 @@ a:hover i, a:focus i,
 }
 
 .radio {
-    position: relative;
-    height: 100%;
-    width: 100%;
     cursor: pointer;
-}
-
-.radio input {
-    display: none;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
 }
 
 .radio span {
-    padding-left: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.radio span::before {
-    content: '\e912';
+.radio input:focus + svg {
+    -webkit-box-shadow: 0 0 1px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.radio svg {
+    fill: none;
+    vertical-align: middle;
+}
+
+.radio svg circle {
+    stroke-width: 1;
+    stroke: #BDA180;
+}
+
+.radio svg path {
+    stroke: #BDA180;
+}
+
+.radio svg path.inner {
+    stroke-width: 6;
+    stroke-dasharray: 19;
+    stroke-dashoffset: 19;
+}
+
+.radio svg path.outer {
+    stroke-width: 2;
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+}
+
+.radio input[type="radio"] {
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 1;
+    height: 10px;
     position: absolute;
-    left: 0;
-    top: 2px;
-    font-family: 'icomoon';
-    font-size: 15px;
-    color: #BDA180;
+    cursor: pointer;
 }
 
-.radio input:checked ~ span::before {
-    content: '\e913';
+.radio input:checked + svg path {
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.radio input:checked + svg path.inner {
+    stroke-dashoffset: 38;
+}
+
+.radio input:checked + svg path.outer {
+    stroke-dashoffset: 1px;
 }
 
 .header nav {
@@ -1926,6 +1950,10 @@ a:hover i, a:focus i,
     transform: translate(0);
 }
 
+.header nav.open .header__menu {
+    display: block;
+}
+
 .header nav.open .header__socials {
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
@@ -1933,6 +1961,7 @@ a:hover i, a:focus i,
 }
 
 .header__menu {
+    display: none;
     height: 100%;
     overflow-y: auto;
 }
@@ -2040,10 +2069,10 @@ a:hover i, a:focus i,
 }
 
 .modalCallBack.open .modalCallBack__container {
-    width: 410px;
-    height: 475px;
-    background: no-repeat center/100% url(../images/background/modalCallback.jpg);
-    padding: 0 25px;
+    width: 100%;
+    max-width: 410px;
+    padding: 0 25px 55px;
+    background: no-repeat center/cover url(../images/background/modalCallback.jpg);
 }
 
 .modalCallBack.open .modalCallBack__header {
@@ -2069,47 +2098,8 @@ a:hover i, a:focus i,
     text-align: center;
 }
 
-.modalThanks,
-.modalError {
+.modalProductCard {
     display: none;
-}
-
-.modalThanks div,
-  .modalError div {
-    height: 475px;
-    width: 600px;
-    padding: 0 25px;
-    background: #000 no-repeat bottom center/100% url(../images/background/modalSuccess.jpg);
-}
-
-.modalThanks .icon-close,
-  .modalError .icon-close {
-    display: block;
-    margin-left: auto;
-    font-size: 35px;
-    padding: 20px 0 10px 10px;
-}
-
-.modalThanks h3,
-  .modalError h3 {
-    margin: -5px 0 10px;
-    font-size: 48px;
-    color: #BDA180;
-    text-align: left;
-    letter-spacing: 2.5px;
-    font-weight: 600;
-}
-
-.modalThanks p,
-  .modalError p {
-    max-width: 180px;
-}
-
-.modalThanks.open,
-  .modalError.open {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
 }
 
 .modalProductCard__container {
@@ -2236,6 +2226,14 @@ a:hover i, a:focus i,
     flex-grow: 1;
 }
 
+.modalProductCard .swiper-pagination .swiper-pagination-bullet:focus {
+    outline: 1px solid #BDA180;
+}
+
+.modalProductCard .swiper-pagination .swiper-pagination-bullet:focus:not(.swiper-pagination-bullet-active) {
+    opacity: 0.5;
+}
+
 @media screen and (max-width: 1024px) {
     .modalProductCard__content {
         padding: 10px 40px 40px;
@@ -2270,27 +2268,30 @@ a:hover i, a:focus i,
     }
 }
 
-.quizModal {
+.modalOrder {
     display: none;
 }
 
-.quizModal__container {
-    max-width: 900px;
+.modalOrder__container {
+    max-width: 920px;
+    width: 100%;
+    max-height: 100vh;
     padding: 40px 40px 40px 60px;
     background: #262527;
     background: no-repeat center/cover url(../images/background/mainBg.jpg);
 }
 
-.quizModal__header {
+.modalOrder .simplebar-vertical.simplebar-track {
+    margin: 120px 10px 40px 0;
+}
+
+.modalOrder__header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
 }
 
-.quizModal__progressBar {
+.modalOrder__progress {
     width: 80%;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -2298,24 +2299,32 @@ a:hover i, a:focus i,
     user-select: none;
 }
 
-.quizModal__bar {
-    height: 6px;
-    border-radius: 3px;
+.modalOrder__bar {
+    height: 9px;
+    border-radius: 5px;
     border: 1px solid #BDA180;
     overflow: hidden;
 }
 
-.quizModal__progressBarStick {
+.modalOrder__bar div {
+    margin: 1px 0 0 1px;
+    -webkit-transition: width 0.9s ease-out;
+    -o-transition: width 0.9s ease-out;
+    transition: width 0.9s ease-out;
     height: 4px;
     background: #BDA180;
     width: 8%;
+    max-width: calc(100% - 2px);
+    border-radius: 2px;
 }
 
-.quizModal__steps {
-    margin-top: 20px;
+.modalOrder__steps {
+    margin-top: 18px;
     color: #BDA180;
     font-size: 18px;
+    font-weight: 300;
     letter-spacing: 2px;
+    line-height: 18px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2324,59 +2333,75 @@ a:hover i, a:focus i,
     justify-content: space-between;
 }
 
-.quizModal__steps.active {
+.modalOrder__steps span.active {
     font-weight: 700;
+    font-size: 20px;
 }
 
-.quizModal .icon-close {
-    padding: 20px;
-    margin: -20px -30px 0 0;
+.modalOrder .icon-close {
+    padding: 0 20px 20px 20px;
+    margin: -9px -30px 0 auto;
     font-size: 30px;
 }
 
-.quizModal__row {
+.modalOrder__row {
     margin-top: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 30px;
 }
 
-.quizModal__col {
+.modalOrder__col {
+    -webkit-box-flex: 5;
+    -ms-flex-positive: 5;
+    flex-grow: 5;
+    -ms-flex-preferred-size: 300px;
+    flex-basis: 300px;
+}
+
+.modalOrder__imageFrame {
+    max-width: 300px;
+    margin: 22px 0 0 15px;
+    width: 220px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    max-width: 450px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    border: 1px solid #BDA180;
 }
 
-.quizModal h2 {
-    font-size: 24px;
-    font-weight: 600;
+.modalOrder__imageFrame img {
+    position: relative;
+    -webkit-transform: translate(-15px, -15px);
+    -ms-transform: translate(-15px, -15px);
+    transform: translate(-15px, -15px);
 }
 
-.quizModal__stepsNav {
-    margin-top: 50px;
+.modalOrder form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    gap: 8%;
 }
 
-.quizModal__answers {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-
-.quizModal__answersCol {
+.modalOrder__formCol {
+    -ms-flex-preferred-size: 200px;
+    flex-basis: 200px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2384,55 +2409,196 @@ a:hover i, a:focus i,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
-.quizModal .btn-border,
-  .quizModal .btn-solid {
-    height: 45px;
-    width: 200px;
+.modalOrder__formCol .btn-solid {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.quizModal__imageFrame {
-    margin-top: 22px;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    border: 1px solid #BDA180;
-}
-
-.quizModal img {
-    width: 275px;
-    height: 250px;
-    position: relative;
-    -webkit-transform: translate(-15px, -15px);
-    -ms-transform: translate(-15px, -15px);
-    transform: translate(-15px, -15px);
-}
-
-.quizModal.open {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.modalOrder__nav {
+    margin-top: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-    background: #777b;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 8%;
+}
+
+.modalOrder h2 {
+    min-height: 80px;
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.modalOrder .btn-border,
+  .modalOrder .btn-solid {
+    height: 45px;
+    width: 100%;
+}
+
+.modalOrder .radio {
+    margin-top: 20px;
+}
+
+.modalOrder .radio span {
+    margin-left: 15px;
+}
+
+.modalOrder [data-hide] {
+    display: none;
+    opacity: 0;
+}
+
+.modalOrder .show {
+    display: block;
+    -webkit-animation: showModalOrderQuestions 0.5s ease-in-out forwards;
+    animation: showModalOrderQuestions 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes showModalOrderQuestions {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showModalOrderQuestions {
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .modalOrder h2 {
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modalOrder__container {
+        padding: 40px 40px 40px 30px;
+    }
+
+    .modalOrder__header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .modalOrder__progress {
+        width: 100%;
+    }
+
+    .modalOrder .icon-close {
+        margin-top: -20px;
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1;
+    }
+
+    .modalOrder__row {
+        margin-top: 25px;
+    }
+
+    .modalOrder h2 {
+        min-height: 70px;
+        font-size: 20px;
+    }
+
+    .modalOrder__imageFrame {
+        margin: 22px 0 0 10px;
+    }
+
+    .modalOrder__imageFrame img {
+        -webkit-transform: translate(-10px, -10px);
+        -ms-transform: translate(-10px, -10px);
+        transform: translate(-10px, -10px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modalOrder__container {
+        padding: 40px 40px 40px 20px;
+    }
+
+    .modalOrder__steps {
+        margin-top: 10px;
+        font-size: 15px;
+        letter-spacing: 0;
+    }
+
+    .modalOrder__steps span.active {
+        font-size: 16px;
+    }
+
+    .modalOrder h2 {
+        font-size: 16px;
+    }
+}
+
+.modalThanks,
+.modalError {
+    display: none;
+}
+
+.modalThanks div,
+  .modalError div {
+    height: 475px;
+    max-height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 25px;
+    background: #000 no-repeat bottom center/100% url(../images/background/modalSuccess.jpg);
+}
+
+.modalThanks .icon-close,
+  .modalError .icon-close {
+    display: block;
+    margin-left: auto;
+    font-size: 35px;
+    padding: 20px 0 10px 10px;
+}
+
+.modalThanks h3,
+  .modalError h3 {
+    margin: -5px 0 10px;
+    font-size: 48px;
+    color: #BDA180;
+    text-align: left;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+}
+
+.modalThanks p,
+  .modalError p {
+    max-width: 180px;
+}
+
+.modalThanks.open,
+  .modalError.open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .modalThanks div,
+    .modalError div {
+        height: 380px;
+    }
+
+    .modalThanks h3,
+    .modalError h3 {
+        font-size: 38px;
+    }
 }
 
 /* Blocks */
@@ -3063,9 +3229,9 @@ a:hover i, a:focus i,
     }
 }
 
-.quiz__wrapper {
+.order__wrapper {
     min-height: 458px;
-    background-image: url(../images/sectionImages/quiz.jpg);
+    background-image: url(../images/sectionImages/order.jpg);
     background-size: contain;
     background-position: left top;
     background-repeat: no-repeat;
@@ -3080,29 +3246,29 @@ a:hover i, a:focus i,
     padding: 50px 100px;
 }
 
-.quiz h2 {
+.order h2 {
     font-size: 28px;
 }
 
-.quiz p {
+.order p {
     margin-top: 30px;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
-.quiz ul {
+.order ul {
     margin-top: 15px;
 }
 
-.quiz .btn-solid {
+.order .btn-solid {
     width: 250px;
     height: 60px;
     float: left;
     margin-top: 30px;
 }
 
-.quiz__savings {
+.order__savings {
     max-width: 190px;
     margin-left: 40px;
     margin-top: 34px;
@@ -3113,7 +3279,7 @@ a:hover i, a:focus i,
 }
 
 @media screen and (max-width: 1280px) {
-    .quiz__wrapper {
+    .order__wrapper {
         background-size: 100%;
         background-position: center bottom;
         padding: 50px;
@@ -3121,35 +3287,35 @@ a:hover i, a:focus i,
 }
 
 @media screen and (max-width: 768px) {
-    .quiz__wrapper {
+    .order__wrapper {
         padding: 40px;
     }
 
-    .quiz__col {
+    .order__col {
         width: 100%;
     }
 
-    .quiz h2 {
+    .order h2 {
         margin: 0 auto 50px;
         font-size: 24px;
         text-align: center;
     }
 
-    .quiz p {
+    .order p {
         margin-left: 50px;
         max-width: 300px;
     }
 
-    .quiz ul {
+    .order ul {
         margin-left: 50px;
     }
 
-    .quiz .btn-solid {
+    .order .btn-solid {
         margin: 30px 0 30px 68px;
         float: unset;
     }
 
-    .quiz__savings {
+    .order__savings {
         margin-left: 50px;
         float: unset;
         max-width: unset;
@@ -3157,26 +3323,26 @@ a:hover i, a:focus i,
 }
 
 @media screen and (max-width: 480px) {
-    .quiz__wrapper {
+    .order__wrapper {
         padding: 40px 15px;
-        background: #000 no-repeat left bottom/400px url(../images/sectionImages/quiz.jpg);
+        background: #000 no-repeat left bottom/400px url(../images/sectionImages/order.jpg);
     }
 
-    .quiz h2 {
+    .order h2 {
         font-size: 20px;
     }
 
-    .quiz p,
-  .quiz ul {
+    .order p,
+  .order ul {
         margin-left: 0px;
     }
 
-    .quiz .btn-solid {
+    .order .btn-solid {
         margin: 30px 0 120px 0;
         width: 100%;
     }
 
-    .quiz__savings {
+    .order__savings {
         margin-left: 0;
     }
 }

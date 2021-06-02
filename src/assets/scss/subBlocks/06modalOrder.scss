@@ -1,0 +1,225 @@
+.modalOrder {
+    display: none;
+
+    &__container {
+        max-width: 920px;
+        width: 100%;
+        max-height: 100vh;
+        padding: 40px 40px 40px 60px;
+        background: $backgroundColor;
+        background: no-repeat center / cover url(../images/background/mainBg.jpg);
+    }
+
+    .simplebar-vertical.simplebar-track {
+        margin: 120px 10px 40px 0;
+    }
+
+    &__header {
+        display: flex;
+    }
+
+    &__progress {
+        width: 80%;
+        user-select: none;
+    }
+
+    &__bar {
+        height: 9px;
+        border-radius: 5px;
+        border: 1px solid $accentColor;
+        overflow: hidden;
+
+        div {
+            margin: 1px 0 0 1px;
+            transition: width 0.9s ease-out;
+            height: 4px;
+            background: $accentColor;
+            width: 8%;
+            max-width: calc(100% - 2px);
+            border-radius: 2px;
+        }
+    }
+
+    &__steps {
+        margin-top: 18px;
+        color: $accentColor;
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        line-height: 18px;
+
+        display: flex;
+        justify-content: space-between;
+
+        span.active {
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+    .icon-close {
+        padding: 0 20px 20px 20px;
+        margin: -9px -30px 0 auto;
+        font-size: 30px;
+    }
+
+    &__row {
+        // questions -||- image
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__col {
+        // content column (left to image)
+        flex-grow: 5;
+        flex-basis: 300px;
+    }
+
+    &__imageFrame {
+        max-width: 300px;
+        margin: 22px 0 0 15px;
+        width: 220px;
+        flex-grow: 1;
+        align-self: flex-start;
+
+        border: 1px solid $accentColor;
+
+        img {
+            position: relative;
+            transform: translate(-15px, -15px);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8%;
+    }
+
+    &__formCol {
+        // in form columns
+        flex-basis: 200px;
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .btn-solid {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__nav {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 8%;
+    }
+
+    h2 {
+        min-height: 80px;
+        margin-bottom: 0;
+        line-height: 1.4;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .btn-border,
+    .btn-solid {
+        height: 45px;
+        width: 100%;
+    }
+
+    .radio {
+        margin-top: 20px;
+
+        span {
+            margin-left: 15px;
+        }
+    }
+
+    [data-hide] {
+        display: none;
+        opacity: 0;
+    }
+
+    .show {
+        display: block;
+        animation: showModalOrderQuestions 0.5s ease-in-out forwards;
+
+        @keyframes showModalOrderQuestions {
+            to {
+                opacity: 1;
+            }
+        }
+    }
+
+    @media screen and (max-width: $smDesktopWidth) {
+        h2 {
+            font-weight: 400;
+        }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+
+        &__container {
+            padding: 40px 40px 40px 30px;
+        }
+
+        &__header {
+            flex-direction: column;
+        }
+
+        &__progress {
+            width: 100%;
+        }
+
+        .icon-close {
+            margin-top: -20px;
+            order: -1;
+        }
+
+        &__row {
+            margin-top: 25px;
+        }
+
+        h2 {
+            min-height: 70px;
+            font-size: 20px;
+        }
+
+        &__imageFrame {
+            margin: 22px 0 0 10px;
+
+            img {
+                transform: translate(-10px, -10px);
+            }
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__container {
+            padding: 40px 40px 40px 20px;
+        }
+
+        &__steps {
+            margin-top: 10px;
+            font-size: 15px;
+            letter-spacing: 0;
+
+            span.active {
+                font-size: 16px;
+            }
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+    }
+}
