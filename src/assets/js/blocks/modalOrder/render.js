@@ -1,9 +1,11 @@
+import modalOrderData from './data.js';
+
 export default class {
 
-  constructor(data) {
+  constructor() {
 
     this.parentElement = document.querySelector('.modalOrder__row');
-    this.data = data;
+    this.data = modalOrderData;
 
     return this;
   }

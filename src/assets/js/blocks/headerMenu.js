@@ -28,7 +28,7 @@ export default class {
         });
       });
     })
-    /////////////////////////////////______ end scroll to section
+    /////////////////////////////////______ open & close nav menu
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
@@ -44,6 +44,20 @@ export default class {
     document.addEventListener('click', (e) => {
       if (!e.target.closest('header nav') && !e.target.closest('.header__openMenuBtn')) this.close();;
     });
+
+    /////////////////////////////////______ observer
+
+    const target = document.querySelector('.intro');
+    const header = document.querySelector('.header');
+    new IntersectionObserver((entries) => {
+      if (entries[0].intersectionRatio > 0.2) this.close();
+      if (entries[0].intersectionRatio > 0.05) header.classList.remove('sticky');
+      if (entries[0].intersectionRatio < 0.05) header.classList.add('sticky');
+    }, {
+      threshold: [0.01, 0.2, 0.5],
+      rootMargin: '100px'
+    }).observe(target);
+
   }
 
   open() {
@@ -57,3 +71,26 @@ export default class {
     this.menuSocialButtons.forEach(btn => btn.setAttribute('tabindex', 0));
   };
 };
+
+
+// const sections = document.querySelectorAll('section:not(.intro)');
+// console.log(sections);
+
+// const lazyLoad = (target, i) => {
+//   const io = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         console.log(i);
+//         // указать пункты меню навигациии
+
+//         // li:nth-of-type(2) button {
+//         //   border-bottom: 1px solid $defaultColor;
+//         //   color: $defaultColor;
+//         // }
+
+//       }
+//     });
+//   });
+//   io.observe(target);
+// };
+// sections.forEach(lazyLoad);

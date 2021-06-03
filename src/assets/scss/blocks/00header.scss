@@ -4,8 +4,48 @@
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 1;
 
     border-bottom: 1px solid $accentColor;
+
+
+    &.sticky {
+        @media (min-width: $desktopWidth) {
+            animation: stickyHeader 0.6s ease-out forwards;
+
+            @keyframes stickyHeader {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+
+                50% {
+                    transform: none;
+                    opacity: 0.08;
+                }
+
+                to {
+                    opacity: 1;
+                    background: #262527d3;
+                }
+            }
+
+            position: fixed;
+            z-index: 2;
+            backdrop-filter: blur(4px);
+            height: 60px;
+        }
+
+        .header__socials {
+            transition: none;
+            transform: translate(0);
+        }
+
+        nav {
+            height: 100vh;
+            border: 1px solid $accentColor;
+        }
+    }
 
     .container {
         height: 100%;

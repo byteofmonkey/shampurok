@@ -5,8 +5,8 @@
         url(../images/webp/parallax/02story/item2.webp),
         url(../images/webp/parallax/02story/item3.webp);
     background-repeat: no-repeat;
-    background-position: left top, left bottom, center bottom, right top;
-    background-size: 100px, 100px, 100px, 200px;
+    background-position: left top, left bottom, center bottom, right bottom -100px;
+    background-size: 100px, 100px, 100px, 22%;
 }
 
 .tiles {
@@ -17,7 +17,7 @@
         url(../images/webp/parallax/03tiles/item3.webp);
     background-repeat: no-repeat;
     background-position: left 100px bottom 100px, left bottom, center bottom, top right;
-    background-size: 100px, 100px, 100px, 200px;
+    background-size: 100px, 100px, 100px, 100px;
 }
 
 .sliderKit {

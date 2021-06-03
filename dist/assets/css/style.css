@@ -488,15 +488,15 @@ h3 {
 .story {
     background: url(../images/webp/parallax/02story/item0.webp), url(../images/webp/parallax/02story/item1.webp), url(../images/webp/parallax/02story/item2.webp), url(../images/webp/parallax/02story/item3.webp);
     background-repeat: no-repeat;
-    background-position: left top, left bottom, center bottom, right top;
-    background-size: 100px, 100px, 100px, 200px;
+    background-position: left top, left bottom, center bottom, right bottom -100px;
+    background-size: 100px, 100px, 100px, 22%;
 }
 
 .tiles {
     background: url(../images/webp/parallax/03tiles/item0.webp), url(../images/webp/parallax/03tiles/item1.webp), url(../images/webp/parallax/03tiles/item2.webp), url(../images/webp/parallax/03tiles/item3.webp);
     background-repeat: no-repeat;
     background-position: left 100px bottom 100px, left bottom, center bottom, top right;
-    background-size: 100px, 100px, 100px, 200px;
+    background-size: 100px, 100px, 100px, 100px;
 }
 
 .sliderKit {
@@ -2698,7 +2698,70 @@ a:hover i, a:focus i,
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 1;
     border-bottom: 1px solid #BDA180;
+}
+
+@media (min-width: 1280px) {
+    .header.sticky {
+        -webkit-animation: stickyHeader 0.6s ease-out forwards;
+        animation: stickyHeader 0.6s ease-out forwards;
+        position: fixed;
+        z-index: 2;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        height: 60px;
+    }
+    @    -webkit-keyframes stickyHeader {
+        from {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+
+    50% {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 0.08;
+    }
+
+    to {
+        opacity: 1;
+        background: #262527d3;
+    }
+}
+
+@keyframes stickyHeader {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+
+    50% {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 0.08;
+    }
+
+    to {
+        opacity: 1;
+        background: #262527d3;
+    }
+} }
+
+.header.sticky .header__socials {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+}
+
+.header.sticky nav {
+    height: 100vh;
+    border: 1px solid #BDA180;
 }
 
 .header .container {
@@ -3036,7 +3099,7 @@ a:hover i, a:focus i,
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    grid-column-gap: 68px;
+    grid-column-gap: 78px;
     grid-row-gap: 10px;
     padding-left: 68px;
 }
