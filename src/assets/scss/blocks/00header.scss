@@ -8,9 +8,8 @@
 
     border-bottom: 1px solid $accentColor;
 
-
     &.sticky {
-        @media (min-width: $desktopWidth) {
+        @media (min-width: 1200px) and (max-width:1920px) {
             animation: stickyHeader 0.6s ease-out forwards;
 
             @keyframes stickyHeader {

@@ -1,7 +1,7 @@
-import SimpleBar from 'simplebar/dist/simplebar';
+import Simplebar from 'simplebar';
 import fitText from './plugin/fittext.js';
+import Rellax from 'rellax';
 
-//_____________________________________________________________________________render data
 import Slider from "./blocks/slider/render";
 import dataKit from './blocks/slider/dataKit';
 import dataFeedback from './blocks/slider/dataFeedback';
@@ -81,15 +81,9 @@ openModalOrderBtn.addEventListener('click', () => {
   closeAllModal();
   modalOrder.classList.add('open');
 });
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-// Parallax
-const ttt = document.documentElement;
-const targetMain = document.querySelector('main');
-document.addEventListener('scroll', (e) => {
-  let a = ttt.scrollTop * 0.7 + 'px';
-  targetMain.style = `background-position: center ${a};`;
-});
+
+
+var rellax = new Rellax('.parallaxTop');
+var rellax = new Rellax('.parallaxMiddle');
+var rellax = new Rellax('.parallaxBottom');
+var rellax = new Rellax('.parallaxBg');
