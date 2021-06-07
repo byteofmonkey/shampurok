@@ -1,69 +1,38 @@
-@import 'utils/01reset';
-@import 'utils/02vars';
-@import 'utils/03mixins';
-@import 'utils/04fonts';
-@import 'utils/05pagePresets';
-@import 'utils/06typography';
-@import 'utils/07parallaxImages';
+@import './utils/01reset';
+@import './utils/02vars';
+@import './utils/03mixins';
+@import './utils/04fonts';
+@import './utils/05pagePresets';
+@import './utils/06typography';
+@import './utils/07chips';
 
 
 @import 'swiper/swiper-bundle';
 @import 'simplebar/dist/simplebar';
-// @import 'node_modules/animate.css/animate';
 
 
 /* SubBlocks & page elements */
-@import "subBlocks/01elementsStatic.scss";
-@import "subBlocks/02elementsInteractive.scss";
-@import "subBlocks/03headerMenu.scss";
-@import "subBlocks/04modalCallBack.scss";
-@import "subBlocks/05modalProductCard.scss";
-@import "subBlocks/06modalOrder.scss";
-@import "subBlocks/07modalThanks&Error.scss";
+@import "./subBlocks/01elementsStatic.scss";
+@import "./subBlocks/02elementsInteractive.scss";
+@import "./subBlocks/03headerMenu.scss";
+@import "./subBlocks/04modalCallBack.scss";
+@import "./subBlocks/05modalProductCard.scss";
+@import "./subBlocks/06modalOrder.scss";
+@import "./subBlocks/07modalThanks&Error.scss";
 
 
 /* Blocks */
-@import "blocks/00header.scss";
-@import "blocks/01intro.scss";
-@import "blocks/02story.scss";
-@import "blocks/03tiles.scss";
-@import "blocks/04sliderKit.scss";
-@import "blocks/05custom.scss";
-@import "blocks/06order.scss";
-@import "blocks/07cardsWho.scss";
-@import "blocks/08accordion.scss";
-@import "blocks/09cardsCompare.scss";
-@import "blocks/10cardsOrder.scss";
-@import "blocks/11sliderFeedback.scss";
-@import "blocks/12formQuestions.scss";
-@import "blocks/13footer.scss";
-
-
-// .radio {
-//     position: relative;
-//     height: 100%;
-//     width: 100%;
-//     cursor: pointer;
-
-//     input {
-//         display: none;
-//     }
-
-//     span {
-//         padding-left: 35px;
-//     }
-
-//     span::before {
-//         content: '\e912';
-//         position: absolute;
-//         left: 0;
-//         top: 2px;
-//         font-family: 'icomoon';
-//         font-size: 15px;
-//         color: $accentColor;
-//     }
-
-//     input:checked~span::before {
-//         content: '\e913';
-//     }
-// }
+@import "./blocks/00header.scss";
+@import "./blocks/01intro.scss";
+@import "./blocks/02story.scss";
+@import "./blocks/03tiles.scss";
+@import "./blocks/04sliderKit.scss";
+@import "./blocks/05custom.scss";
+@import "./blocks/06order.scss";
+@import "./blocks/07cardsWho.scss";
+@import "./blocks/08accordion.scss";
+@import "./blocks/09cardsCompare.scss";
+@import "./blocks/10cardsOrder.scss";
+@import "./blocks/11sliderFeedback.scss";
+@import "./blocks/12formQuestions.scss";
+@import "./blocks/13footer.scss";

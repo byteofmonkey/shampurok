@@ -5,6 +5,16 @@ main {
     position: relative;
 }
 
+.parallax {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: repeat-y center top / 100% url(../images/background/mainBg.jpg);
+}
+
 .container,
 .containerFluid {
     padding: 0 30px;

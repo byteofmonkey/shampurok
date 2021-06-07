@@ -12,41 +12,54 @@ import {
   FBprops,
 } from './blocks/slider/swiperProps.js';
 
-import Menu from './blocks/headerMenu';
+import HeaderMenu from './blocks/headerMenu';
 import Accordion from './blocks/accordion';
 import ModalKit from "./blocks/modalKit/render";
 import ModalOrder from "./blocks/modalOrder/render";
 
 
 fitText(document.querySelector('h1'), 1.3);
+new Rellax('.parallax');
 
 new Slider("#swiperKIT", kit, dataKit, KITprops).render();
 new Slider("#swiperFB", feedback, dataFeedback, FBprops).render();
 
-new Menu();
+new HeaderMenu();
 new Accordion();
 new ModalOrder().render();
 new ModalKit().render();
 
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-// установка события на кнопку intro - узнать ингридиент
-const introBtn = document.querySelector('.intro .btn-solid');
-
-introBtn.addEventListener('click', () => {
-  document.querySelector('.tiles').scrollIntoView({
-    block: 'center'
-  });
-});
 /////////////////////////////////////////////////////////////////////////
 const allModal = document.querySelectorAll('[data-modal]');
 const closeBtn = document.querySelectorAll('[data-close]');
 const modalWrapper = document.querySelectorAll('.modal-wrapper');
+const openModalCallbackBtn = document.querySelectorAll('[data-callBack]');
+const modalCallback = document.querySelector('.modalCallBack');
+const openModalOrderBtn = document.querySelector('.order .btn-solid');
+const modalOrder = document.querySelector('.modalOrder');
+const introBtn = document.querySelector('.intro .btn-solid');
+
+
+
+openModalCallbackBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeAllModal();
+    modalCallback.classList.add('open');
+    document.documentElement.style = 'overflow: hidden';
+  });
+});
+
+openModalOrderBtn.addEventListener('click', () => {
+  closeAllModal();
+  modalOrder.classList.add('open');
+  document.documentElement.style = 'overflow: hidden';
+});
+
+
 
 const closeAllModal = () => {
   allModal.forEach(item => item.classList.remove('open'));
-
+  document.documentElement.style = '';
 };
 
 closeBtn.forEach((item) => {
@@ -61,29 +74,10 @@ document.addEventListener('keydown', (e) => {
   if (e.code === "Escape") closeAllModal();
 });
 
-/////////////////////////////////////////////////////////////////////////
-const openModalCallbackBtn = document.querySelectorAll('[data-callBack]');
-const modalCallback = document.querySelector('.modalCallBack');
-const doc = document.body;
 
-openModalCallbackBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    closeAllModal();
-    modalCallback.classList.add('open');
-    doc.style = 'overflow:hidden';
+
+introBtn.addEventListener('click', () => {
+  document.querySelector('.tiles').scrollIntoView({
+    block: 'center'
   });
 });
-/////////////////////////////////////////////////////////////////////////
-const openModalOrderBtn = document.querySelector('.order .btn-solid');
-const modalOrder = document.querySelector('.modalOrder');
-
-openModalOrderBtn.addEventListener('click', () => {
-  closeAllModal();
-  modalOrder.classList.add('open');
-});
-
-
-var rellax = new Rellax('.parallaxTop');
-var rellax = new Rellax('.parallaxMiddle');
-var rellax = new Rellax('.parallaxBottom');
-var rellax = new Rellax('.parallaxBg');

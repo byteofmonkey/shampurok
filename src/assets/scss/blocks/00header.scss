@@ -35,14 +35,13 @@
             height: 60px;
         }
 
-        .header__socials {
-            transition: none;
-            transform: translate(0);
-        }
-
         nav {
             height: 100vh;
             border: 1px solid $accentColor;
+
+            .header__socials {
+                visibility: hidden;
+            }
         }
     }
 

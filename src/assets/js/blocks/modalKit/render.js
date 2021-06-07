@@ -45,6 +45,7 @@ export default class {
 
       const id = e.target.dataset.card;
       this.render(id);
+      document.documentElement.style = 'overflow: hidden';
     }
 
     buttonsKit.forEach(btn => {

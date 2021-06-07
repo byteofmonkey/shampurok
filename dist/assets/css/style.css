@@ -484,46 +484,401 @@ h3 {
     }
 }
 
-.parallaxTop,
-.parallaxMiddle,
-.parallaxBottom,
-.parallaxBg {
-    height: 100%;
-    width: 100%;
+.story {
+    position: relative;
+}
+
+.story > img:first-of-type {
     position: absolute;
+    top: 0;
+    left: 100px;
+    width: 150px;
+}
+
+.story > img:nth-of-type(2) {
+    position: absolute;
+    bottom: -100px;
     left: 0;
-    z-index: -1;
-    background-repeat: no-repeat;
+    width: 380px;
 }
 
-.parallaxTop {
-    background-image: url(../images/webp/parallax/02story/item1.webp), url(../images/webp/parallax/02story/item2.webp), url(../images/webp/parallax/03tiles/item0.webp), url(../images/webp/parallax/04sliderKit/item0.webp), url(../images/webp/parallax/06order/item0.webp), url(../images/webp/parallax/07cardsWho/item0.webp), url(../images/webp/parallax/09cardsCompare/item0.webp), url(../images/webp/parallax/10cardsOrder/item0.webp), url(../images/webp/parallax/12questionsForm/item0.webp);
-    background-position: left top 1300px, center top 1450px, left top 2250px, left top 3250px, left top 4700px, left top 5000px, center top 6200px, left top 7700px, left top 9010px;
-    background-size: 280px, 100px, 100px, 150px, 200px, 200px, 200px, 400px, 150px;
-    top: 0;
+.story > img:nth-of-type(3) {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 150px;
 }
 
-.parallaxMiddle {
-    background-image: url(../images/webp/parallax/02story/item0.webp), url(../images/webp/parallax/03tiles/item1.webp), url(../images/webp/parallax/03tiles/item2.webp), url(../images/webp/parallax/06order/item1.webp), url(../images/webp/parallax/07cardsWho/item1.webp), url(../images/webp/parallax/09cardsCompare/item1.webp), url(../images/webp/parallax/10cardsOrder/item1.webp), url(../images/webp/parallax/12questionsForm/item1.webp), url(../images/webp/parallax/12questionsForm/item1.webp);
-    background-position: left top 1250px, left top 2250px, right top 2250px, right top 5200px, right top 5600px, center top 6800px, right top 8400px, right top 9700px;
-    background-size: 150px, 100px, 100px, 200px, 300px, 150px, 150px, 150px;
-    top: 0;
+.story > img:nth-of-type(4) {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 330px;
 }
 
-.parallaxBottom {
-    background-image: url(../images/webp/parallax/02story/item3.webp), url(../images/webp/parallax/03tiles/item3.webp), url(../images/webp/parallax/09cardsCompare/item2.webp), url(../images/webp/parallax/12questionsForm/item2.webp);
-    background-position: right top 1300px, right top 2550px, left top 8200px, left top 8500px;
-    background-size: 22%, 100px, 300px, 300px;
-    top: 0;
+@media screen and (max-width: 1280px) {
+    .story > img:first-of-type {
+        top: 0;
+        left: 0;
+        width: 110px;
+    }
+
+    .story > img:nth-of-type(2) {
+        width: 300px;
+    }
+
+    .story > img:nth-of-type(4) {
+        bottom: 0;
+        width: 230px;
+    }
 }
 
-.parallaxBg {
-    background: repeat-y center top/100% url(../images/background/mainBg.jpg);
+@media screen and (max-width: 1024px) {
+    .story > img:nth-of-type(4) {
+        display: none;
+    }
+
+    .story > img:nth-of-type(2) {
+        bottom: -150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .story > img:first-of-type {
+        display: none;
+    }
+
+    .story > img:nth-of-type(2) {
+        display: none;
+    }
+
+    .story > img:nth-of-type(3) {
+        bottom: -100px;
+        left: 50%;
+        width: 140px;
+    }
+}
+
+.tiles {
+    position: relative;
+}
+
+.tiles > img:first-of-type {
+    position: absolute;
+    bottom: -120px;
+    left: 20px;
+    width: 250px;
+}
+
+.tiles > img:nth-of-type(2) {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    width: 150px;
+}
+
+@media screen and (max-width: 1280px) {
+    .tiles > img:first-of-type {
+        width: 180px;
+    }
+
+    .tiles > img:nth-of-type(2) {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tiles > img:first-of-type {
+        width: 120px;
+    }
+
+    .tiles > img:nth-of-type(2) {
+        width: 100px;
+        bottom: -60px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .tiles > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tiles > img:first-of-type {
+        display: none;
+    }
+}
+
+.sliderKit {
+    position: relative;
+}
+
+.sliderKit > img:first-of-type {
+    position: absolute;
+    bottom: -140px;
+    left: 0;
+    width: 180px;
+}
+
+@media screen and (max-width: 1280px) {
+    .sliderKit > img:first-of-type {
+        bottom: -100px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sliderKit > img:first-of-type {
+        display: none;
+    }
+}
+
+.order {
+    position: relative;
+}
+
+.order > img:first-of-type {
+    position: absolute;
     top: 0;
+    left: 20px;
+    width: 180px;
+}
+
+.order > img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: -150px;
+    width: 180px;
+}
+
+@media screen and (max-width: 1280px) {
+    .order > img:first-of-type {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .order > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.cardsWho {
+    position: relative;
+}
+
+.cardsWho > img:first-of-type {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 250px;
+}
+
+.cardsWho > img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: -400px;
+    width: 400px;
+}
+
+@media screen and (max-width: 1280px) {
+    .cardsWho > img:first-of-type {
+        bottom: -140px;
+        width: 200px;
+    }
+
+    .cardsWho > img:nth-of-type(2) {
+        bottom: -250px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cardsWho > img:first-of-type {
+        bottom: -80px;
+        width: 200px;
+    }
+
+    .cardsWho > img:nth-of-type(2) {
+        bottom: -50px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardsWho > img:first-of-type {
+        display: none;
+    }
+
+    .cardsWho > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.cardsCompare {
+    position: relative;
+}
+
+.cardsCompare > img:first-of-type {
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    width: 300px;
+}
+
+.cardsCompare > img:nth-of-type(2) {
+    position: absolute;
+    left: 50%;
+    top: -150px;
+    width: 280px;
+}
+
+@media screen and (max-width: 1280px) {
+    .cardsCompare > img:first-of-type {
+        width: 200px;
+    }
+
+    .cardsCompare > img:nth-of-type(2) {
+        top: -60px;
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cardsCompare > img:nth-of-type(2) {
+        top: -80px;
+        left: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardsCompare > img:first-of-type {
+        display: none;
+    }
+
+    .cardsCompare > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.cardsOrder {
+    position: relative;
+}
+
+.cardsOrder > img:first-of-type {
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    width: 400px;
+}
+
+.cardsOrder > img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: -250px;
+    width: 220px;
+}
+
+@media screen and (max-width: 1024px) {
+    .cardsOrder > img:first-of-type {
+        width: 320px;
+    }
+
+    .cardsOrder > img:nth-of-type(2) {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardsOrder > img:first-of-type {
+        display: none;
+    }
+
+    .cardsOrder > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.questionsForm {
+    position: relative;
+}
+
+.questionsForm > img:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+
+.questionsForm > img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: 200px;
+    width: 200px;
+}
+
+@media screen and (max-width: 1280px) {
+    .questionsForm > img:first-of-type {
+        left: 0;
+        width: 150px;
+    }
+
+    .questionsForm > img:nth-of-type(2) {
+        bottom: 200px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .questionsForm > img:first-of-type {
+        display: none;
+    }
+
+    .questionsForm > img:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.footer {
+    position: relative;
+}
+
+.footer > img:first-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+}
+
+.footer > img:nth-of-type(2) {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 300px;
+}
+
+@media screen and (max-width: 1750px) {
+    .footer > img:first-of-type {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .footer > img:nth-of-type(2) {
+        width: 200px;
+        bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer > img:nth-of-type(2) {
+        display: none;
+    }
 }
 
 /**
- * Swiper 6.6.2
+ * Swiper 6.7.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -531,7 +886,7 @@ h3 {
  *
  * Released under the MIT License
  *
- * Released on: May 19, 2021
+ * Released on: May 31, 2021
  */
 @font-face {
     font-family: 'swiper-icons';
@@ -1531,6 +1886,16 @@ main {
     max-width: 1920px;
     overflow: hidden;
     position: relative;
+}
+
+.parallax {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: repeat-y center top/100% url(../images/background/mainBg.jpg);
 }
 
 .container,
@@ -2723,18 +3088,13 @@ a:hover i, a:focus i,
     }
 } }
 
-.header.sticky .header__socials {
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    transform: translate(0);
-}
-
 .header.sticky nav {
     height: 100vh;
     border: 1px solid #BDA180;
+}
+
+.header.sticky nav .header__socials {
+    visibility: hidden;
 }
 
 .header .container {
