@@ -3,7 +3,9 @@
     margin-top: 0;
     padding-top: 90px;
 
-    background: #000 no-repeat url(../images/background/01introBg.jpg);
+    background-image: url(../images/background/01introBg.jpg);
+    background-color: #000;
+    background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 100%;
 

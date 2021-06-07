@@ -8,7 +8,6 @@ export default class {
     this.modalCallback = document.querySelector('.modalCallBack');
     this.openModalOrderBtn = document.querySelector('.order .btn-solid');
     this.modalOrder = document.querySelector('.modalOrder');
-    this.introBtn = document.querySelector('.intro .btn-solid');
 
     this.closeAllModal = this.closeAllModal.bind(this);
 

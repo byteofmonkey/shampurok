@@ -8,6 +8,14 @@
 
     border-bottom: 1px solid $accentColor;
 
+    .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &.sticky {
         @media (min-width: 1200px) and (max-width:1920px) {
             animation: stickyHeader 0.6s ease-out forwards;
@@ -34,13 +42,6 @@
             backdrop-filter: blur(4px);
             height: 60px;
         }
-    }
-
-    .container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 
     .logo {

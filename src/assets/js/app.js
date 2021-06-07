@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
   new ModalOrder().render();
   new ModalKit().render();
 
-
+  const introBtn = document.querySelector('.intro .btn-solid');
   introBtn.addEventListener('click', () => {
     document.querySelector('.tiles').scrollIntoView({
-      block: 'center'
+      block: 'center',
+      behavior: "smooth",
     });
   });
 
