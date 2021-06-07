@@ -2,13 +2,15 @@
 ## Source folder: ./src
 
 This project created with gulp 4.0.2
-use 'npm i' to install node_modules
 
 Project specifics:
-1. created with vanilla javascript/scss/gulp/swiper.js/iconfonts
-2. added product card popUp
+1. SCSS
+2. vanilla javascript
+3. iconfonts
+4. modal: callback/order/productCard
 
-
-Used libraries:
-swiper.js                   https://swiperjs.com/
-simple-scrollbar            https://github.com/buzinas/simple-scrollbar
+Libraries:
+1. swiper.js            https://swiperjs.com/
+2. simpleBar            https://www.npmjs.com/package/simplebar
+3. fitText              https://www.npmjs.com/package/fittext
+4. Rellax               https://www.npmjs.com/package/rellax
