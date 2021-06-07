@@ -1,5 +1,14 @@
 .header {
 
+    &.sticky nav {
+        height: 100vh;
+        border: 1px solid $accentColor;
+
+        .header__socials {
+            visibility: hidden;
+        }
+    }
+
     nav {
         position: absolute;
         top: 0;
@@ -8,7 +17,7 @@
         height: 800px;
         width: 100%;
         max-width: 480px;
-        padding: 100px 0;
+        padding: 40px 0;
 
         background-color: $backgroundColor;
 
@@ -24,12 +33,7 @@
 
         button {
             text-transform: uppercase;
-        }
-
-        .icon-close {
-            margin-left: -14px;
-            font-size: 56px;
-            line-height: 10px;
+            padding: 10px 0;
         }
 
         &.open {
@@ -49,6 +53,12 @@
         display: none;
         height: 100%;
         overflow-y: auto;
+    }
+
+    .icon-close {
+        margin-left: -12px;
+        font-size: 56px;
+        line-height: 10px;
     }
 
     &__socials {

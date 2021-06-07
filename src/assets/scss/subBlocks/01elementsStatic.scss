@@ -125,6 +125,14 @@ section {
     .slider-bar-container {
         max-width: 520px;
         width: 100%;
+
+        .swiper-scrollbar-drag {
+            cursor: grab;
+        }
+
+        .swiper-scrollbar-drag:active {
+            cursor: grabbing;
+        }
     }
 
     .slider-scroll-bar {

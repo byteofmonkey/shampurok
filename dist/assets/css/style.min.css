@@ -1479,6 +1479,10 @@ section {
   .slider-bar .slider-bar-container {
     max-width: 520px;
     width: 100%; }
+    .slider-bar .slider-bar-container .swiper-scrollbar-drag {
+      cursor: grab; }
+    .slider-bar .slider-bar-container .swiper-scrollbar-drag:active {
+      cursor: grabbing; }
   .slider-bar .slider-scroll-bar {
     height: 8px;
     border: 1px solid #BDA180;
@@ -1665,11 +1669,17 @@ button {
     position: absolute;
     cursor: pointer; }
   .radio input:checked + svg path {
-    transition: all .15s ease-out; }
+    transition: all .1s ease-out; }
     .radio input:checked + svg path.inner {
       stroke-dashoffset: 38; }
     .radio input:checked + svg path.outer {
       stroke-dashoffset: 1px; }
+
+.header.sticky nav {
+  height: 100vh;
+  border: 1px solid #BDA180; }
+  .header.sticky nav .header__socials {
+    visibility: hidden; }
 
 .header nav {
   position: absolute;
@@ -1678,7 +1688,7 @@ button {
   height: 800px;
   width: 100%;
   max-width: 480px;
-  padding: 100px 0;
+  padding: 40px 0;
   background-color: #262527;
   transform: translate(100%);
   transition: transform 0.4s;
@@ -1688,11 +1698,8 @@ button {
   grid-gap: 50px;
   z-index: 1; }
   .header nav button {
-    text-transform: uppercase; }
-  .header nav .icon-close {
-    margin-left: -14px;
-    font-size: 56px;
-    line-height: 10px; }
+    text-transform: uppercase;
+    padding: 10px 0; }
   .header nav.open {
     transform: translate(0); }
     .header nav.open .header__menu {
@@ -1704,6 +1711,11 @@ button {
   display: none;
   height: 100%;
   overflow-y: auto; }
+
+.header .icon-close {
+  margin-left: -12px;
+  font-size: 56px;
+  line-height: 10px; }
 
 .header__socials {
   transform: translate(-100%);
@@ -2080,11 +2092,6 @@ button {
       to {
         opacity: 1;
         background: #262527d3; } } }
-  .header.sticky nav {
-    height: 100vh;
-    border: 1px solid #BDA180; }
-    .header.sticky nav .header__socials {
-      visibility: hidden; }
   .header .container {
     height: 100%;
     display: flex;
@@ -2330,6 +2337,8 @@ button {
   width: 435px;
   background-color: #262527;
   box-shadow: 20px 20px 80px 0 #0005; }
+  .sliderKit .swiper-slide:active {
+    cursor: grabbing; }
 
 .sliderKit__content {
   padding: 36px 47px 65px; }

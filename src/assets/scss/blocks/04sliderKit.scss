@@ -4,6 +4,10 @@
         width: 435px;
         background-color: $backgroundColor;
         box-shadow: 20px 20px 80px 0 #0005;
+
+        &:active {
+            cursor: grabbing
+        }
     }
 
     &__content {

@@ -9,6 +9,7 @@ export const KITprops = {
   slidesPerView: 'auto',
   spaceBetween: 30,
   noSwipingSelector: 'button',
+  grabCursor: true,
   pagination: {
     el: '#sliderORDpag',
     type: 'fraction',
@@ -25,8 +26,24 @@ export const KITprops = {
     }
   },
   scrollbar: {
+    draggable: true,
     el: '#sliderORDbar',
-    dragSize: 200,
+    dragSize: 180,
+    snapOnRelease: true,
+  },
+  on: {
+    scrollbarDragStart: function() {
+      document.documentElement.style.cursor = 'grabbing';
+    },
+    scrollbarDragEnd: function() {
+      document.documentElement.style.cursor = '';
+    },
+    touchStart: function() {
+      document.documentElement.style.cursor = 'grabbing';
+    },
+    touchEnd: function() {
+      document.documentElement.style.cursor = '';
+    },
   },
   breakpoints: {
     1500: {
@@ -46,7 +63,7 @@ export const FBprops = {
   slidesPerView: 1.3,
   spaceBetween: 30,
   speed: 400,
-  slideToClickedSlide: true,
+  grabCursor: true,
   pagination: {
     el: '#sliderFBpag',
     type: 'fraction',
@@ -63,8 +80,25 @@ export const FBprops = {
     }
   },
   scrollbar: {
+    draggable: true,
     el: '#sliderFBbar',
-    dragSize: 200,
+    dragSize: 100,
+    snapOnRelease: true,
+    cursor: 'grab',
+  },
+  on: {
+    scrollbarDragStart: function() {
+      document.documentElement.style.cursor = 'grabbing';
+    },
+    scrollbarDragEnd: function() {
+      document.documentElement.style.cursor = '';
+    },
+    touchStart: function() {
+      document.documentElement.style.cursor = 'grabbing';
+    },
+    touchEnd: function() {
+      document.documentElement.style.cursor = '';
+    },
   },
   breakpoints: {
     1400: {
@@ -81,7 +115,6 @@ export const FBprops = {
     768: {
       slidesPerView: 3.4,
       spaceBetween: 45,
-      slideToClickedSlide: false,
     },
     640: {
       slidesPerView: 3.2,
