@@ -6,13 +6,13 @@ export default class {
     this.menuSocialButtons = document.querySelectorAll('header nav a');
     this.menuCloseButton = document.querySelector('header nav .icon-close');
 
-    /////////////////////////////////______ scroll to sections
+    /////////////////////////////////_________________________________ target sections:
     this.targetEl = [
       '.intro',
       '.tiles',
       '.sliderKit',
       '.custom',
-      '.quiz',
+      '.order',
       '.accordion',
       '.cardsCompare',
       '.cardsOrder',
@@ -20,16 +20,37 @@ export default class {
       '.footer',
     ].map(target => document.querySelector(target));
 
+
+    /////////////////////////////////_________________________________watch current posittion in menu:
+    const watchMenu = (target, i) => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log(this.menuNavButtons[i].parentElement);
+            this.menuNavButtons.forEach(item => item.parentElement.style = "");
+            this.menuNavButtons[i].parentElement.style = 'border-bottom: 1px solid #BDA180;';
+          }
+        });
+      });
+      io.observe(target);
+    };
+    this.targetEl.forEach(watchMenu);
+
+
+    /////////////////////////////////_________________________________ scroll to section:
     this.menuNavButtons.forEach((button, i) => {
       button.addEventListener('click', () => {
         this.close();
+
         this.targetEl[i].scrollIntoView({
-          block: 'center'
+          block: 'center',
+          behavior: "smooth",
         });
       });
     })
-    /////////////////////////////////______ open & close nav menu
 
+
+    /////////////////////////////////_________________________________ open & close nav menu
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
 
@@ -42,11 +63,11 @@ export default class {
     });
 
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('header nav') && !e.target.closest('.header__openMenuBtn')) this.close();;
+      if (!e.target.closest('header nav') && !e.target.closest('.header__openMenuBtn')) this.close();
     });
 
-    /////////////////////////////////______ observer
 
+    /////////////////////////////////_________________________________ observer - menu close
     const target = document.querySelector('.intro');
     const header = document.querySelector('.header');
     new IntersectionObserver((entries) => {
@@ -66,31 +87,7 @@ export default class {
   }
 
   close() {
-    document.body.style.overflow = "";
     this.menu.classList.remove('open');
     this.menuSocialButtons.forEach(btn => btn.setAttribute('tabindex', 0));
   };
 };
-
-
-// const sections = document.querySelectorAll('section:not(.intro)');
-// console.log(sections);
-
-// const lazyLoad = (target, i) => {
-//   const io = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         console.log(i);
-//         // указать пункты меню навигациии
-
-//         // li:nth-of-type(2) button {
-//         //   border-bottom: 1px solid $defaultColor;
-//         //   color: $defaultColor;
-//         // }
-
-//       }
-//     });
-//   });
-//   io.observe(target);
-// };
-// sections.forEach(lazyLoad);

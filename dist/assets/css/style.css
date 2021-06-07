@@ -2029,6 +2029,16 @@ section {
     width: 100%;
 }
 
+.slider-bar .slider-bar-container .swiper-scrollbar-drag {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.slider-bar .slider-bar-container .swiper-scrollbar-drag:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
 .slider-bar .slider-scroll-bar {
     height: 8px;
     border: 1px solid #BDA180;
@@ -2323,9 +2333,9 @@ a:hover i, a:focus i,
 }
 
 .radio input:checked + svg path {
-    -webkit-transition: all .15s ease-out;
-    -o-transition: all .15s ease-out;
-    transition: all .15s ease-out;
+    -webkit-transition: all .1s ease-out;
+    -o-transition: all .1s ease-out;
+    transition: all .1s ease-out;
 }
 
 .radio input:checked + svg path.inner {
@@ -2336,6 +2346,15 @@ a:hover i, a:focus i,
     stroke-dashoffset: 1px;
 }
 
+.header.sticky nav {
+    height: 100vh;
+    border: 1px solid #BDA180;
+}
+
+.header.sticky nav .header__socials {
+    visibility: hidden;
+}
+
 .header nav {
     position: absolute;
     top: 0;
@@ -2343,7 +2362,7 @@ a:hover i, a:focus i,
     height: 800px;
     width: 100%;
     max-width: 480px;
-    padding: 100px 0;
+    padding: 40px 0;
     background-color: #262527;
     -webkit-transform: translate(100%);
     -ms-transform: translate(100%);
@@ -2364,12 +2383,7 @@ a:hover i, a:focus i,
 
 .header nav button {
     text-transform: uppercase;
-}
-
-.header nav .icon-close {
-    margin-left: -14px;
-    font-size: 56px;
-    line-height: 10px;
+    padding: 10px 0;
 }
 
 .header nav.open {
@@ -2392,6 +2406,12 @@ a:hover i, a:focus i,
     display: none;
     height: 100%;
     overflow-y: auto;
+}
+
+.header .icon-close {
+    margin-left: -12px;
+    font-size: 56px;
+    line-height: 10px;
 }
 
 .header__socials {
@@ -3088,15 +3108,6 @@ a:hover i, a:focus i,
     }
 } }
 
-.header.sticky nav {
-    height: 100vh !important;
-    border: 1px solid #BDA180;
-}
-
-.header.sticky nav .header__socials {
-    visibility: hidden;
-}
-
 .header .container {
     height: 100%;
     display: -webkit-box;
@@ -3523,6 +3534,11 @@ a:hover i, a:focus i,
     background-color: #262527;
     -webkit-box-shadow: 20px 20px 80px 0 #0005;
     box-shadow: 20px 20px 80px 0 #0005;
+}
+
+.sliderKit .swiper-slide:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
 }
 
 .sliderKit__content {

@@ -19,7 +19,7 @@ import ModalOrder from "./blocks/modalOrder/render";
 
 
 fitText(document.querySelector('h1'), 1.3);
-new Rellax('.parallax');
+new Rellax('.parallax div');
 
 new Slider("#swiperKIT", kit, dataKit, KITprops).render();
 new Slider("#swiperFB", feedback, dataFeedback, FBprops).render();
