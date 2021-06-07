@@ -16,68 +16,29 @@ import HeaderMenu from './blocks/headerMenu';
 import Accordion from './blocks/accordion';
 import ModalKit from "./blocks/modalKit/render";
 import ModalOrder from "./blocks/modalOrder/render";
+import ModalButtons from "./blocks/modalButtons";
 
 
-fitText(document.querySelector('h1'), 1.3);
-new Rellax('.parallax div');
+document.addEventListener('DOMContentLoaded', () => {
 
-new Slider("#swiperKIT", kit, dataKit, KITprops).render();
-new Slider("#swiperFB", feedback, dataFeedback, FBprops).render();
+  fitText(document.querySelector('h1'), 1.3);
+  new Rellax('.parallax div');
 
-new HeaderMenu();
-new Accordion();
-new ModalOrder().render();
-new ModalKit().render();
+  new Slider("#swiperKIT", kit, dataKit, KITprops).render();
+  new Slider("#swiperFB", feedback, dataFeedback, FBprops).render();
 
-/////////////////////////////////////////////////////////////////////////
-const allModal = document.querySelectorAll('[data-modal]');
-const closeBtn = document.querySelectorAll('[data-close]');
-const modalWrapper = document.querySelectorAll('.modal-wrapper');
-const openModalCallbackBtn = document.querySelectorAll('[data-callBack]');
-const modalCallback = document.querySelector('.modalCallBack');
-const openModalOrderBtn = document.querySelector('.order .btn-solid');
-const modalOrder = document.querySelector('.modalOrder');
-const introBtn = document.querySelector('.intro .btn-solid');
+  new HeaderMenu();
+  new Accordion();
+
+  new ModalButtons();
+  new ModalOrder().render();
+  new ModalKit().render();
 
 
-
-openModalCallbackBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    closeAllModal();
-    modalCallback.classList.add('open');
-    document.documentElement.style = 'overflow: hidden';
+  introBtn.addEventListener('click', () => {
+    document.querySelector('.tiles').scrollIntoView({
+      block: 'center'
+    });
   });
-});
 
-openModalOrderBtn.addEventListener('click', () => {
-  closeAllModal();
-  modalOrder.classList.add('open');
-  document.documentElement.style = 'overflow: hidden';
-});
-
-
-
-const closeAllModal = () => {
-  allModal.forEach(item => item.classList.remove('open'));
-  document.documentElement.style = '';
-};
-
-closeBtn.forEach((item) => {
-  item.addEventListener('click', closeAllModal);
-});
-
-modalWrapper.forEach(item => item.addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal-wrapper')) closeAllModal();
-}));
-
-document.addEventListener('keydown', (e) => {
-  if (e.code === "Escape") closeAllModal();
-});
-
-
-
-introBtn.addEventListener('click', () => {
-  document.querySelector('.tiles').scrollIntoView({
-    block: 'center'
-  });
-});
+})

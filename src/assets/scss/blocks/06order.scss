@@ -1,5 +1,21 @@
 .order {
 
+    .container {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 60px);
+            height: 100%;
+            margin: 0 30px;
+            border: 1px solid $accentColor;
+            transform: translate(-20px, -20px);
+        }
+    }
+
     &__wrapper {
         min-height: 458px;
         background-image: url(../images/sectionImages/order.jpg);
@@ -8,6 +24,7 @@
         background-repeat: no-repeat;
         background-color: #000;
 
+        position: relative;
         border: 1px solid $accentColor;
 
         display: flex;
@@ -58,6 +75,10 @@
     }
 
     @media screen and (max-width: $tableWidth) {
+        .container::before {
+            display: none;
+        }
+
         &__wrapper {
             padding: 40px;
         }

@@ -21,20 +21,21 @@ export default class {
     ].map(target => document.querySelector(target));
 
 
-    /////////////////////////////////_________________________________watch current posittion in menu:
-    const watchMenu = (target, i) => {
+    /////////////////////////////////_________________________________ underline in menu for current position
+    const observeNavitems = (target, i) => {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log(this.menuNavButtons[i].parentElement);
-            this.menuNavButtons.forEach(item => item.parentElement.style = "");
-            this.menuNavButtons[i].parentElement.style = 'border-bottom: 1px solid #BDA180;';
+            this.menuNavButtons.forEach(item => item.style = "");
+            this.menuNavButtons[i].style = 'border-color: #BDA180;';
           }
         });
+      }, {
+        threshold: [0.99, 1],
       });
       io.observe(target);
     };
-    this.targetEl.forEach(watchMenu);
+    this.targetEl.forEach(observeNavitems);
 
 
     /////////////////////////////////_________________________________ scroll to section:
@@ -84,10 +85,14 @@ export default class {
   open() {
     this.menu.classList.add('open');
     this.menuSocialButtons.forEach(btn => btn.setAttribute('tabindex', -1));
+    if (window.innerWidth < 640 || window.innerWidth < 992 && window.innerWidth > window.innerHeight) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   close() {
     this.menu.classList.remove('open');
     this.menuSocialButtons.forEach(btn => btn.setAttribute('tabindex', 0));
+    document.body.style.overflow = '';
   };
 };

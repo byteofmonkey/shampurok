@@ -1701,7 +1701,9 @@ button {
   z-index: 1; }
   .header nav button {
     text-transform: uppercase;
-    padding: 10px 0; }
+    padding: 0;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s linear; }
   .header nav.open {
     transform: translate(0); }
     .header nav.open .header__menu {
@@ -1713,6 +1715,8 @@ button {
   display: none;
   height: 100%;
   overflow-y: auto; }
+  .header__menu li {
+    padding: 15px 0; }
 
 .header .icon-close {
   margin-left: -12px;
@@ -1746,7 +1750,7 @@ button {
   .header__socials {
     transform: none; }
   .header__menu li {
-    line-height: 4em; } }
+    line-height: 1.5em; } }
 
 @media screen and (max-width: 480px) {
   .header nav {
@@ -1762,14 +1766,14 @@ button {
   .header__socials .link {
     font-size: 25px; }
   .header__menu li {
-    line-height: 3.5em; }
-    .header__menu li a {
+    line-height: 1em; }
+    .header__menu li button {
       font-size: 13px; } }
 
 @media screen and (max-width: 320px) {
   .header__menu li {
-    line-height: 3em; }
-    .header__menu li a {
+    line-height: 1em; }
+    .header__menu li button {
       font-size: 10px; } }
 
 .modalCallBack__header {
@@ -2452,6 +2456,19 @@ button {
     .custom .btn-border {
       width: 100%; } }
 
+.order .container {
+  position: relative; }
+  .order .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 60px);
+    height: 100%;
+    margin: 0 30px;
+    border: 1px solid #BDA180;
+    transform: translate(-20px, -20px); }
+
 .order__wrapper {
   min-height: 458px;
   background-image: url(../images/sectionImages/order.jpg);
@@ -2459,6 +2476,7 @@ button {
   background-position: left top;
   background-repeat: no-repeat;
   background-color: #000;
+  position: relative;
   border: 1px solid #BDA180;
   display: flex;
   justify-content: flex-end;
@@ -2498,6 +2516,8 @@ button {
     padding: 50px; } }
 
 @media screen and (max-width: 768px) {
+  .order .container::before {
+    display: none; }
   .order__wrapper {
     padding: 40px; }
   .order__col {

@@ -102,15 +102,15 @@ export const FBprops = {
   },
   breakpoints: {
     1400: {
-      slidesPerView: 4.2,
+      slidesPerView: 5,
       spaceBetween: 50,
     },
     1280: {
-      slidesPerView: 4,
+      slidesPerView: 4.5,
       spaceBetween: 50,
     },
     1024: {
-      slidesPerView: 3.6,
+      slidesPerView: 4,
     },
     768: {
       slidesPerView: 3.4,

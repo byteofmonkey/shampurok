@@ -359,7 +359,6 @@ html {
     line-height: 1.5;
     font-size: 16px;
     color: #EBECF5;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -1889,12 +1888,17 @@ main {
 }
 
 .parallax {
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
     z-index: -1;
+    overflow: hidden;
+}
+
+.parallax div {
+    height: 100%;
     background: repeat-y center top/100% url(../images/background/mainBg.jpg);
 }
 
@@ -2383,7 +2387,7 @@ a:hover i, a:focus i,
 
 .header nav button {
     text-transform: uppercase;
-    padding: 10px 0;
+    padding: 0;
 }
 
 .header nav.open {
@@ -2406,6 +2410,10 @@ a:hover i, a:focus i,
     display: none;
     height: 100%;
     overflow-y: auto;
+}
+
+.header__menu li {
+    padding: 15px 0;
 }
 
 .header .icon-close {
@@ -2466,7 +2474,7 @@ a:hover i, a:focus i,
     }
 
     .header__menu li {
-        line-height: 4em;
+        line-height: 1.5em;
     }
 }
 
@@ -2494,20 +2502,20 @@ a:hover i, a:focus i,
     }
 
     .header__menu li {
-        line-height: 3.5em;
+        line-height: 1em;
     }
 
-    .header__menu li a {
+    .header__menu li button {
         font-size: 13px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .header__menu li {
-        line-height: 3em;
+        line-height: 1em;
     }
 
-    .header__menu li a {
+    .header__menu li button {
         font-size: 10px;
     }
 }
@@ -3731,6 +3739,24 @@ a:hover i, a:focus i,
     }
 }
 
+.order .container {
+    position: relative;
+}
+
+.order .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 60px);
+    height: 100%;
+    margin: 0 30px;
+    border: 1px solid #BDA180;
+    -webkit-transform: translate(-20px, -20px);
+    -ms-transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px);
+}
+
 .order__wrapper {
     min-height: 458px;
     background-image: url(../images/sectionImages/order.jpg);
@@ -3738,6 +3764,7 @@ a:hover i, a:focus i,
     background-position: left top;
     background-repeat: no-repeat;
     background-color: #000;
+    position: relative;
     border: 1px solid #BDA180;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3789,6 +3816,10 @@ a:hover i, a:focus i,
 }
 
 @media screen and (max-width: 768px) {
+    .order .container::before {
+        display: none;
+    }
+
     .order__wrapper {
         padding: 40px;
     }

@@ -33,7 +33,9 @@
 
         button {
             text-transform: uppercase;
-            padding: 10px 0;
+            padding: 0;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s linear;
         }
 
         &.open {
@@ -53,6 +55,10 @@
         display: none;
         height: 100%;
         overflow-y: auto;
+
+        li {
+            padding: 15px 0;
+        }
     }
 
     .icon-close {
@@ -106,7 +112,7 @@
         }
 
         &__menu li {
-            line-height: 4em;
+            line-height: 1.5em;
         }
     }
 
@@ -138,9 +144,9 @@
         }
 
         &__menu li {
-            line-height: 3.5em;
+            line-height: 1em;
 
-            a {
+            button {
                 font-size: 13px;
             }
         }
@@ -148,9 +154,9 @@
 
     @media screen and (max-width: $smPhoneWidth) {
         &__menu li {
-            line-height: 3em;
+            line-height: 1em;
 
-            a {
+            button {
                 font-size: 10px;
             }
         }
