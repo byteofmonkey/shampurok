@@ -1,13 +1,8 @@
-## Compiled project: ./dist
-## Source folder: ./src
-
-This project created with gulp 4.0.2
-
-Project specifics:
-1. SCSS
-2. vanilla javascript
-3. iconfonts
-4. modal: callback/order/productCard
+1. gulp 4.0.2
+2. SCSS
+3. vanilla javascript
+4. iconfonts
+5. modal: callback/order/productCard
 
 Libraries:
 1. swiper.js            https://swiperjs.com/
