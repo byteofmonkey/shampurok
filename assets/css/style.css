@@ -1,5 +1,3 @@
-/* Reset
-  ========================================================================== */
 html,
 body,
 div,
@@ -200,7 +198,7 @@ th {
   font-weight: 300;
   style: normal;
   font-display: swap;
-  src: local("Poppins light"), local("Poppins-light"), url("../fonts/Montserrat-light.ttf") format("truetype");
+  src: local("Montserrat light"), local("Montserrat-light"), url("../fonts/Montserrat-Light.woff") format("woff");
 }
 
 @font-face {
@@ -208,7 +206,7 @@ th {
   font-weight: 400;
   style: normal;
   font-display: swap;
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -216,7 +214,7 @@ th {
   font-weight: 500;
   style: normal;
   font-display: swap;
-  src: local("Montserrat Medium"), local("Montserrat-Medium"), url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url("../fonts/Montserrat-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -224,7 +222,7 @@ th {
   font-weight: 600;
   style: normal;
   font-display: swap;
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
 }
 
 @font-face {
@@ -232,7 +230,7 @@ th {
   font-weight: 700;
   style: normal;
   font-display: swap;
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -240,7 +238,7 @@ th {
   font-weight: 400;
   style: normal;
   font-display: swap;
-  src: url("../fonts/Georgia.ttf") format("truetype");
+  src: url("../fonts/Georgia.woff") format("woff");
 }
 
 @font-face {
@@ -248,7 +246,7 @@ th {
   font-weight: 400;
   style: italic;
   font-display: swap;
-  src: url("../fonts/Georgia-italic.ttf") format("truetype");
+  src: url("../fonts/Georgia-italic.woff") format("woff");
 }
 
 @font-face {
@@ -256,7 +254,7 @@ th {
   font-weight: 700;
   style: normal;
   font-display: swap;
-  src: url("../fonts/Georgia-bold.ttf") format("truetype");
+  src: url("../fonts/Georgia-bold.woff") format("woff");
 }
 
 @font-face {
@@ -877,7 +875,7 @@ h3 {
 }
 
 /**
- * Swiper 6.8.0
+ * Swiper 6.8.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -885,7 +883,7 @@ h3 {
  *
  * Released under the MIT License
  *
- * Released on: July 22, 2021
+ * Released on: August 23, 2021
  */
 @font-face {
     font-family: 'swiper-icons';
@@ -1268,6 +1266,10 @@ button.swiper-pagination-bullet {
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
     cursor: pointer;
+}
+
+.swiper-pagination-bullet:only-child {
+    display: none !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -1899,7 +1901,7 @@ main {
 
 .parallax div {
     height: 100%;
-    background: repeat-y center top/100% url(../images/background/mainBg.jpg);
+    background: repeat-y center top/100% url(../images/background/mainBg.webp);
 }
 
 .container,
@@ -2532,7 +2534,7 @@ a:hover i, a:focus i,
     width: 100%;
     max-width: 410px;
     padding: 0 25px 55px;
-    background: no-repeat center/cover url(../images/background/modalCallback.jpg);
+    background: no-repeat center/cover url(../images/background/modalCallback.webp);
 }
 
 .modalCallBack.open .modalCallBack__header {
@@ -2566,7 +2568,7 @@ a:hover i, a:focus i,
     max-width: 1100px;
     width: 100%;
     max-height: 100vh;
-    background: #000 no-repeat top/cover url(../images/background/mainBg.jpg);
+    background: #000 no-repeat top/cover url(../images/background/mainBg.webp);
 }
 
 .modalProductCard .simplebar-vertical.simplebar-track {
@@ -2738,7 +2740,7 @@ a:hover i, a:focus i,
     max-height: 100vh;
     padding: 40px 40px 40px 60px;
     background: #262527;
-    background: no-repeat center/cover url(../images/background/mainBg.jpg);
+    background: no-repeat center/cover url(../images/background/mainBg.webp);
 }
 
 .modalOrder .simplebar-vertical.simplebar-track {
@@ -3016,7 +3018,7 @@ a:hover i, a:focus i,
     width: 100%;
     max-width: 600px;
     padding: 0 25px;
-    background: #000 no-repeat bottom center/100% url(../images/background/modalSuccess.jpg);
+    background: #000 no-repeat bottom center/100% url(../images/background/modalSuccess.wepb);
 }
 
 .modalThanks .icon-close,
@@ -3088,49 +3090,27 @@ a:hover i, a:focus i,
 
 @media (min-width: 1200px) and (max-width: 1920px) {
     .header.sticky {
-        -webkit-animation: stickyHeader 0.6s ease-out forwards;
-        animation: stickyHeader 0.6s ease-out forwards;
         position: fixed;
         z-index: 2;
-        -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px);
         height: 60px;
+        -webkit-transform: translateY(-60px);
+        -ms-transform: translateY(-60px);
+        transform: translateY(-60px);
+        background: #262527;
+        -webkit-animation: stickyHeader 0.2s linear forwards;
+        animation: stickyHeader 0.2s linear forwards;
     }
     @    -webkit-keyframes stickyHeader {
-        from {
-        opacity: 0;
-        -webkit-transform: translateY(50px);
-        transform: translateY(50px);
-    }
-
-    50% {
-        -webkit-transform: none;
-        transform: none;
-        opacity: 0.08;
-    }
-
-    to {
-        opacity: 1;
-        background: #262527d3;
+        to {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 
 @keyframes stickyHeader {
-    from {
-        opacity: 0;
-        -webkit-transform: translateY(50px);
-        transform: translateY(50px);
-    }
-
-    50% {
-        -webkit-transform: none;
-        transform: none;
-        opacity: 0.08;
-    }
-
     to {
-        opacity: 1;
-        background: #262527d3;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 } }
 
@@ -3316,7 +3296,7 @@ a:hover i, a:focus i,
     height: 800px;
     margin-top: 0;
     padding-top: 90px;
-    background-image: url(../images/background/01introBg.jpg);
+    background-image: url(../images/background/01introBg.webp);
     background-color: #000;
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -3363,9 +3343,9 @@ a:hover i, a:focus i,
         min-height: 570px;
         max-height: 820px;
         text-align: center;
-        background: no-repeat url(../images/background/01introMobile.jpg), -webkit-gradient(linear, left top, left bottom, color-stop(70%, #000), color-stop(71%, #0000));
-        background: no-repeat url(../images/background/01introMobile.jpg), -o-linear-gradient(#000 70%, #0000 71%);
-        background: no-repeat url(../images/background/01introMobile.jpg), linear-gradient(#000 70%, #0000 71%);
+        background: no-repeat url(../images/background/01introMobile.webp), -webkit-gradient(linear, left top, left bottom, color-stop(70%, #000), color-stop(71%, #0000));
+        background: no-repeat url(../images/background/01introMobile.webp), -o-linear-gradient(#000 70%, #0000 71%);
+        background: no-repeat url(../images/background/01introMobile.webp), linear-gradient(#000 70%, #0000 71%);
         background-position: bottom 140px center, center;
         background-size: 100% auto;
     }
@@ -3663,7 +3643,7 @@ a:hover i, a:focus i,
 .custom {
     -webkit-box-shadow: 0 15px 25px 0 #0005;
     box-shadow: 0 15px 25px 0 #0005;
-    background: no-repeat center/cover url(../images/background/05getInfoBg.jpg);
+    background: no-repeat center/cover url(../images/background/05getInfoBg.webp);
 }
 
 .custom .container {
@@ -3766,7 +3746,7 @@ a:hover i, a:focus i,
 
 .order__wrapper {
     min-height: 458px;
-    background-image: url(../images/sectionImages/order.jpg);
+    background-image: url(../images/sectionImages/order.webp);
     background-size: contain;
     background-position: left top;
     background-repeat: no-repeat;
@@ -3940,7 +3920,7 @@ a:hover i, a:focus i,
 .accordion__image {
     height: 100%;
     position: relative;
-    background: no-repeat right bottom/cover url(../images/sectionImages/accordion.jpg);
+    background: no-repeat right bottom/cover url(../images/sectionImages/accordion.webp);
 }
 
 .accordion__imageFrame {
