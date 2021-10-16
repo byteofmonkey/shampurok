@@ -2,6 +2,11 @@
     "name": "shampurok",
     "version": "1.0.0",
     "license": "mit",
+    "description": "website",
+    "author": "byteofmonkey",
+    "scripts": {
+        "deploy": "gh-pages -d dist"
+    },
     "devDependencies": {
         "@babel/core": "^7.13.10",
         "@babel/preset-env": "^7.14.4",
@@ -26,7 +31,8 @@
         "gulp-webp": "^4.0.1",
         "panini": "^1.7.1",
         "webpack": "^5.38.1",
-        "webpack-stream": "^6.1.2"
+        "webpack-stream": "^6.1.2",
+         "gh-pages": "^3.2.3"
     },
     "browserslist": [
         "last 5 version",

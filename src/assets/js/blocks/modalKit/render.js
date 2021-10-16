@@ -22,7 +22,7 @@ export default class {
     const itemData = this.data[id];
 
     this.slides = itemData.alt.map((item, i) => {
-      this.images[i].src = `./assets/images/sliderKit/kit${id}/slide${i}.jpg`;
+      this.images[i].src = `./assets/images/sliderKit/kit${id}/slide${i}.webp`;
       this.images[i].alt = item;
     });
     this.titleEl.innerHTML = itemData.title;

@@ -1,6 +1,6 @@
 export default function(id, alt, title, price) {
   return `
-        <img src="./assets/images/sliderKit/kit${id}/slide0.jpg" alt=${alt}>
+        <img src="./assets/images/sliderKit/kit${id}/slide0.webp" alt=${alt}>
         <div class="sliderKit__content">
             <h3>${title}</h3>
             <div>

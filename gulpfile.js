@@ -62,7 +62,9 @@ function serve() {
   browserSync.init({
     server: {
       baseDir: "./" + distPath // dist/*.html
-    }
+    },
+    port: 9000,
+    notify: false
   });
 }
 
@@ -225,13 +227,13 @@ function images(cb) {
       imagemin.gifsicle({
         interlaced: true
       }),
-      imagemin.mozjpeg({
-        quality: 80,
-        progressive: true
-      }),
-      imagemin.optipng({
-        optimizationLevel: 5
-      }),
+      // imagemin.mozjpeg({
+      //   quality: 80,
+      //   progressive: true
+      // }),
+      // imagemin.optipng({
+      //   optimizationLevel: 5
+      // }),
       imagemin.svgo({
         plugins: [{
             removeViewBox: true
@@ -242,13 +244,13 @@ function images(cb) {
         ]
       })
     ]))
-    .pipe(dest(path.build.images))
+    // .pipe(dest(path.build.images))
     .pipe(webp({
       // lossless: true,
       quality: 80,
       alphaQuality: 80
     }))
-    .pipe(dest(path.build.webp))
+    .pipe(dest(path.build.images))
     .pipe(browserSync.reload({
       stream: true
     }));

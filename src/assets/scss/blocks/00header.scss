@@ -18,29 +18,19 @@
 
     &.sticky {
         @media (min-width: 1200px) and (max-width:1920px) {
-            animation: stickyHeader 0.6s ease-out forwards;
+            position: fixed;
+            z-index: 2;
+            height: 60px;
+            transform: translateY(-60px);
+            background: $backgroundColor;
+            animation: stickyHeader 0.2s linear forwards;
 
             @keyframes stickyHeader {
-                from {
-                    opacity: 0;
-                    transform: translateY(50px);
-                }
-
-                50% {
-                    transform: none;
-                    opacity: 0.08;
-                }
-
                 to {
-                    opacity: 1;
-                    background: #262527d3;
+                    transform: translateY(0px);
                 }
             }
 
-            position: fixed;
-            z-index: 2;
-            backdrop-filter: blur(4px);
-            height: 60px;
         }
     }
 

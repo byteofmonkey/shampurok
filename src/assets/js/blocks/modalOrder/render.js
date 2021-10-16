@@ -122,7 +122,7 @@ export default class {
   }
 
   renderImage(data) {
-    return data.alt.map((alt, i) => `<img src="./assets/images/modalOrder/modal${i}.jpg" alt='${alt}' data-step=${i} data-hide></img>`).join('');
+    return data.alt.map((alt, i) => `<img src="./assets/images/modalOrder/modal${i}.webp" alt='${alt}' data-step=${i} data-hide></img>`).join('');
   }
 
   renderInputLeft(data) {
