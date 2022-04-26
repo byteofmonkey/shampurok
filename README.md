@@ -1,15 +1,9 @@
 <p align='center'>
-  <img height='220' src='https://github.com/byteofmonkey/shampurok/blob/master/readme/preview.gif' alt='preview'/>
+  <img height='200' src='https://github.com/byteofmonkey/shampurok/blob/master/readme/preview.gif' alt='preview'/>
 </p>
 
 <p align='center'>
   <b>url : <a href='https://shampurok.netlify.app'>shampurok.netlify.app</a><b>
-</p>
-
-<p align="center">
-    <a href='https://github.com/byteofmonkey/TestReadme/blob/master/LICENSE'>
-      <img src='https://img.shields.io/github/license/byteofmonkey/shampurok?color=ffcc66&style=for-the-badge' alt='bage'/>
-     </a>
 </p>
 
 <p align="center">
@@ -32,7 +26,7 @@
 
 # About The Project
 
-Landing page with animations. NPM libraries, burger menu, css animations, object-oriented-programming, JS classes. Code style.
+Landing page with animations, paralax, modals. Responsive design.
 
 <p align='center'><b>Project dependencies:<b></p>
 
